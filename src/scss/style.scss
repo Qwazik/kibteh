@@ -1,0 +1,50 @@
+@import "_settings/_mixins";
+@import "_settings/_config";
+@import "_settings/_reset";
+@import "_bootstrap-grid";
+@import "_fonts";
+
+html{
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 1.6rem;
+    background: $white;
+    font-family: $ff-primary;
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------------------------------------*/
+/*  helpers
+/*-------------------------------------------------*/
+
+.off-link{
+    text-decoration: none;
+}
+.ns{
+    list-style-type: none;
+}
+.tt{
+    text-transform: uppercase;
+}
+
+$ta: (
+        'ta-left':'left',
+        'ta-right':'right',
+        'ta-center':'center'
+);
+
+@include generateRule($ta);
+
+/*-------------------------------------------------*/
+/*  ui
+/*-------------------------------------------------*/
+
+
+/*-------------------------------------------------*/
+/*  blocks
+/*-------------------------------------------------*/
