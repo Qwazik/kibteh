@@ -20,7 +20,7 @@
   @return ($vw * ($window / 100)) * 1px;
 }
 
-@mixin generateRule($ta){
+@mixin generateRule($ta, $rule){
   @each $ruleName, $ruleVal in $ta{
     @each $key, $val in $grid-breakpoints{
       @if($val==0){
@@ -30,7 +30,7 @@
       }@else{
         @media screen and (min-width: $val){
           .ta-#{$key}-center{
-            text-align: center;
+            $rule: $ruleVal;
           }
         }
       }

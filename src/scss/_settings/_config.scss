@@ -1,5 +1,11 @@
 @import "_mixins";
 
+/*-------------------------------------------------*/
+/*  font-family
+/*-------------------------------------------------*/
+$ff-primary: Roboto, sans-serif;
+$ff-secondary: 'Roboto Slab', serif;
+
 // ---------------------------
 // colors
 // ---------------------------
@@ -22,27 +28,61 @@ $muted300: #999;
 $muted200: #cecece;
 $muted100: #ddd;
 
-// border radius
-$border-radius-buttons: 999px;
-$border-radius: 10px;
-$border-radius-big: 20px;
+//radius 
+$bdrs-button: 9999px;
+$bdrs-big: 2rem;
+$bdrs-small: 1rem;
 
 // button border color
 $button-border: #e5e5e5;
 
-// blocks shadow
-$blocks-shadow: 0 0.7rem 1.8rem rgba($blue, 0.18);
+//shadow
+$shadow-s: 0 0.7rem 1.8rem hsla($primary, 0.18);
+$shadow-md: 0 1rem 3.9rem 0.1rem hsla($primary, 0.46);
+$shadow-l: 0 0.5rem 4rem hsla($primary, 0.1);
 
-//fonts
-$ff-primary: Roboto, sans-serif;
-$ff-secondary: 'Roboto Slab', serif;
+// text colors
+$white-text: $white;
+$default-text: $muted600;
+$light-text: $muted500;
+$primary-btn-text: $white-text;
 
+//text sizes
+$fz-s3: 1.2rem;
+$fz-s2: 1.3rem;
+$fz-s1: 1.4rem;
+$fz-m: 1.6rem;
+$fz-l1: 1.8rem;
+$fz-l2: 2.4rem;
+$fz-l3: 3.0rem;
+$fz-l4: 3.6rem;
+$fz-l5: 6.0rem;
+
+//headers prarams
+$h_l_color: $black;
+$h_l_size: $fz-l3;
+$h_l_weigth: bold;
+
+$h_m_color: $black;
+$h_m_size: $fz-l2;
+$h_m_weigth: bold;
+
+$h_s_color: $black;
+$h_s_size: $fz-l1;
+$h_s_weigth: bold;
+
+$h_xs_color: $black;
+$h_xs_size: $fz-m;
+$h_xs_weigth: bold;
+
+// ---------------------------
+// colors
+// ---------------------------
 // buttons colors
 $button-colors: (
     primary: $primary,
     white: $white
 );
-
 // text-colors
 $text-colors: (
     primary: $primary,
@@ -52,20 +92,18 @@ $text-colors: (
     muted300: $muted300,
     muted400: $muted400
 );
-
 // text-sizes
 $text-size: (
-  fz1:1.2rem,
-  fz2:1.3rem,
-  fz3:1.4rem,
-  fz4:1.6rem,
-  fz5:1.8rem,
-  fz6:2.4rem,
-  fz7:3rem,
-  fz8:3.6rem,
-  fz9:6rem
+  fz-s3: 1.2rem,
+  fz-s2: 1.3rem,
+  fz-s1: 1.4rem,
+  fz-m: 1.6rem,
+  fz-l1: 1.8rem,
+  fz-l2: 2.4rem,
+  fz-l3: 3.0rem,
+  fz-l4: 3.6rem,
+  fz-l5: 6.0rem
 );
-
 // backgrounds
 $backgrounds-colors: (
   white: $white,

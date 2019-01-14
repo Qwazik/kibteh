@@ -18,35 +18,33 @@ body{
     padding: 0;
 }
 
-/*-------------------------------------------------*/
-/*  helpers
-/*-------------------------------------------------*/
-
-.off-link{
-    text-decoration: none;
-}
-.ns{
-    list-style-type: none;
-}
-.tt{
-    text-transform: uppercase;
-}
-
-BOWER <-----------------------------------
-
 $ta: (
-        'ta-left':'left',
-        'ta-right':'right',
-        'ta-center':'center'
+    ta-center:center,
+    ta-left:left,
+    ta-right:right
 );
 
-@include generateRule($ta);
+@include generateRule($ta, 'text-align');
 
 /*-------------------------------------------------*/
-/*  ui
+/*  elements
 /*-------------------------------------------------*/
 
-
-/*-------------------------------------------------*/
-/*  blocks
-/*-------------------------------------------------*/
+/*-- START: ui --*/
+.btn{
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+    outline:none;
+    color: inherit;
+    font-size: 1.4rem;
+    box-shadow: $shadow-md;
+    border-radius: $bdrs-button;
+    padding: em(20) em(86);
+    font-weight: bold;
+    &_primary{
+        background: $primary;
+        color: $primary-btn-text;
+    }
+}
+/*-- END: ui --*/
