@@ -9,6 +9,7 @@ $ff-secondary: 'Roboto Slab', serif;
 // ---------------------------
 // colors
 // ---------------------------
+$black: #000;
 $white: #fff;
 $blue: hsl(199, 73%, 53%); //#2ea7df
 $lightblue: hsl(199, 85%, 50%); //#14a8ec
@@ -37,9 +38,9 @@ $bdrs-small: 1rem;
 $button-border: #e5e5e5;
 
 //shadow
-$shadow-s: 0 0.7rem 1.8rem hsla($primary, 0.18);
-$shadow-md: 0 1rem 3.9rem 0.1rem hsla($primary, 0.46);
-$shadow-l: 0 0.5rem 4rem hsla($primary, 0.1);
+$shadow-s: 0 0.7rem 1.8rem rgba($primary, 0.18);
+$shadow-md: 0 1rem 3.9rem 0.1rem rgba($primary, 0.46);
+$shadow-l: 0 0.5rem 4rem rgba($primary, 0.1);
 
 // text colors
 $white-text: $white;
