@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Smart Airkey</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body><!--[if lt IE 10]>
+    <p class="browserupgrade">Ваш браузер  <strong>устарел</strong>. Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a> для корректного отображения сайтов.</p><![endif]-->
+    <div class="page" id="app">
+      <div class="top-panel">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-auto top-panel__logo"><a class="logo" href="/"><img src="img/logo.svg" alt="Smart Airkey"></a></div>
+            <div class="col-auto">
+              <div class="row flex-column">
+                <div class="col-auto top-panel__social">
+                  <ul class="social">
+                    <li class="social__item"><a class="social__link" href="#"><i class="icm icm-fb"></i></a></li>
+                    <li class="social__item"><a class="social__link" href="#"><i class="icm icm-vk"></i></a></li>
+                    <li class="social__item"><a class="social__link" href="#"><i class="icm icm-telegram"></i></a></li>
+                    <li class="social__item"><a class="social__link" href="#"><i class="icm icm-insta"></i></a></li>
+                  </ul>
+                </div>
+                <div class="col-auto top-panel__lang">
+                  <vue-lang current="Рус" :other="{name:&quot;Eng&quot;, url:&quot;/en/&quot;}"></vue-lang>
+                </div>
+              </div>
+            </div>
+            <div class="ml-auto col-auto top-panel__right">
+              <div class="top-panel__right-top row align-items-center">
+                <div class="top-panel__info">
+                  <div class="horizontal-contacts">
+                    <div class="horizontal-contacts__item"><i class="icm icm-phone"></i><span>8 (495) 150 66 25</span></div>
+                    <div class="horizontal-contacts__item"><i class="icm icm-mail"></i><span>info@smartairkey.com</span></div>
+                    <div class="horizontal-contacts__item"><i class="icm icm-clock"></i><span>Пн-Пт: 10:00 - 20:00</span></div>
+                  </div>
+                </div>
+                <div class="top-panel__auth col-auto ml-auto"><a class="auth-btn" href="#"><span class="auth-btn__ico"><i class="icm icm-user"></i></span><span class="auth-btn__title">Вход</span></a></div>
+              </div>
+              <div class="top-panel__right-bottom row align-items-center">
+                <div class="top-panel__nav">
+                  <nav class="main-nav"><a class="main-nav__link" href="#">Типовые решения</a><a class="main-nav__link" href="#">Преимущества</a><a class="main-nav__link" href="#">Истории успеха</a><a class="main-nav__link" href="#">FAQ</a><a class="main-nav__link" href="#">Контакты</a></nav>
+                </div>
+                <div class="top-panel__feedback"><a class="btn btn_bd top-panel__callback" href="#">Заказать</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container py-3">
+        <div class="row mb-5">
+          <div class="col"><a class="btn btn_primary" href="#">Кнопка</a></div>
+          <div class="col"><a class="btn btn_primary btn_ico" href="#"><i class="icm icm-play"></i>Кнопка</a></div>
+          <div class="col"><a class="btn btn_primary btn_disabled" href="#">Кнопка</a></div>
+        </div>
+        <div class="row mb-5">
+          <div class="col"><a class="btn btn_light" href="#">Кнопка</a></div>
+          <div class="col"><a class="btn btn_light btn_ico" href="#"><i class="icm icm-play"></i>Кнопка</a></div>
+          <div class="col"><a class="btn btn_light btn_ico btn_disabled" href="#"><i class="icm icm-play"></i>Кнопка</a></div>
+        </div>
+        <div class="row mb-5">
+          <div class="col"><a class="btn btn_bd" href="#">Кнопка</a></div>
+          <div class="col"><a class="btn btn_bd btn_ico" href="#"><i class="icm icm-play"></i>Кнопка</a></div>
+          <div class="col"><a class="btn btn_bd btn_disabled" href="#">Кнопка</a></div>
+        </div>
+        <div class="row mb-5">
+          <div class="col">
+            <div class="tab-nav">
+              <div class="tab-nav__inner">
+                <div class="tab-nav__item tab-nav__item_active">Жилые комплексы</div>
+                <div class="tab-nav__item">Предприятия</div>
+                <div class="tab-nav__item">Офисы</div>
+                <div class="tab-nav__item">Распределенные объекты</div>
+                <div class="tab-nav__item">Парковки</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <vue-input name="name" type="text" title="Имя" placeholder="Иван" error-text="Ошибка"></vue-input>
+          </div>
+          <div class="col">
+            <vue-input name="tel" type="tel" title="Телефон" placeholder="+7 (920) 899-99-99" mask="+7(999) 999-99-99" error-text="Текст ошибки"></vue-input>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--scripts =================================================-->
+    <script type="text/x-template" id="vue-input">
+      <label>
+        <div class="input" :class="{'input_focus':isFocus, 'input_error':isError}"><span class="input__input">
+            <input :name="name" :type="type" :placeholder="placeholder" v-model="text" v-masked="mask" @focus="isFocus=true" @blur="blur"><span class="input__placeholder">{{title}}</span></span></div>
+        <div class="input__error" v-if="isError===true">{{errorText}}</div>
+      </label>
+    </script>
+    <script type="text/x-template" id="vue-lang">
+      <div class="lang" @click="isActive = !isActive" :class="{'lang_active':isActive}" @mouseleave="mouseleave" @mouseenter="mouseenter">
+        <div class="lang__current">{{current}}</div>
+        <div class="lang__list"><a class="lang__item" :href="other.url">{{other.name}}</a></div>
+      </div>
+    </script>
+    <script src="js/core.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

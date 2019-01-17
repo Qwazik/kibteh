@@ -1,5 +1,0 @@
-script(type="text/x-template" id="vue-lang")
-    .lang(@click="isActive = !isActive" :class="{'lang_active':isActive}" @mouseleave="mouseleave" @mouseenter="mouseenter")
-        .lang__current {{current}}
-        .lang__list
-            a(:href="other.url").lang__item {{other.name}}
