@@ -35,12 +35,15 @@ $bdrs-big: 2rem;
 $bdrs-small: 1rem;
 
 // button border color
-$button-border: #e5e5e5;
+$border-color: #e5e5e5;
+$border-default: 1px solid $border-color;
 
 //shadow
 $shadow-s: 0 0.7rem 1.8rem rgba($primary, 0.18);
 $shadow-md: 0 1rem 3.9rem 0.1rem rgba($primary, 0.46);
 $shadow-l: 0 0.5rem 4rem rgba($primary, 0.1);
+$shadow-hover: 0 0.5rem 1.8rem 0.1rem rgba($primary, 0.76);
+$shadow-light: 0 1rem 3.9rem 0.1rem rgba(229, 229, 229, 0.46);
 
 // text colors
 $white-text: $white;
@@ -91,7 +94,8 @@ $text-colors: (
     muted100: $muted100,
     muted200: $muted200,
     muted300: $muted300,
-    muted400: $muted400
+    muted400: $muted400,
+    muted500: $muted500
 );
 // text-sizes
 $text-size: (

@@ -1,6 +1,7 @@
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const mode = (process.env.NODE_ENV)?"production":"development";
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
     mode: mode,
@@ -8,13 +9,23 @@ module.exports = {
         fs:'empty'
     },
     output: {
-        filename: 'bundle.min.js'
+        filename: 'core.js'
     },
-    optimization: {
-        minimizer: [new UglifyJsPlugin({test: /\.js(\?.*)?$/i})]
+    // optimization:{
+    //     minimize: false,
+    // },
+    resolve: {
+        alias: {
+          'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+        }
     },
     module: {
         rules: [
+            {
+                test: /\.vue$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'vue-loader'
+            },
             {
                 test: /\.m?js$/,
                 exclude: /(node_modules|bower_components)/,
@@ -27,5 +38,8 @@ module.exports = {
                 }
               }
         ]
-    }
+    },
+    // plugins: [
+    //     new VueLoaderPlugin()
+    // ]
 };

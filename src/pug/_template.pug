@@ -20,8 +20,11 @@ html(lang="ru")
 			a(href='http://browsehappy.com/') обновите ваш браузер
 			|  для корректного отображения сайтов.
 		<![endif]-->
-		.page
+		.page#app
+			include blocks/header
 			block main
 		//scripts =================================================
+		block x-templates
+		include blocks/x-templates
 		each script in scriptList
 			script(src=script)

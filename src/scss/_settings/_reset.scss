@@ -34,6 +34,15 @@ textarea {
     resize: none;
 }
 
+button{
+    outline: none;
+    cursor: pointer;
+}
+input,textarea,select{
+    font-family: inherit;
+    outline: none;
+}
+
 .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;

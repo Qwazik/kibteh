@@ -1,3 +1,48 @@
 extends _template
 
 block main
+    .outer-container.mb-4
+        .main-slider
+            .main-slider__slides
+                .main-slider__slide: img(src="img/big-slide-1.jpg", alt="")
+                .main-slider__slide: img(src="img/big-slide-2.jpg", alt="")
+            .main-slider__static
+                .container
+                    .main-slider__header Доступ с функцией <br> «свободные руки»
+                    .main-slider__btns
+                        a(href="#").btn.btn_primary Подробнее
+                        a(href="#").btn.btn_light.btn_ico
+                            i.icm.icm-play
+                            span Видео
+                    .main-slider__smalltext Продукт для корпоративного использования. <br><a href="#" class="off-link">Решение для частных лиц</a>
+                    .main-slider__navigation.slider-navigation
+                        .slider-btn: i.icm.icm-arrow.rotate-180
+                        .slider-dots
+                            .slider-dots__dot
+                            .slider-dots__dot
+                            .slider-dots__dot
+                        .slider-btn: i.icm.icm-arrow
+                    .main-slider__end Просто внедрить в любом <br> жилом комплексе
+    .outer-container.py-4
+        .h.h_l.ta-center.mb-4 Типовые решения
+        .ta-center.mb-4: .tab-nav
+            .tab-nav__inner
+                .tab-nav__item.tab-nav__item_active Жилые комплексы
+                .tab-nav__item Предприятия
+                .tab-nav__item Офисы
+                .tab-nav__item Распределенные объекты
+                .tab-nav__item Парковки
+        .tab-content
+            .tab-content__item
+                .solution-item
+                    .solution-item__col.solution-item__col_image
+                        .solution-item__image(style="background-image:url('img/solution-1.jpg')")
+                    .solution-item__col
+                        .solution-item__text
+                            .slider-navigation.mb-3
+                                .slider-btn: i.icm.icm-arrow.rotate-180
+                                .slider-btn: i.icm.icm-arrow
+                            .h.h_m.mb-3 Для бизнес центров
+                            p.text-muted500.mb-4 Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
+                            a(href="#").btn.btn_bd Подробнее
+block x-templates

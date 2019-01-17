@@ -1,0 +1,45 @@
+.top-panel
+    .container
+        .row.align-items-center
+            .col-auto.top-panel__logo
+                a(href="/").logo: img(src="img/logo.svg", alt="Smart Airkey")
+            .col-auto
+                .row.flex-column
+                    .col-auto.top-panel__social
+                        ul.social
+                            li.social__item: a(href="#").social__link: i.icm.icm-fb
+                            li.social__item: a(href="#").social__link: i.icm.icm-vk
+                            li.social__item: a(href="#").social__link: i.icm.icm-telegram
+                            li.social__item: a(href="#").social__link: i.icm.icm-insta
+                    .col-auto.top-panel__lang
+                        vue-lang(
+                            current='Рус'
+                            :other='{name:"Eng", url:"/en/"}'
+                        )
+            .ml-auto.col-auto.top-panel__right
+                .top-panel__right-top.row.align-items-center
+                    .top-panel__info
+                        .horizontal-contacts
+                            .horizontal-contacts__item
+                                i.icm.icm-phone
+                                span 8 (495) 150 66 25
+                            .horizontal-contacts__item
+                                i.icm.icm-mail
+                                span info@smartairkey.com
+                            .horizontal-contacts__item
+                                i.icm.icm-clock
+                                span Пн-Пт: 10:00 - 20:00
+                    .top-panel__auth.col-auto.ml-auto
+                        a(href="#").auth-btn
+                            span.auth-btn__ico: i.icm.icm-user
+                            span.auth-btn__title Вход
+                .top-panel__right-bottom.row.align-items-center
+                    .top-panel__nav
+                        nav.main-nav
+                            a(href="#").main-nav__link Типовые решения
+                            a(href="#").main-nav__link Преимущества
+                            a(href="#").main-nav__link Истории успеха
+                            a(href="#").main-nav__link FAQ
+                            a(href="#").main-nav__link Контакты
+                    .top-panel__feedback
+                        a(href="#").btn.btn_bd.top-panel__callback Заказать

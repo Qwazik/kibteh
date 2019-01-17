@@ -19,8 +19,6 @@ const ghPages = require('gulp-gh-pages');
 const webpack = require('webpack');
 const webpackGulp = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
-const cssmin = require('gulp-cssmin');
-const rename = require('gulp-rename');
 const reload = browserSync.reload;
 const buildPath = 'build';
 const srcPath = 'src';
@@ -33,6 +31,7 @@ var path = {
 	build: {
 		pug: buildPath+'/',
 		js: {
+			webpack: buildPath+'/js/webpack/',
 			common: buildPath+'/js/'
 		},
 		css: buildPath+'/css/',
@@ -44,7 +43,8 @@ var path = {
 	src: {
 		pug: srcPath+'/pug/!(_)*.pug',
 		js: {
-			common: srcPath+'/js/**/*'
+			webpack: srcPath+'/js/webpack/**/*',
+			common: srcPath+'/js/common/*.js'
 		},
 		css: srcPath+'/scss/**/*.scss',
 		fonts: srcPath+'/fonts/**/*',
@@ -56,9 +56,10 @@ var path = {
 		html: srcPath+'/html/**/*.html',
 		php: srcPath+'/php/**/*.php',
 		pug: srcPath+'/pug/*.pug',
-		includes: srcPath+'/pug/includes/*.pug',
+		blocks: srcPath+'/pug/blocks/*.pug',
 		js: {
-			common: srcPath+'/js/**/*.js',
+			webpack: srcPath+'/js/webpack/**/*.js',
+			common: srcPath+'/js/*.js',
 		},
 		css: srcPath+'/scss/**/*.scss',
 		fonts: srcPath+'/fonts/**/*',
@@ -110,15 +111,15 @@ gulp.task('build:pug', function(){
 });
 
 /*-------------------------------------------------*/
-/*  pug includes
+/*  pug blocks
 /*-------------------------------------------------*/
-gulp.task('build:includes', function(){
+gulp.task('build:blocks', function(){
 	var YOUR_LOCALS = {};
 	return gulp.src(path.src.pug)
 		.pipe(plumber({
 			errorHandler: notify.onError(function(err){
 				return {
-					title: 'JadeIncludes',
+					title: 'Jadeblocks',
 					message: err.message
 				}
 			})
@@ -134,19 +135,20 @@ gulp.task('build:includes', function(){
 /*-------------------------------------------------*/
 /*  javascript
 /*-------------------------------------------------*/
-// gulp.task('build:js', function(){
-// 	return gulp.src(path.src.js.common, {since: gulp.lastRun('build:js')})
-// 		.pipe(plumber({
-// 			errorHandler: notify.onError(function(err){
-// 				return {
-// 					title: 'JS',
-// 					message: err.message
-// 				}
-// 			})
-// 		}))
-// 		.pipe(gulp.dest(path.build.js.common))
-// 		.pipe(browserSync.stream());
-// });
+gulp.task('build:webpack', function(){
+	return gulp.src(path.src.js.webpack, {since: gulp.lastRun('build:webpack')})
+		.pipe(plumber({
+			errorHandler: notify.onError(function(err){
+				return {
+					title: 'JS',
+					message: err.message
+				}
+			})
+		}))
+		.pipe(webpackGulp(webpackConfig, webpack))
+		.pipe(gulp.dest(path.build.js.common))
+		.pipe(browserSync.stream());
+});
 
 gulp.task('build:js', function(){
 	return gulp.src(path.src.js.common, {since: gulp.lastRun('build:js')})
@@ -158,7 +160,6 @@ gulp.task('build:js', function(){
 				}
 			})
 		}))
-		.pipe(webpackGulp(webpackConfig, webpack))
 		.pipe(gulp.dest(path.build.js.common))
 		.pipe(browserSync.stream());
 });
@@ -181,7 +182,6 @@ gulp.task('build:css', function(){
 		.pipe(sass())
 		.pipe(gulpIf(isDevelopment, sourcemaps.write()))
 		.pipe(prefixer())
-		.pipe(gulpIf(!isDevelopment, cssmin()))
 		.pipe(gulp.dest(path.build.css))
 		.pipe(browserSync.stream())
 });
@@ -349,6 +349,7 @@ gulp.task('deploy', function() {
 gulp.task('build', gulp.parallel(
 	'build:pug',
 	'build:css',
+	'build:webpack',
 	'build:js',
 	'build:fonts',
 	'build:data',
@@ -373,8 +374,9 @@ gulp.task('watch', function(){
 		gulp.watch(path.watch.php, gulp.series('build:php'));
 	}
 	gulp.watch(path.watch.pug, gulp.series('build:pug'));
-	gulp.watch(path.watch.includes, gulp.series('build:includes'));
+	gulp.watch(path.watch.blocks, gulp.series('build:blocks'));
 	gulp.watch(path.watch.css, gulp.series('build:css'));
+	gulp.watch(path.watch.js.webpack, gulp.series('build:webpack'));
 	gulp.watch(path.watch.js.common, gulp.series('build:js'));
 	gulp.watch(path.watch.icons, gulp.series('build:sprite'))
 		.on('change', function(){
