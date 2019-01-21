@@ -31,7 +31,7 @@ var path = {
 	build: {
 		pug: buildPath+'/',
 		js: {
-			webpack: buildPath+'/js/webpack/',
+			webpack: buildPath+'/js/',
 			common: buildPath+'/js/'
 		},
 		css: buildPath+'/css/',
@@ -59,7 +59,7 @@ var path = {
 		blocks: srcPath+'/pug/blocks/*.pug',
 		js: {
 			webpack: srcPath+'/js/webpack/**/*.js',
-			common: srcPath+'/js/*.js',
+			common: srcPath+'/js/common/**/*.js',
 		},
 		css: srcPath+'/scss/**/*.scss',
 		fonts: srcPath+'/fonts/**/*',
@@ -349,7 +349,7 @@ gulp.task('deploy', function() {
 gulp.task('build', gulp.parallel(
 	'build:pug',
 	'build:css',
-	'build:webpack',
+	//'build:webpack',
 	'build:js',
 	'build:fonts',
 	'build:data',
@@ -376,7 +376,7 @@ gulp.task('watch', function(){
 	gulp.watch(path.watch.pug, gulp.series('build:pug'));
 	gulp.watch(path.watch.blocks, gulp.series('build:blocks'));
 	gulp.watch(path.watch.css, gulp.series('build:css'));
-	gulp.watch(path.watch.js.webpack, gulp.series('build:webpack'));
+	//gulp.watch(path.watch.js.webpack, gulp.series('build:webpack'));
 	gulp.watch(path.watch.js.common, gulp.series('build:js'));
 	gulp.watch(path.watch.icons, gulp.series('build:sprite'))
 		.on('change', function(){

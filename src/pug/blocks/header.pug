@@ -1,7 +1,7 @@
 .top-panel
     .container
         .row.align-items-center
-            .col-auto.top-panel__logo
+            h1.col-auto.top-panel__logo
                 a(href="/").logo: img(src="img/logo.svg", alt="Smart Airkey")
             .col-auto
                 .row.flex-column
@@ -12,10 +12,10 @@
                             li.social__item: a(href="#").social__link: i.icm.icm-telegram
                             li.social__item: a(href="#").social__link: i.icm.icm-insta
                     .col-auto.top-panel__lang
-                        vue-lang(
-                            current='Рус'
-                            :other='{name:"Eng", url:"/en/"}'
-                        )
+                        .lang
+                            .lang__current Рус
+                            .lang__list
+                                a(href="/en/").lang__item Eng
             .ml-auto.col-auto.top-panel__right
                 .top-panel__right-top.row.align-items-center
                     .top-panel__info

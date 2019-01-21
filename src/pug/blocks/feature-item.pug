@@ -1,0 +1,8 @@
+mixin featureItem(ico,name,desc)
+    li.feature-props__item.col-6.mb-3
+        .feature-prop
+            .feature-prop__ico
+                .circle-ico: i.icm(class=ico)
+            .feature-prop__text
+                h4.h.h_s.mb-1!=name
+                .feature-prop__desc.muted500=desc

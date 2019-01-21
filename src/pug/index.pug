@@ -1,4 +1,5 @@
 extends _template
+include blocks/feature-item
 
 block main
     .outer-container.mb-4
@@ -23,8 +24,8 @@ block main
                             .slider-dots__dot
                         .slider-btn: i.icm.icm-arrow
                     .main-slider__end Просто внедрить в любом <br> жилом комплексе
-    .outer-container.py-4
-        .h.h_l.ta-center.mb-4 Типовые решения
+    section.outer-container.py-4.mb-5
+        h2.h.h_l.ta-center.mb-4 Типовые решения
         .ta-center.mb-4: .tab-nav
             .tab-nav__inner
                 .tab-nav__item.tab-nav__item_active Жилые комплексы
@@ -42,7 +43,307 @@ block main
                             .slider-navigation.mb-3
                                 .slider-btn: i.icm.icm-arrow.rotate-180
                                 .slider-btn: i.icm.icm-arrow
-                            .h.h_m.mb-3 Для бизнес центров
-                            p.text-muted500.mb-4 Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
+                            h3.h.h_m.mb-3 Для бизнес центров
+                            p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
                             a(href="#").btn.btn_bd Подробнее
-block x-templates
+    section.outer-container.py-4.mb-3
+        .container
+            h2.h.h_l.ta-center.mb-4 Приемущества и выгоды системы
+            ul.ns.features
+                li.mb-2.featues__item
+                    .feature(data-open)
+                        .feature__header
+                            button.feature__close
+                            h3.h.h_m Единая среда доступа по смартфону
+                        .feature__body
+                            ul.feature-props.row
+                                +featureItem(
+                                    'icm-no_key',
+                                    'Удобный <br> гостевой доступ',
+                                    'Простая моментальная отправка пользователями временных гостевых ключей. Гостям не требуется несколько раз звонить в домофон, они проходят на территорию и в подъезд со своим смартфоном'
+                                    )
+                                +featureItem(
+                                    'icm-diamond',
+                                    'Телефон – единый идентификатор <br> в рамках всего объекта',
+                                    'С помощью цифровых ключей в смартфоне открываются двери подъезда, калитки ограждения, шлагбаумы, ворота парковки, вызываются лифты'
+                                    )
+                                +featureItem(
+                                    'icm-lock',
+                                    'Безопасная аутентификация <br> по смартфону',
+                                    'Цифровые ключи надежно защищены криптографическим протоколом'
+                                    )
+                                +featureItem(
+                                    'icm-hand',
+                                    'Бесключевой доступ <br> «свободные руки»',
+                                    'Открытие дверей и шлагбаумов по приближению без необходимости доставать смартфон'
+                                    )
+                                +featureItem(
+                                    'icm-admin',
+                                    'Администрирование и логи доступа <br> в облачном личном кабинете',
+                                    'Система позволяет полностью контролировать наличие прав доступа и срок их действия у пользователей, а также фиксировать факты прохода или проезда, не требуя установки отдельного сервера. Вся функциональность доступна в личном кабинете в web-браузере.'
+                                    )
+                                +featureItem(
+                                    'icm-factory',
+                                    'Легкая адаптация системы <br> для любых объектов',
+                                    'Система можно установить на любые объекты — от частного дома до большого завода.'
+                                    )
+                li.mb-2.featues__item
+                    .feature
+                        .feature__header
+                            button.feature__close
+                            h2.h.h_m Единая среда доступа по смартфону
+                        .feature__body
+                            ul.feature-props.row
+                                +featureItem(
+                                    'icm-no_key',
+                                    'Удобный <br> гостевой доступ',
+                                    'Простая моментальная отправка пользователями временных гостевых ключей. Гостям не требуется несколько раз звонить в домофон, они проходят на территорию и в подъезд со своим смартфоном'
+                                    )
+                                +featureItem(
+                                    'icm-diamond',
+                                    'Телефон – единый идентификатор <br> в рамках всего объекта',
+                                    'С помощью цифровых ключей в смартфоне открываются двери подъезда, калитки ограждения, шлагбаумы, ворота парковки, вызываются лифты'
+                                    )
+                                +featureItem(
+                                    'icm-lock',
+                                    'Безопасная аутентификация <br> по смартфону',
+                                    'Цифровые ключи надежно защищены криптографическим протоколом'
+                                    )
+                                +featureItem(
+                                    'icm-hand',
+                                    'Бесключевой доступ <br> «свободные руки»',
+                                    'Открытие дверей и шлагбаумов по приближению без необходимости доставать смартфон'
+                                    )
+                                +featureItem(
+                                    'icm-admin',
+                                    'Администрирование и логи доступа <br> в облачном личном кабинете',
+                                    'Система позволяет полностью контролировать наличие прав доступа и срок их действия у пользователей, а также фиксировать факты прохода или проезда, не требуя установки отдельного сервера. Вся функциональность доступна в личном кабинете в web-браузере.'
+                                    )
+                                +featureItem(
+                                    'icm-factory',
+                                    'Легкая адаптация системы <br> для любых объектов',
+                                    'Система можно установить на любые объекты — от частного дома до большого завода.'
+                                    )
+    section.outer-container.mb-4
+        .more-block
+            .container
+                .more-block__inner
+                    .more-block__image
+                        img(src="img/more-block-image.png", alt="")
+                    .more-block__text
+                        h2.h.h_l.h_light.mb-2 Хотите больше узнать о системе SmartAirkey?
+                        p Заполните форму обратной связи, и мы свяжемся с вами в течение нескольких минут
+                        a(href="#").btn.btn_primary Узнать больше       
+    section.outer-container.py-4
+        .container
+            .row
+                .col-md-6.pr-md-5.mb-3
+                    h2.h.h_l.mb-2 О компании
+                    .default-content
+                        p SmartAirkey — передовая компания, занимающаяся разработками высокотехнологичных систем контроля доступа с помощью современных смартфонов.
+                .col-md-6
+                    .image-text.mb-3
+                        .image-text__image
+                            img(src="img/about-1.jpg", alt="")
+                        .image-text__text.default-content
+                            h3.h.h_s Startup Village
+                            p SmartAirkey оказался в 2016 году в числе 100 лучших инновационных проектов, отобранных для участия STARTUP BAZAAR среди нескольких тысяч заявок.
+                    .image-text
+                        .image-text__image
+                            img(src="img/about-2.jpg", alt="")
+                        .image-text__text.default-content
+                            h3.h.h_s Сколково
+                            p Разработка системы осуществляется при грантовой поддержке Фонда «Сколково»
+    section.outer-container.py-4
+        .container
+            h2.h.h_l.mb-4 С кем работали
+            ul.row.ns
+                li.col-2: .partner-item: img(src="img/partner1.png", alt="lg") 
+                li.col-2: .partner-item: img(src="img/partner2.png", alt="asus") 
+                li.col-2: .partner-item: img(src="img/partner3.png", alt="samsung") 
+                li.col-2: .partner-item: img(src="img/partner4.png", alt="sony") 
+                li.col-2: .partner-item: img(src="img/partner5.png", alt="google") 
+                li.col-2: .partner-item: img(src="img/partner6.png", alt="acer") 
+    section.outer-container.py-4
+        .container.about-features
+            .ta-center
+                h2.h.h_l.mb-2 О системе
+                .h-desc.mb-4 Система SmartAirkey состоит из трех компонентов
+            .row
+                .col.d-flex
+                    .about-feature
+                        .about-feature__ico: i.icm.icm-controller
+                        h3.h.h_xs.about-feature__header Контроллер мобильного доступа
+                        .default-content
+                            ul
+                                li Устанавливается на различные точки доступа: двери, шлагбаумы, ворота
+                                li Считывает мобильные цифровые ключи и карты доступа (Mifare или Emarin)
+                                li При отсутствии СКУД работает в автономном режиме, при использовании СКУД – интегрируется в нее
+                        a(href="#").btn.btn_bd.mt-auto Подробнее
+                .col.d-flex
+                    .about-feature
+                        .about-feature__ico: i.icm.icm-cloud
+                        h3.h.h_xs.about-feature__header Облачный сервис
+                        .default-content
+                            ul
+                                li Позволяет полностью управлять правами доступа с помощью выдачи, изменения и удаления цифровых ключей
+                                li Позволяет администрировать точки доступа и пользователей
+                                li Позволяет просматривать логи доступа
+                                li Имеет развитый API  для интеграции с системами учета управляющих компаний, контроля доступа, приложениями для жильцов.
+                        a(href="#").btn.btn_bd.mt-auto Подробнее
+                .col.d-flex
+                    .about-feature
+                        .about-feature__ico: i.icm.icm-app
+                            .ta-center
+                        h3.h.h_xs.about-feature__header Мобильное приложение
+                        .default-content
+                            ul
+                                li Позволяет пользователям открывать двери и шлагбаумы по приближению, не доставая смартфона 
+                                li Позволяет хранить ключи от жилого комплекса, офиса, парковки, коттеджа и квартиры в одном приложении
+                                li Позволяет в пару кликов отправлять временные гостевые ключи
+                                li Администратору доступа позволяет настраивать и обновлять контроллеры SmartAirkey
+                        a(href="#").btn.btn_bd.mt-auto Подробнее
+    section.outer-container.py-4
+        .container
+            h2.h.h_l.ta-center.mb-4 Нашей компанией была разработана система <br> на основе уникальных контроллеров
+            .product-slider
+                .swiper-container
+                    .swiper-wrapper
+                        -for(var i=0;i<=3;i++)
+                            .swiper-slide
+                                .product-slide
+                                    .row
+                                        .col.product-slide__image
+                                        .col: h3.h.h_m.mb-2 Контроллер SmartAirkey
+                                        .col
+                                    .row
+                                        .col.product-slide__image: img(src="img/product-slider-image.jpg", alt="")
+                                        .col.pr-md-5
+                                            .default-content.mb-3
+                                                p Контроллер доступа SmartAirkey SmartLock предназначен для контроля и управления доступом при помощи смартфона и представляет собой микропроцессорное электронное устройство.  Контроллер может использоваться для управления доступом через двери, шлагбаумы, турникеты и другие средства ограничения доступа как самостоятельно, так и в составе Системы контроля и управления доступом.
+                                                p Система бесконтактного доступа SmartAirkey может использоваться в жилых комплексах, в загородных домах, в коттеджах, при оснащении умных домов, в коттеджных и дачных поселках, на парковках и автостоянках, в бизнес-центрах и офисах. Везде, где необходимо обеспечить бесключевой доступ «свободные руки».
+                                            .d-inline-flex.align-items-center
+                                                .col
+                                                    .product-slide__price 12 000 р.
+                                                .col-auto
+                                                    a(href="#").btn.btn_primary Купить
+                                        .col-auto
+                                            h4.h.h_s.mb-3 Характеристики
+                                            .props-images
+                                                .props-images__item: i.icm.icm-wifi
+                                                .props-images__item: i.icm.icm-bluetooth
+                                                .props-images__item: i.icm.icm-bluetooth__le
+                                            ul.props-list
+                                                li 1 реле (до 7А, 220V)
+                                                li Питание 9-16v
+                                                li Корпус DIN 6
+                .slider-navigation.slider-navigation_centered
+                    .slider-btn: i.icm.icm-arrow.rotate-180
+                    .slider-btn: i.icm.icm-arrow
+    section.outer-container.py-4
+        .container
+            .row
+                .col
+                    h2.h.h_l.mb-2 Мобильные приложения
+                    .default-content.mb-4
+                        p Наше мобильное приложение специально разработано для платформ IOS и Android. При создании системы мы использовали передовые технологии. Такой подход позволяет нам открывать новые возможности СКУД и расширять их функционал.
+                    h3.h.h_m.mb-3 Как пользоваться приложением?
+                    ol.how-use
+                        li.how-use__item
+                            .how-use__title Скачайте приложение
+                            p.how-use__text Скачайте приложение в Google Play или App Store
+                            .how-use__btns
+                                a(href="#"): img(src="img/google-play.png", alt="")
+                                a(href="#"): img(src="img/app-store.png", alt="")
+                        li.how-use__item
+                            .how-use__title Регистрация
+                            p.how-use__text Зарегистрируйтесь в приложении. 
+                        li.how-use__item
+                            .how-use__title Бесключевой доступ
+                            p.how-use__text Пользуйтесь бесключевым доступом.
+                .col.ta-right.d-none.d-md-block: img(src="img/phone.png", alt="")
+    section.outer-container.py-4
+        .container
+            .row.mb-7
+                .col
+                    h2.h.h_l.mb-2 Монтаж
+                    .default-content
+                        p Устанавливаем системы SmartAirkey качественно и быстро. При установке мы ориентируемся на тонкости работы объекта и гарантируем дальнейшее обслуживание и поддержку.
+                .col.d-none.d-md-block
+            .row
+                .col
+                    .install-item
+                        .install-item__ico: i.icm.icm-pro
+                        .install-item__title Профессионально
+                        .default-content Наши работники имеют соответствующие сертификаты для работы с оборудованием.
+                .col
+                    .install-item
+                        .install-item__ico: i.icm.icm-warranty
+                        .install-item__title Гарантийное постобслуживание
+                        .default-content В течение года обслуживание бесплатно.
+                .col
+                    .install-item
+                        .install-item__ico: i.icm.icm-system
+                        .install-item__title Учет особенностей объекта
+                        .default-content Мы устанавливаем СКУД на разные типы объектов, у вас частный случай, то мы с ним справимся.
+                .col
+                    .install-item
+                        .install-item__ico: i.icm.icm-special
+                        .install-item__title Учет особенностей SmartAirKey
+                        .default-content В течение года обслуживание бесплатно.
+    section.outer-container.mb-3
+        .more-block
+            .container
+                .more-block__inner
+                    .more-block__text
+                        h2.h.h_l.h_light.mb-2 Остались вопросы о системе SmartAirKey?
+                        p Оставьте ваши контакты и наш специалист ответит на них
+                        a(href="#").btn.btn_primary Оставить контакты       
+                    .more-block__image
+                        img(src="img/more-block-image2.png", alt="")
+    section.outer-container.py-4
+        .container
+            h2.h.h_l.mb-3.ta-center Выполненные проекты
+            .carousel(data-items="3")
+                .carousel__inner
+                    .swiper-container
+                        .swiper-wrapper
+                            -for(var i=0;i<5;i++)
+                                .swiper-slide
+                                    a(href="#").post-item
+                                        .post-item__image: img(src="img/carousel-image.jpg", alt="").img-responsive
+                                        .post-item__title Бесключевой доступ в Сколково
+                .slider-navigation.slider-navigation_centered
+                    .slider-btn: i.icm.icm-arrow.rotate-180
+                    .slider-btn: i.icm.icm-arrow
+    section.outer-container.py-4
+        .container
+            h2.h.h_l.mb-3 Вопросы
+            .faq-list.mb-4
+                -for(var i=0;i<5;i++)
+                    .faq-item
+                        .faq-item__quest
+                            span Владельцы, подскажите мне пожалуйста, сколько с машиной идет ключей Smart key в комплекте один или два? И где можно прочитать что это такое и на сколько надежно от угона.
+                            .faq-item__toggler
+                                span
+                                span
+                        .faq-item__answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero, nesciunt eaque facere provident hic adipisci rerum corrupti autem nostrum unde aliquam repellendus! Excepturi ipsum optio quos exercitationem commodi nemo?
+            .faq-buttons
+                a(href="#").btn.btn_bd Показать весь список
+                a(href="#").btn.btn_light Задать вопрос
+    section.outer-container.py-4
+        .container
+            h2.h.h_l.mb-3 Новости
+            .carousel(data-items="3")
+                .carousel__inner
+                    .swiper-container
+                        .swiper-wrapper
+                            -for(var i=0;i<5;i++)
+                                .swiper-slide
+                                    a(href="#").post-item
+                                        .post-item__image: img(src="img/carousel-image.jpg", alt="").img-responsive
+                                        .post-item__title Бесключевой доступ в Сколково
+                                        .post-item__date 14 октября 
+                .slider-navigation.slider-navigation_centered
+                    .slider-btn: i.icm.icm-arrow.rotate-180
+                    .slider-btn: i.icm.icm-arrow

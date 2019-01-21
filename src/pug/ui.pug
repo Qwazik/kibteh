@@ -42,36 +42,15 @@ block main
                         .tab-nav__item Парковки
         .row
             .col
-                vue-input(
-                    name="name"
-                    type="text"
-                    title="Имя"
-                    placeholder="Иван"
-                    error-text="Ошибка"
-                )
+                label.input
+                    span.input__input
+                        input(name="name" type="tel" placeholder="Плейсхолдек")
+                        span.input__placeholder Инпут
+                .input__error Ошибка
             .col
-               vue-input(
-                    name="tel"
-                    type="tel"
-                    title="Телефон"
-                    placeholder="+7 (920) 899-99-99"
-                    mask="+7(999) 999-99-99"
-                    error-text="Текст ошибки"
-                )
-            
-block x-templates
-    script(type="text/x-template" id="vue-input")
-         label
-            .input(:class="{'input_focus':isFocus, 'input_error':isError}")
-                span.input__input
-                    input(
-                        :name="name"
-                        :type="type" 
-                        :placeholder="placeholder" 
-                        v-model="text"
-                        v-masked="mask"
-                        @focus="isFocus=true"
-                        @blur="blur"
-                    )
-                    span.input__placeholder {{title}}
-            .input__error(v-if="isError===true") {{errorText}}
+                label.input
+                    span.input__input
+                        input(name="name" type="tel" placeholder="Плейсхолдек")
+                        span.input__placeholder Инпут
+                .input__error Ошибка
+        
