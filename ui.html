@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="libs/jquery-modal/jquery.modal.min.css">
+    <link rel="stylesheet" href="libs/swiper/dist/css/swiper.min.css">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -16,7 +18,7 @@
       <div class="top-panel">
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-auto top-panel__logo"><a class="logo" href="/"><img src="img/logo.svg" alt="Smart Airkey"></a></div>
+            <h1 class="col-auto top-panel__logo"><a class="logo" href="/"><img src="img/logo.svg" alt="Smart Airkey"></a></h1>
             <div class="col-auto">
               <div class="row flex-column">
                 <div class="col-auto top-panel__social">
@@ -28,7 +30,10 @@
                   </ul>
                 </div>
                 <div class="col-auto top-panel__lang">
-                  <vue-lang current="Рус" :other="{name:&quot;Eng&quot;, url:&quot;/en/&quot;}"></vue-lang>
+                  <div class="lang">
+                    <div class="lang__current">Рус</div>
+                    <div class="lang__list"><a class="lang__item" href="/en/">Eng</a></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -84,29 +89,24 @@
         </div>
         <div class="row">
           <div class="col">
-            <vue-input name="name" type="text" title="Имя" placeholder="Иван" error-text="Ошибка"></vue-input>
+            <label class="input"><span class="input__input">
+                <input name="name" type="tel" placeholder="Плейсхолдек"><span class="input__placeholder">Инпут</span></span></label>
+            <div class="input__error">Ошибка</div>
           </div>
           <div class="col">
-            <vue-input name="tel" type="tel" title="Телефон" placeholder="+7 (920) 899-99-99" mask="+7(999) 999-99-99" error-text="Текст ошибки"></vue-input>
+            <label class="input"><span class="input__input">
+                <input name="name" type="tel" placeholder="Плейсхолдек"><span class="input__placeholder">Инпут</span></span></label>
+            <div class="input__error">Ошибка</div>
           </div>
         </div>
       </div>
     </div>
     <!--scripts =================================================-->
-    <script type="text/x-template" id="vue-input">
-      <label>
-        <div class="input" :class="{'input_focus':isFocus, 'input_error':isError}"><span class="input__input">
-            <input :name="name" :type="type" :placeholder="placeholder" v-model="text" v-masked="mask" @focus="isFocus=true" @blur="blur"><span class="input__placeholder">{{title}}</span></span></div>
-        <div class="input__error" v-if="isError===true">{{errorText}}</div>
-      </label>
-    </script>
-    <script type="text/x-template" id="vue-lang">
-      <div class="lang" @click="isActive = !isActive" :class="{'lang_active':isActive}" @mouseleave="mouseleave" @mouseenter="mouseenter">
-        <div class="lang__current">{{current}}</div>
-        <div class="lang__list"><a class="lang__item" :href="other.url">{{other.name}}</a></div>
-      </div>
-    </script>
-    <script src="js/core.js"></script>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/jquery-modal/jquery.modal.min.js"></script>
+    <script src="libs/swiper/dist/js/swiper.min.js"></script>
+    <script src="libs/parsleyjs/dist/parsley.min.js"></script>
+    <script src="libs/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
     <script src="js/custom.js"></script>
   </body>
 </html>
