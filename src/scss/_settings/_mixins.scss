@@ -20,24 +20,6 @@
   @return ($vw * ($window / 100)) * 1px;
 }
 
-@mixin generateRule($ta, $rule){
-  @each $ruleName, $ruleVal in $ta{
-    @each $key, $val in $grid-breakpoints{
-      @if($val==0){
-        .#{$ruleName}{
-          text-align: $ruleVal;
-        }
-      }@else{
-        @media screen and (min-width: $val){
-          .ta-#{$key}-center{
-            $rule: $ruleVal;
-          }
-        }
-      }
-    }
-  }
-}
-
 // Bootstrap functions
 //
 // Utility mixins and functions for evalutating source code across our variables, maps, and mixins.

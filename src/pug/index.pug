@@ -2,55 +2,108 @@ extends _template
 include blocks/feature-item
 
 block main
-    .outer-container.mb-4
+    .outer-container.mb-sm-3
         .main-slider
-            .main-slider__slides
-                .main-slider__slide: img(src="img/big-slide-1.jpg", alt="")
-                .main-slider__slide: img(src="img/big-slide-2.jpg", alt="")
+            .swiper-container.main-slider__slides
+                .swiper-wrapper
+                    .swiper-slide.main-slider__slide(
+                        data-title="Доступ с функцией <br> «свободные руки»"
+                        data-end="Просто внедрить в любом <br> жилом комплексе"
+                        style="background-image: url(img/big-slide-1.jpg)")
+                    .swiper-slide.main-slider__slide(
+                        data-title="Управление доступом <br> к распределенным <br> объектам"
+                        data-end="Без затрат на каналы связи"
+                        style="background-image: url(img/big-slide-2.jpg)")
             .main-slider__static
                 .container
                     .main-slider__header Доступ с функцией <br> «свободные руки»
                     .main-slider__btns
-                        a(href="#").btn.btn_primary Подробнее
-                        a(href="#").btn.btn_light.btn_ico
+                        a(href="#giveContacts").btn.btn_primary.fancybox Подробнее
+                        a(href="https://www.youtube.com/watch?v=3dYouSEBKiU").btn.btn_light.btn_ico.fancybox
                             i.icm.icm-play
                             span Видео
                     .main-slider__smalltext Продукт для корпоративного использования. <br><a href="#" class="off-link">Решение для частных лиц</a>
                     .main-slider__navigation.slider-navigation
-                        .slider-btn: i.icm.icm-arrow.rotate-180
+                        .slider-btn(data-prev): i.icm.icm-arrow.rotate-180
                         .slider-dots
-                            .slider-dots__dot
-                            .slider-dots__dot
-                            .slider-dots__dot
-                        .slider-btn: i.icm.icm-arrow
+                        .slider-btn(data-next): i.icm.icm-arrow
                     .main-slider__end Просто внедрить в любом <br> жилом комплексе
-    section.outer-container.py-4.mb-5
-        h2.h.h_l.ta-center.mb-4 Типовые решения
-        .ta-center.mb-4: .tab-nav
-            .tab-nav__inner
-                .tab-nav__item.tab-nav__item_active Жилые комплексы
-                .tab-nav__item Предприятия
-                .tab-nav__item Офисы
-                .tab-nav__item Распределенные объекты
-                .tab-nav__item Парковки
-        .tab-content
-            .tab-content__item
-                .solution-item
-                    .solution-item__col.solution-item__col_image
-                        .solution-item__image(style="background-image:url('img/solution-1.jpg')")
-                    .solution-item__col
-                        .solution-item__text
-                            .slider-navigation.mb-3
-                                .slider-btn: i.icm.icm-arrow.rotate-180
-                                .slider-btn: i.icm.icm-arrow
-                            h3.h.h_m.mb-3 Для бизнес центров
-                            p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
-                            a(href="#").btn.btn_bd Подробнее
-    section.outer-container.py-4.mb-3
+    section.outer-container.py-4.mb-lg-5
+        h2.h.h_l.ta-center.mb-2.mb-sm-4 Типовые решения
+        .js-tabs
+            .ta-center.mb-4: .tab-nav: .container
+                .tab-nav__inner
+                    .tab-nav__item.tab-nav__item_active Жилые комплексы
+                    .tab-nav__item Предприятия
+                    .tab-nav__item Офисы
+                    .tab-nav__item Распределенные объекты
+                    .tab-nav__item Парковки
+            .tab-content
+                .tab-content__item.tab-content__item_active
+                    .solution-item
+                        .solution-item__col.solution-item__col_image
+                            .solution-item__image(style="background-image:url('img/solution-1.jpg')")
+                        .solution-item__col
+                            .solution-item__text
+                                .slider-navigation.mb-2
+                                    .slider-btn: i.icm.icm-arrow.rotate-180
+                                    .slider-btn: i.icm.icm-arrow
+                                h3.h.h_m.mb-2 Для бизнес центров1
+                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
+                                a(href="#").btn.btn_bd Подробнее
+                .tab-content__item
+                    .solution-item
+                        .solution-item__col.solution-item__col_image
+                            .solution-item__image(style="background-image:url('img/solution-1.jpg')")
+                        .solution-item__col
+                            .solution-item__text
+                                .slider-navigation.mb-2
+                                    .slider-btn: i.icm.icm-arrow.rotate-180
+                                    .slider-btn: i.icm.icm-arrow
+                                h3.h.h_m.mb-2 Для бизнес центров2
+                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
+                                a(href="#").btn.btn_bd Подробнее
+                .tab-content__item
+                    .solution-item
+                        .solution-item__col.solution-item__col_image
+                            .solution-item__image(style="background-image:url('img/solution-1.jpg')")
+                        .solution-item__col
+                            .solution-item__text
+                                .slider-navigation.mb-2
+                                    .slider-btn: i.icm.icm-arrow.rotate-180
+                                    .slider-btn: i.icm.icm-arrow
+                                h3.h.h_m.mb-2 Для бизнес центров
+                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
+                                a(href="#").btn.btn_bd Подробнее
+                .tab-content__item
+                    .solution-item
+                        .solution-item__col.solution-item__col_image
+                            .solution-item__image(style="background-image:url('img/solution-1.jpg')")
+                        .solution-item__col
+                            .solution-item__text
+                                .slider-navigation.mb-2
+                                    .slider-btn: i.icm.icm-arrow.rotate-180
+                                    .slider-btn: i.icm.icm-arrow
+                                h3.h.h_m.mb-2 Для бизнес центров
+                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
+                                a(href="#").btn.btn_bd Подробнее
+                .tab-content__item
+                    .solution-item
+                        .solution-item__col.solution-item__col_image
+                            .solution-item__image(style="background-image:url('img/solution-1.jpg')")
+                        .solution-item__col
+                            .solution-item__text
+                                .slider-navigation.mb-2
+                                    .slider-btn: i.icm.icm-arrow.rotate-180
+                                    .slider-btn: i.icm.icm-arrow
+                                h3.h.h_m.mb-2 Для бизнес центров
+                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
+                                a(href="#").btn.btn_bd Подробнее
+    section.outer-container.py-4.mb-1
         .container
-            h2.h.h_l.ta-center.mb-4 Приемущества и выгоды системы
+            h2.h.h_l.ta-center.mb-3.mb-sm-4 Преимущества и выгоды системы
             ul.ns.features
-                li.mb-2.featues__item
+                li.featrues__item
                     .feature(data-open)
                         .feature__header
                             button.feature__close
@@ -59,35 +112,35 @@ block main
                             ul.feature-props.row
                                 +featureItem(
                                     'icm-no_key',
-                                    'Удобный <br> гостевой доступ',
+                                    'Удобный гостевой доступ',
                                     'Простая моментальная отправка пользователями временных гостевых ключей. Гостям не требуется несколько раз звонить в домофон, они проходят на территорию и в подъезд со своим смартфоном'
                                     )
                                 +featureItem(
                                     'icm-diamond',
-                                    'Телефон – единый идентификатор <br> в рамках всего объекта',
+                                    'Телефон – единый идентификатор в рамках всего объекта',
                                     'С помощью цифровых ключей в смартфоне открываются двери подъезда, калитки ограждения, шлагбаумы, ворота парковки, вызываются лифты'
                                     )
                                 +featureItem(
                                     'icm-lock',
-                                    'Безопасная аутентификация <br> по смартфону',
+                                    'Безопасная аутентификация по смартфону',
                                     'Цифровые ключи надежно защищены криптографическим протоколом'
                                     )
                                 +featureItem(
                                     'icm-hand',
-                                    'Бесключевой доступ <br> «свободные руки»',
+                                    'Бесключевой доступ «свободные руки»',
                                     'Открытие дверей и шлагбаумов по приближению без необходимости доставать смартфон'
                                     )
                                 +featureItem(
                                     'icm-admin',
-                                    'Администрирование и логи доступа <br> в облачном личном кабинете',
+                                    'Администрирование и логи доступа в облачном личном кабинете',
                                     'Система позволяет полностью контролировать наличие прав доступа и срок их действия у пользователей, а также фиксировать факты прохода или проезда, не требуя установки отдельного сервера. Вся функциональность доступна в личном кабинете в web-браузере.'
                                     )
                                 +featureItem(
                                     'icm-factory',
-                                    'Легкая адаптация системы <br> для любых объектов',
+                                    'Легкая адаптация системы для любых объектов',
                                     'Система можно установить на любые объекты — от частного дома до большого завода.'
                                     )
-                li.mb-2.featues__item
+                li.features__item
                     .feature
                         .feature__header
                             button.feature__close
@@ -124,7 +177,7 @@ block main
                                     'Легкая адаптация системы <br> для любых объектов',
                                     'Система можно установить на любые объекты — от частного дома до большого завода.'
                                     )
-    section.outer-container.mb-4
+    section.outer-container.mb-1.mb-sm-4
         .more-block
             .container
                 .more-block__inner
@@ -133,44 +186,47 @@ block main
                     .more-block__text
                         h2.h.h_l.h_light.mb-2 Хотите больше узнать о системе SmartAirkey?
                         p Заполните форму обратной связи, и мы свяжемся с вами в течение нескольких минут
-                        a(href="#").btn.btn_primary Узнать больше       
-    section.outer-container.py-4
+                        a(href="#giveContacts").fancybox.btn.btn_primary Узнать больше       
+    section.outer-container.py-3
         .container
             .row
-                .col-md-6.pr-md-5.mb-3
+                .col-12.col-lg-6.pr-md-5.mb-2.mb-sm-3.about-header
                     h2.h.h_l.mb-2 О компании
                     .default-content
                         p SmartAirkey — передовая компания, занимающаяся разработками высокотехнологичных систем контроля доступа с помощью современных смартфонов.
-                .col-md-6
-                    .image-text.mb-3
+                .col-12.col-lg-6.pt-1
+                    .image-text.mb-1
                         .image-text__image
                             img(src="img/about-1.jpg", alt="")
                         .image-text__text.default-content
-                            h3.h.h_s Startup Village
+                            h3.h.h_m Startup Village
                             p SmartAirkey оказался в 2016 году в числе 100 лучших инновационных проектов, отобранных для участия STARTUP BAZAAR среди нескольких тысяч заявок.
                     .image-text
                         .image-text__image
                             img(src="img/about-2.jpg", alt="")
                         .image-text__text.default-content
-                            h3.h.h_s Сколково
+                            h3.h.h_m Сколково
                             p Разработка системы осуществляется при грантовой поддержке Фонда «Сколково»
-    section.outer-container.py-4
+    section.outer-container.pt-3
         .container
             h2.h.h_l.mb-4 С кем работали
             ul.row.ns
-                li.col-2: .partner-item: img(src="img/partner1.png", alt="lg") 
-                li.col-2: .partner-item: img(src="img/partner2.png", alt="asus") 
-                li.col-2: .partner-item: img(src="img/partner3.png", alt="samsung") 
-                li.col-2: .partner-item: img(src="img/partner4.png", alt="sony") 
-                li.col-2: .partner-item: img(src="img/partner5.png", alt="google") 
-                li.col-2: .partner-item: img(src="img/partner6.png", alt="acer") 
-    section.outer-container.py-4
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner1.png", alt="lg") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner2.png", alt="asus") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner3.png", alt="samsung") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner4.png", alt="sony") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner5.png", alt="google") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner6.png", alt="acer") 
+    section.outer-container.py-3.mb-1
         .container.about-features
             .ta-center
                 h2.h.h_l.mb-2 О системе
-                .h-desc.mb-4 Система SmartAirkey состоит из трех компонентов
-            .row
-                .col.d-flex
+                .h-desc Система SmartAirkey состоит из трех компонентов
+            .row(data-swiper-container)
+                .slider-navigation.slider-navigation_centered.d-md-none
+                    .slider-btn(data-prev): i.icm.icm-arrow.rotate-180
+                    .slider-btn(data-next): i.icm.icm-arrow
+                .col-6.col-lg-4.d-flex.mb-2.mb-lg-0(data-swiper-slide)
                     .about-feature
                         .about-feature__ico: i.icm.icm-controller
                         h3.h.h_xs.about-feature__header Контроллер мобильного доступа
@@ -179,8 +235,14 @@ block main
                                 li Устанавливается на различные точки доступа: двери, шлагбаумы, ворота
                                 li Считывает мобильные цифровые ключи и карты доступа (Mifare или Emarin)
                                 li При отсутствии СКУД работает в автономном режиме, при использовании СКУД – интегрируется в нее
-                        a(href="#").btn.btn_bd.mt-auto Подробнее
-                .col.d-flex
+                        .about-feature__detail
+                            .default-content.mb-4
+                                .h.h_m Контроллер мобильного доступа
+                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов. 
+                                p Система SmartAirkey упростит управление гостевым доступом в офисный центр и на парковку с помощью цифровых ключей. Стандартная интеграция с существующими СКУД доступ по времени и уровню не потребуют дополнительных расходов.
+                            a(href="#giveContacts").fancybox.btn.btn_primary Заказать
+                        button.btn.btn_bd.mt-auto.about-feature__btn Подробнее
+                .col-6.col-lg-4.d-flex.mb-2.mb-lg-0(data-swiper-slide)
                     .about-feature
                         .about-feature__ico: i.icm.icm-cloud
                         h3.h.h_xs.about-feature__header Облачный сервис
@@ -190,46 +252,55 @@ block main
                                 li Позволяет администрировать точки доступа и пользователей
                                 li Позволяет просматривать логи доступа
                                 li Имеет развитый API  для интеграции с системами учета управляющих компаний, контроля доступа, приложениями для жильцов.
-                        a(href="#").btn.btn_bd.mt-auto Подробнее
-                .col.d-flex
+                        .about-feature__detail
+                            .default-content.mb-4
+                                .h.h_m Мобильное приложение
+                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов. 
+                                p Система SmartAirkey упростит управление гостевым доступом в офисный центр и на парковку с помощью цифровых ключей. Стандартная интеграция с существующими СКУД доступ по времени и уровню не потребуют дополнительных расходов.
+                            a(href="#giveContacts").fancybox.btn.btn_primary Заказать
+                        button.btn.btn_bd.mt-auto.about-feature__btn Подробнее
+                .col-6.col-lg-4.d-flex.mb-2.mb-lg-0(data-swiper-slide)
                     .about-feature
                         .about-feature__ico: i.icm.icm-app
                             .ta-center
                         h3.h.h_xs.about-feature__header Мобильное приложение
-                        .default-content
+                        .default-content.mb-1
                             ul
                                 li Позволяет пользователям открывать двери и шлагбаумы по приближению, не доставая смартфона 
                                 li Позволяет хранить ключи от жилого комплекса, офиса, парковки, коттеджа и квартиры в одном приложении
                                 li Позволяет в пару кликов отправлять временные гостевые ключи
                                 li Администратору доступа позволяет настраивать и обновлять контроллеры SmartAirkey
-                        a(href="#").btn.btn_bd.mt-auto Подробнее
-    section.outer-container.py-4
+                        .about-feature__detail
+                            .default-content.mb-4
+                                .h.h_m Сервис управления цифровыми ключами
+                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов. 
+                                p Система SmartAirkey упростит управление гостевым доступом в офисный центр и на парковку с помощью цифровых ключей. Стандартная интеграция с существующими СКУД доступ по времени и уровню не потребуют дополнительных расходов.
+                            a(href="#giveContacts").fancybox.btn.btn_primary Заказать
+                        button.btn.btn_bd.mt-auto.about-feature__btn Подробнее
+    section.outer-container.py-3
         .container
             h2.h.h_l.ta-center.mb-4 Нашей компанией была разработана система <br> на основе уникальных контроллеров
-            .product-slider
+            .product-slider.js-swiper
                 .swiper-container
                     .swiper-wrapper
                         -for(var i=0;i<=3;i++)
                             .swiper-slide
                                 .product-slide
                                     .row
-                                        .col.product-slide__image
-                                        .col: h3.h.h_m.mb-2 Контроллер SmartAirkey
-                                        .col
-                                    .row
                                         .col.product-slide__image: img(src="img/product-slider-image.jpg", alt="")
-                                        .col.pr-md-5
-                                            .default-content.mb-3
+                                        .col.pr-lg-5.pr-1
+                                            .default-content.mb-4
+                                                h3.h.h_m.mb-2 Контроллер SmartAirkey
                                                 p Контроллер доступа SmartAirkey SmartLock предназначен для контроля и управления доступом при помощи смартфона и представляет собой микропроцессорное электронное устройство.  Контроллер может использоваться для управления доступом через двери, шлагбаумы, турникеты и другие средства ограничения доступа как самостоятельно, так и в составе Системы контроля и управления доступом.
                                                 p Система бесконтактного доступа SmartAirkey может использоваться в жилых комплексах, в загородных домах, в коттеджах, при оснащении умных домов, в коттеджных и дачных поселках, на парковках и автостоянках, в бизнес-центрах и офисах. Везде, где необходимо обеспечить бесключевой доступ «свободные руки».
-                                            .d-inline-flex.align-items-center
-                                                .col
-                                                    .product-slide__price 12 000 р.
+                                            .row.product-slide__price-block
                                                 .col-auto
-                                                    a(href="#").btn.btn_primary Купить
-                                        .col-auto
-                                            h4.h.h_s.mb-3 Характеристики
-                                            .props-images
+                                                    .product-slide__price 12 000 р.
+                                                .col
+                                                    a(href="#giveContacts").fancybox.btn.btn_primary Купить
+                                        .col-auto.d-none.d-md-block
+                                            h4.h.h_s.mb-2 Характеристики
+                                            .props-images.mb-1
                                                 .props-images__item: i.icm.icm-wifi
                                                 .props-images__item: i.icm.icm-bluetooth
                                                 .props-images__item: i.icm.icm-bluetooth__le
@@ -238,59 +309,65 @@ block main
                                                 li Питание 9-16v
                                                 li Корпус DIN 6
                 .slider-navigation.slider-navigation_centered
-                    .slider-btn: i.icm.icm-arrow.rotate-180
-                    .slider-btn: i.icm.icm-arrow
-    section.outer-container.py-4
-        .container
-            .row
-                .col
-                    h2.h.h_l.mb-2 Мобильные приложения
-                    .default-content.mb-4
-                        p Наше мобильное приложение специально разработано для платформ IOS и Android. При создании системы мы использовали передовые технологии. Такой подход позволяет нам открывать новые возможности СКУД и расширять их функционал.
-                    h3.h.h_m.mb-3 Как пользоваться приложением?
-                    ol.how-use
+                    .slider-btn(data-prev): i.icm.icm-arrow.rotate-180
+                    .slider-btn(data-next): i.icm.icm-arrow
+    section.outer-container.py-3
+        .container.how-use
+            .how-use__header
+                h2.h.h_l.mb-3 Мобильные приложения
+                .default-content.mb-3
+                    p Наше мобильное приложение специально разработано для платформ IOS и Android. При создании системы мы использовали передовые технологии. Такой подход позволяет нам открывать новые возможности СКУД и расширять их функционал.
+            .how-use__bottom
+                .how-use__image: img(src="img/phone.png", alt="")
+                .how-use__bottom-left
+                    h3.h.h_m.mb-4 Как пользоваться приложением?
+                    ol.how-use__list
                         li.how-use__item
                             .how-use__title Скачайте приложение
                             p.how-use__text Скачайте приложение в Google Play или App Store
                             .how-use__btns
-                                a(href="#"): img(src="img/google-play.png", alt="")
-                                a(href="#"): img(src="img/app-store.png", alt="")
+                                a(href="#").app-btn: img(src="img/google-play.png", alt="")
+                                a(href="#").app-btn: img(src="img/app-store.png", alt="")
                         li.how-use__item
                             .how-use__title Регистрация
                             p.how-use__text Зарегистрируйтесь в приложении. 
                         li.how-use__item
                             .how-use__title Бесключевой доступ
                             p.how-use__text Пользуйтесь бесключевым доступом.
-                .col.ta-right.d-none.d-md-block: img(src="img/phone.png", alt="")
-    section.outer-container.py-4
+                
+    section.outer-container.py-3.mobile-text-center
         .container
-            .row.mb-7
-                .col
+            .row.mb-4.mb-lg-6
+                .col-12.col-lg-6
                     h2.h.h_l.mb-2 Монтаж
                     .default-content
                         p Устанавливаем системы SmartAirkey качественно и быстро. При установке мы ориентируемся на тонкости работы объекта и гарантируем дальнейшее обслуживание и поддержку.
                 .col.d-none.d-md-block
             .row
-                .col
+                .col-12.col-md-6.col-lg.mb-2.mb-md-4.mb-lg-0
                     .install-item
                         .install-item__ico: i.icm.icm-pro
-                        .install-item__title Профессионально
-                        .default-content Наши работники имеют соответствующие сертификаты для работы с оборудованием.
-                .col
+                        .install-item__col
+                            .install-item__title Профессионально
+                            .default-content Наши работники имеют соответствующие сертификаты для работы с оборудованием.
+                .col-12.col-md-6.col-lg.mb-2.mb-md-4.mb-lg-0
                     .install-item
                         .install-item__ico: i.icm.icm-warranty
-                        .install-item__title Гарантийное постобслуживание
-                        .default-content В течение года обслуживание бесплатно.
-                .col
+                        .install-item__col
+                            .install-item__title Гарантийное постобслуживание
+                            .default-content В течение года обслуживание бесплатно.
+                .col-12.col-md-6.col-lg.mb-2.mb-md-4.mb-lg-0
                     .install-item
                         .install-item__ico: i.icm.icm-system
-                        .install-item__title Учет особенностей объекта
-                        .default-content Мы устанавливаем СКУД на разные типы объектов, у вас частный случай, то мы с ним справимся.
-                .col
+                        .install-item__col
+                            .install-item__title Учет особенностей объекта
+                            .default-content Мы устанавливаем СКУД на разные типы объектов, у вас частный случай, то мы с ним справимся.
+                .col-12.col-md-6.col-lg.mb-2.mb-md-4.mb-lg-0
                     .install-item
                         .install-item__ico: i.icm.icm-special
-                        .install-item__title Учет особенностей SmartAirKey
-                        .default-content В течение года обслуживание бесплатно.
+                        .install-item__col
+                            .install-item__title Учет особенностей SmartAirKey
+                            .default-content В течение года обслуживание бесплатно.
     section.outer-container.mb-3
         .more-block
             .container
@@ -298,27 +375,26 @@ block main
                     .more-block__text
                         h2.h.h_l.h_light.mb-2 Остались вопросы о системе SmartAirKey?
                         p Оставьте ваши контакты и наш специалист ответит на них
-                        a(href="#").btn.btn_primary Оставить контакты       
+                        a(href="#giveContacts").fancybox.btn.btn_primary Оставить контакты       
                     .more-block__image
                         img(src="img/more-block-image2.png", alt="")
     section.outer-container.py-4
         .container
-            h2.h.h_l.mb-3.ta-center Выполненные проекты
-            .carousel(data-items="3")
-                .carousel__inner
-                    .swiper-container
-                        .swiper-wrapper
-                            -for(var i=0;i<5;i++)
-                                .swiper-slide
-                                    a(href="#").post-item
-                                        .post-item__image: img(src="img/carousel-image.jpg", alt="").img-responsive
-                                        .post-item__title Бесключевой доступ в Сколково
+            h2.h.h_l.mb-4.ta-center Выполненные проекты
+            .js-swiper(data-items="3")
+                .swiper-container
+                    .swiper-wrapper
+                        -for(var i=0;i<5;i++)
+                            .swiper-slide
+                                a(href="#").post-item
+                                    .post-item__image: img(src="img/carousel-image.jpg", alt="").img-responsive
+                                    .post-item__title Бесключевой доступ в Сколково
                 .slider-navigation.slider-navigation_centered
-                    .slider-btn: i.icm.icm-arrow.rotate-180
-                    .slider-btn: i.icm.icm-arrow
+                    .slider-btn(data-prev): i.icm.icm-arrow.rotate-180
+                    .slider-btn(data-next): i.icm.icm-arrow
     section.outer-container.py-4
         .container
-            h2.h.h_l.mb-3 Вопросы
+            h2.h.h_l.mb-lg-4.mb-0 Вопросы
             .faq-list.mb-4
                 -for(var i=0;i<5;i++)
                     .faq-item
@@ -331,19 +407,115 @@ block main
             .faq-buttons
                 a(href="#").btn.btn_bd Показать весь список
                 a(href="#").btn.btn_light Задать вопрос
-    section.outer-container.py-4
+    section.outer-container.py-4.mb-1
         .container
             h2.h.h_l.mb-3 Новости
-            .carousel(data-items="3")
-                .carousel__inner
-                    .swiper-container
-                        .swiper-wrapper
-                            -for(var i=0;i<5;i++)
-                                .swiper-slide
-                                    a(href="#").post-item
-                                        .post-item__image: img(src="img/carousel-image.jpg", alt="").img-responsive
-                                        .post-item__title Бесключевой доступ в Сколково
-                                        .post-item__date 14 октября 
+            .js-swiper(data-items="3")
+                .swiper-container
+                    .swiper-wrapper
+                        -for(var i=0;i<5;i++)
+                            .swiper-slide
+                                a(href="#").post-item
+                                    .post-item__image: img(src="img/carousel-image.jpg", alt="").img-responsive
+                                    .post-item__title Бесключевой доступ в Сколково
+                                    .post-item__date 14 октября 
                 .slider-navigation.slider-navigation_centered
-                    .slider-btn: i.icm.icm-arrow.rotate-180
-                    .slider-btn: i.icm.icm-arrow
+                    .slider-btn(data-prev): i.icm.icm-arrow.rotate-180
+                    .slider-btn(data-next): i.icm.icm-arrow
+    section.outer-container.my-md-3
+        .home-map
+            .home-map__map: img#map(src="img/map.jpg")
+            .home-map__contacts
+                .container
+                    .contacts-map
+                        h2.h.h_l.mb-3 Контакты
+                        .default-content.mb-2.mb-md-6
+                            p.mb-2 117246, г. Москва, <br> Научный проезд, д. 8, стр. 1.
+                            ul.ns
+                                li
+                                    i.icm.icm-phone.text-muted100.mr-1
+                                    span 8 (495) 150 66 25
+                                li
+                                    i.icm.icm-mail.text-muted100.mr-1
+                                    span info@smartairkey.com
+                                li
+                                    i.icm.icm-clock.text-muted100.mr-1
+                                    span Пн-Пт: 10:00 - 20:00
+                        +socials()
+    section.outer-container.py-4
+        .container
+            h2.h.h_l.ta-center.mb-3 Приглашаем к сотрудничеству партнеров
+            .h-desc.ta-center Мы производим высокотехнологичное оборудование SmartAirkey
+            .row
+                .col-lg-4.d-flex.flex-column.justify-content-center.mobile-text-center.mb-3.mb-lg-0
+                    h3.h_m.mb-4 Эксклюзивные условия поставок
+                    .default-content
+                        p Выбирая SmartAirkey, вы предлагайте своим клиентам перспективные продукты и решения. Начните продажу SmartAirkey в своем городе и получите эксклюзивные условия поставок - успейте первыми предложить новый продукт своим клиентам.
+                .mb-2.mb-md-0.col-12.col-md-6.col-lg-4.d-flex
+                    .ico-block
+                        .ico-block__ico: i.icm.icm-update
+                        .ico-block__text Система SmartAirkey совершенствует систему умного дома с помощью надежного и удобного бесключевого доступа 
+                .mb-2.mb-md-0.col-12.col-md-6.col-lg-4.d-flex
+                    .ico-block
+                        .ico-block__ico: i.icm.icm-integrate
+                        .ico-block__text Легкая интеграция доступа с помощью цифровых ключей SmartAirkey в существующие СКУД для создания уникального продукта и повышения комфорта и удобства клиентов
+    section.outer-container.py-4.mb-2
+        .container
+            h2.h.h_l.ta-center Истории успеха
+            .reviews.js-swiper
+                .swiper-container: .swiper-wrapper 
+                    -for(var i=0;i<3;i++)
+                        .swiper-slide.reviews__item
+                            .review
+                                .review__person.review-person
+                                    .review-person__photo: img(src="img/person-photo.jpg", alt="")
+                                    .review-person__name Илья
+                                    .review-person__who Предприниматель
+                                .review__header Как мне помогла система Smart AirKey
+                                .review__dec
+                                .review__text В 2009 году Facebook отказалась взять на работу бывшего инженера Yahoo Эктона. Спустя пять лет социальная сеть Марка Цукерберга согласилась заплатить своему несостоявшемуся сотруднику более $3 млрд кэшем и акциями за его долю в мобильном мессенджере WhatsApp. Эктон — второй сооснователь сервиса, чья аудитория пробила планку в 600 млн пользователей.
+                .slider-navigation.slider-navigation_centered
+                    .slider-btn(data-prev): i.icm.icm-arrow.rotate-180
+                    .slider-btn(data-next): i.icm.icm-arrow
+    footer.main-footer
+        .container
+            .row
+                .col-auto.main-footer__logo
+                    a(href="/").logo.logo_small.off-link: img(src="img/logo.svg", alt="")
+                    .copyright.d-md-none © 2019 Все права защищены
+                .col.main-footer__nav
+                    nav.footer-nav
+                        .footer-nav__col: a(href="#").footer-nav__link Типовые решения
+                        .footer-nav__col: a(href="#").footer-nav__link О системе
+                        .footer-nav__col: a(href="#").footer-nav__link Преимущества
+                        .footer-nav__col: a(href="#").footer-nav__link Приложение
+                        .footer-nav__col: a(href="#").footer-nav__link Истории успеха
+                        .footer-nav__col: a(href="#").footer-nav__link О компании
+                        .footer-nav__col: a(href="#").footer-nav__link Монтаж
+                        .footer-nav__col: a(href="#").footer-nav__link С кем работали
+                        .footer-nav__col: a(href="#").footer-nav__link Отзывы
+                        .footer-nav__col: a(href="#").footer-nav__link FAQ
+    .modals
+        .modal#emptyModal
+            .modal__close(data-fancybox-close): i.icm.icm-plus
+            .modal__body
+        .modal#giveContacts.ta-center
+            .modal__close(data-fancybox-close): i.icm.icm-plus
+            .modal__header
+                .h.h_m.mb-2 Оставить контакты
+                .h-desc Напишите номер телефона и мы вам перезвоним за 10 минут
+            .modal__body
+                form(action="#").ajax-form.form
+                    .form-control
+                        label.input
+                            span.input__input
+                                input(name="name" type="name" placeholder="Василий" data-parsley-required)
+                                span.input__placeholder Имя
+                        .input__error
+                    .form-control
+                        label.input
+                            span.input__input
+                                input(name="name" type="tel" placeholder="+7(___) ___-__-__" data-parsley-required data-parsley-pattern="/\\+7\\(\\d{3}\\) \\d\{3}-\\d\\d-\\d\\d/")
+                                span.input__placeholder Телефон
+                        .input__error
+                    button.btn.btn_primary.mt-4 Оставить контакты

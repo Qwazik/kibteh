@@ -39,7 +39,7 @@ $border-color: #e5e5e5;
 $border-default: 1px solid $border-color;
 
 //shadow
-$shadow-s: 0 0.7rem 1.8rem rgba($primary, 0.18);
+$shadow-s: 0 0.5rem 1.8rem rgba($primary, 0.18);
 $shadow-md: 0 1rem 3.9rem 0.1rem rgba($primary, 0.46);
 $shadow-l: 0 0.5rem 4rem rgba($primary, 0.1);
 $shadow-hover: 0 0.5rem 1.8rem 0.1rem rgba($primary, 0.76);
@@ -145,6 +145,7 @@ $spacers: map-merge((
   2: 2rem,
   3: 3rem,
   4: 4rem,
+  5: 5rem,
   6: 6rem,
   7: 7rem,
   8: 8rem
@@ -171,7 +172,7 @@ $enable-grid-classes:       true !default;
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
-  md: 800px,
+  md: 768px,
   lg: 992px,
   xl: 1230px
 ) !default;
@@ -186,7 +187,7 @@ $grid-breakpoints: (
 
 $container-max-widths: (
   sm: 540px,
-  md: 768px,
+  md: 750px,
   lg: 960px,
   xl: 1200px
 ) !default;
