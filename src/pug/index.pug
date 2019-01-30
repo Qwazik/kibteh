@@ -225,7 +225,7 @@ block main
                             p Разработка системы осуществляется при грантовой поддержке Фонда «Сколково»
     section.outer-container.pt-3
         .container
-            h2.h.h_l.mb-4 С кем работали
+            h2.h.h_l.mb-4 Нашей системе доверяют
             ul.row.ns
                 li.col-4.col-md-2.d-flex.mb-2: .partner-item.wow.fadeInUp(data-wow-delay="0"): img(src="img/partner1.png", alt="lg") 
                 li.col-4.col-md-2.d-flex.mb-2: .partner-item.wow.fadeInUp(data-wow-delay=".2s"): img(src="img/partner2.png", alt="asus") 
@@ -422,7 +422,7 @@ block main
                         .faq-item__answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero, nesciunt eaque facere provident hic adipisci rerum corrupti autem nostrum unde aliquam repellendus! Excepturi ipsum optio quos exercitationem commodi nemo?
             .faq-buttons.wow.fadeInUp
                 a(href="#").btn.btn_bd Показать весь список
-                a(href="#").btn.btn_light Задать вопрос
+                a(href="#sendQuest").fancybox.btn.btn_light Задать вопрос
     section.outer-container.py-4.mb-1
         .container
             h2.h.h_l.mb-3 Новости
@@ -431,7 +431,7 @@ block main
                     .swiper-wrapper
                         -for(var i=0;i<5;i++)
                             .swiper-slide
-                                a(href="#").post-item
+                                a(href="#modalArticle").post-item.fancybox
                                     .post-item__image: img(src="img/carousel-image.jpg", alt="").img-responsive
                                     .post-item__title Бесключевой доступ в Сколково
                                     .post-item__date 14 октября 
@@ -512,6 +512,19 @@ block main
                         .footer-nav__col: a(href="#").footer-nav__link Отзывы
                         .footer-nav__col: a(href="#").footer-nav__link FAQ
     .modals
+        .article-modal#modalArticle
+            .modal__close(data-fancybox-close): i.icm.icm-plus
+            .article-modal__image: img(src="img/article-inner-image.jpg", alt="")
+            .article-modal__text
+                .default-content
+                    .h.h_m Доступ в Сколково
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?
         .modal#emptyModal
             .modal__close(data-fancybox-close): i.icm.icm-plus
             .modal__body
@@ -535,3 +548,29 @@ block main
                                 span.input__placeholder Телефон
                         .input__error
                     button.btn.btn_primary.mt-4 Оставить контакты
+        .modal#sendQuest.ta-center
+            .modal__close(data-fancybox-close): i.icm.icm-plus
+            .modal__header
+                .h.h_m.mb-2 Оставьте ваш вопрос
+                .h-desc Наши менеджеры подробно ответят на ваш вопрос в ближайшее время
+            .modal__body
+                form(action="#").ajax-form.form
+                    .form-control
+                        label.input
+                            span.input__input
+                                input(name="name" type="name" placeholder="Василий" data-parsley-required)
+                                span.input__placeholder Имя
+                        .input__error
+                    .form-control
+                        label.input
+                            span.input__input
+                                input(name="name" type="email" placeholder="mail@mail.ru" data-parsley-required)
+                                span.input__placeholder Почта
+                        .input__error
+                    .form-control
+                        label.input
+                            span.input__input
+                                input(name="name" type="test" data-parsley-required)
+                                span.input__placeholder Ваш вопрос
+                        .input__error
+                    button.btn.btn_primary.mt-4 Отправить

@@ -245,7 +245,7 @@ body{
     border-radius: $bdrs-button;
     padding: em(20,14) em(76,14);
     font-weight: bold;
-    transition: box-shadow .3s, background .1s; 
+    transition: box-shadow .3s, background .6s, color .6s; 
     color: $primary;
     position: relative;
     text-align: center;
@@ -1506,6 +1506,26 @@ body{
     justify-content: center;
     display: none;
 }
+.fancybox-content#modalArticle{
+    padding: 0;
+}
+.article-modal{
+    position: relative;
+    background: $white;
+    max-width: 54rem;
+    .modal__close{
+        right: 1.5rem;
+        top:   1.5rem;
+    }
+    &__image{
+        img{max-width: 100%;}
+    }
+    &__text{
+        padding: 2.5rem 3.5rem;
+        max-height: 50vh;
+        overflow: auto;
+    }
+}
 .modal{
     background: $white;
     border-radius: $bdrs-big;
@@ -1607,6 +1627,9 @@ body{
 /*-- END: elements --*/
 
 /*-- START: plugins --*/
+.fancybox-button.fancybox-button--close{
+    display: none;
+}
 .parsley-errors-list{
     @extend .ns;
     text-align: left;
@@ -1811,6 +1834,18 @@ body{
 }//991
 
 @media screen and (max-width: 768px){
+    .modal{
+        padding: 3rem 2rem;
+        &__close{
+            top:   2rem;
+            right: 2rem;
+        }
+        &__body{
+            .btn{
+                width: 100%;
+            }
+        }
+    }
     .how-use{
         margin-top: 0;
         margin-bottom: 0;
