@@ -207,6 +207,7 @@ $(function(){
                     },
                     breakpoints: getBreakPoints($slider.data('items'))
                 })
+                $slider.addClass('initialized');
 
                 function getBreakPoints(items){
                     if(items==3){
@@ -222,7 +223,6 @@ $(function(){
                 }
         });
     }());
-
 
     // mobile nav
     var MOBILE_NAV = (function(){
@@ -303,29 +303,6 @@ $(function(){
     }());
 
     //responsive
-    (function(){
-      $(window).on({
-          load: function(){ 
-            var ww = $(window).outerWidth();
-            if(ww>=768){
-
-            }
-            if(ww<768){
-
-            }
-          },
-          resize: function(){ 
-            var ww = $(window).outerWidth();
-            if(ww>768){
-
-            }
-            if(ww<768){
-
-            }
-          }
-      })
-    }());
-
     $('.about-features').mobileSwiper(768, {
         autoHeight: true
     },{
@@ -355,8 +332,6 @@ function sendAjax(form){
         error: sendError
     });
 }
-
-
 
 // data-swiper-container
 // data-swiper-slide
@@ -398,7 +373,6 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
                     if(typeof swiper === 'object'){
                         swiper.update();
                         //console.log('update');
-
                     }else{
                         swiper = new Swiper($thisSwiper, $.extend(swiperProps, {navigation: {
                             nextEl: next,
@@ -406,7 +380,6 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
                             disabledClass: 'slider-btn_disabled'
                         }})) 
                         //console.log('init');
-                        
                         console.log(prev, next);
                     }
                 }
@@ -414,7 +387,6 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
             }else{
                 if(sliderInserted){
                     //console.log('removeSlider');
-                    
                     sliderInserted = false;
                     $targetContainerLink.html($target);
                 }
@@ -422,13 +394,7 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
         }   
     });
 
-
     //about feature detail
-
-        
-          
-      
-
     $(document).on('click','.about-feature__btn', function(e){
         var $feature = $(e.target).closest('.about-feature'),
             $featureDetail = $feature.find('.about-feature__detail').html();

@@ -400,9 +400,13 @@ body{
         border-color: $danger !important;
     }
 }
+.js-swiper.initialized .slider-navigation{
+    display: flex;
+}
 .slider-navigation{
     display: flex;
     align-items: center;
+    display: none;
     &_centered{
         .slider-btn{
             position: absolute;
@@ -1889,6 +1893,7 @@ body{
         }
         &__right-bottom{
             padding: 0;
+            margin-right: 0;
         }
         &__right{
             position: static;
@@ -2226,7 +2231,7 @@ body{
         margin-right: -1rem;
         border-radius: 0;
         flex-basis: auto;
-        max-width: none;ищцу
+        max-width: none;
         &__ico{
             font-size: 4rem;
             background-image: linear-gradient(to bottom, #2ea7df 0%, #3949ab 100%);
