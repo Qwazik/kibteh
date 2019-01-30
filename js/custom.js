@@ -8,6 +8,28 @@ $(function(){
         smallBtn: false,
         touch:false
     });
+
+    $(window).on({
+        'load':function(){
+            $('.mobile-nav__link').each(function(){
+                var $this = $(this);
+                var href = $this.attr('href');
+                var target = ($(href).length)?$(href):false;
+                if(href[0] === '#'){
+                    $this.click(function(){
+                        MOBILE_NAV.close();
+                        if(target){
+                            $('html, body').stop(true,true).animate({
+                                scrollTop: target.offset().top - $('.top-panel').outerHeight()
+                            },1000);
+                        }else{
+                            console.warn('Отсутствует элемент с ID '+href);
+                        }
+                    });
+                }
+            });
+        }
+    });
     
     //feature
     (function(){
@@ -271,6 +293,13 @@ $(function(){
             }
             return element;
         }
+        function close(){
+            $('.'+mobileNavClass).removeClass(mobileNavOpenClass);
+            $('.mobile-nav-btn').removeClass('mobile-nav-btn_active');
+        }
+        return {
+            close: close
+        }
     }());
 
     //responsive
@@ -326,6 +355,8 @@ function sendAjax(form){
         error: sendError
     });
 }
+
+
 
 // data-swiper-container
 // data-swiper-slide
@@ -398,7 +429,7 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
           
       
 
-    $(document).click('.about-feature__btn', function(e){
+    $(document).on('click','.about-feature__btn', function(e){
         var $feature = $(e.target).closest('.about-feature'),
             $featureDetail = $feature.find('.about-feature__detail').html();
         $('#emptyModal').find('.modal__body').html($featureDetail);
