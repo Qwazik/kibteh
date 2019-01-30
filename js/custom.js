@@ -1,4 +1,7 @@
 $(function(){
+    new WOW().init({
+        offset: 100
+    });
     $('[type="tel"]').mask('+7(999) 999-99-99');
     $('.fancybox').fancybox({
         smallBtn: false,
@@ -100,16 +103,23 @@ $(function(){
                 $content = $tab.find('.tab-content'),
                 $contentItems = $content.find('.tab-content__item'),
                 contentActiveClass = 'tab-content__item_active',
-                navActiveClass = 'tab-nav__item_active';
+                itemOutClass = 'tab-content__item_out',
+                navActiveClass = 'tab-nav__item_active',
 
             $navItems.click(function(){
                 $tabNavItem = $(this);
                 index = $tabNavItem.index();
                 $contentItemActive = $contentItems.eq(index);
                 if(!$tabNavItem.is('.'+navActiveClass)){
+                    var $previousItem = $contentItems.filter('.'+contentActiveClass);
                     $tabNavItem.siblings().removeClass(navActiveClass);
                     $tabNavItem.addClass(navActiveClass);
-                    $contentItemActive.addClass(contentActiveClass).siblings().removeClass(contentActiveClass);
+                    $previousItem.removeClass(contentActiveClass).addClass(itemOutClass);
+                    if($contentItemActive.is('.'+itemOutClass)) $contentItemActive.removeClass(itemOutClass);
+                    $contentItemActive.addClass(contentActiveClass);
+                    setTimeout(function(){
+                        $previousItem.removeClass(itemOutClass);
+                    },1000);
                 }
             });
         });

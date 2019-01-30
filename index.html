@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="libs/fancybox/dist/jquery.fancybox.min.css">
     <link rel="stylesheet" href="libs/swiper/dist/css/swiper.min.css">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="libs/wow/css/libs/animate.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body><!--[if lt IE 10]>
@@ -64,14 +65,14 @@
         </div>
       </header>
       <div class="outer-container mb-sm-3">
-        <div class="main-slider">
+        <div class="main-slider animated fadeIn">
           <div class="swiper-container main-slider__slides">
             <div class="swiper-wrapper">
               <div class="swiper-slide main-slider__slide" data-title="Доступ с функцией &lt;br&gt; «свободные руки»" data-end="Просто внедрить в любом &lt;br&gt; жилом комплексе" style="background-image: url(img/big-slide-1.jpg)"></div>
               <div class="swiper-slide main-slider__slide" data-title="Управление доступом &lt;br&gt; к распределенным &lt;br&gt; объектам" data-end="Без затрат на каналы связи" style="background-image: url(img/big-slide-2.jpg)"></div>
             </div>
           </div>
-          <div class="main-slider__static">
+          <div class="main-slider__static animated fadeInLeft delay-2s">
             <div class="container">
               <div class="main-slider__header">Доступ с функцией <br> «свободные руки»</div>
               <div class="main-slider__btns"><a class="btn btn_primary fancybox" href="#giveContacts">Подробнее</a><a class="btn btn_light btn_ico fancybox" href="https://www.youtube.com/watch?v=3dYouSEBKiU"><i class="icm icm-play"></i><span>Видео</span></a></div>
@@ -86,7 +87,7 @@
           </div>
         </div>
       </div>
-      <section class="outer-container py-4 mb-lg-5">
+      <section class="outer-container py-4 mb-lg-5 wow fadeInUp" data-wow-offset="100">
         <h2 class="h h_l ta-center mb-2 mb-sm-4">Типовые решения</h2>
         <div class="js-tabs">
           <div class="ta-center mb-4">
@@ -104,18 +105,43 @@
           </div>
           <div class="tab-content">
             <div class="tab-content__item tab-content__item_active">
-              <div class="solution-item">
-                <div class="solution-item__col solution-item__col_image">
-                  <div class="solution-item__image" style="background-image:url('img/solution-1.jpg')"></div>
-                </div>
-                <div class="solution-item__col">
-                  <div class="solution-item__text">
-                    <div class="slider-navigation mb-2">
-                      <div class="slider-btn"><i class="icm icm-arrow rotate-180"></i></div>
-                      <div class="slider-btn"><i class="icm icm-arrow"></i></div>
+              <div class="js-swiper">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="solution-item">
+                        <div class="solution-item__col solution-item__col_image wow fadeInLeft" data-wow-offset="100">
+                          <div class="solution-item__image" style="background-image:url('img/solution-1.jpg')"></div>
+                        </div>
+                        <div class="solution-item__col wow fadeInRight" data-wow-offset="100">
+                          <div class="solution-item__text">
+                            <div class="slider-navigation mb-2">
+                              <div class="slider-btn" data-prev><i class="icm icm-arrow rotate-180"></i></div>
+                              <div class="slider-btn" data-next><i class="icm icm-arrow"></i></div>
+                            </div>
+                            <h3 class="h h_m mb-2">Для бизнес центров1</h3>
+                            <p>Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.</p><a class="btn btn_bd" href="#">Подробнее</a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <h3 class="h h_m mb-2">Для бизнес центров1</h3>
-                    <p>Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.</p><a class="btn btn_bd" href="#">Подробнее</a>
+                    <div class="swiper-slide">
+                      <div class="solution-item">
+                        <div class="solution-item__col solution-item__col_image">
+                          <div class="solution-item__image" style="background-image:url('img/solution-1.jpg')"></div>
+                        </div>
+                        <div class="solution-item__col">
+                          <div class="solution-item__text">
+                            <div class="slider-navigation mb-2">
+                              <div class="slider-btn" data-prev><i class="icm icm-arrow rotate-180"></i></div>
+                              <div class="slider-btn" data-next><i class="icm icm-arrow"></i></div>
+                            </div>
+                            <h3 class="h h_m mb-2">Для бизнес центров1</h3>
+                            <p>Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.</p><a class="btn btn_bd" href="#">Подробнее</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -195,7 +221,7 @@
         <div class="container">
           <h2 class="h h_l ta-center mb-3 mb-sm-4">Преимущества и выгоды системы</h2>
           <ul class="ns features">
-            <li class="featrues__item">
+            <li class="featrues__item wow fadeInUp">
               <div class="feature" data-open>
                 <div class="feature__header">
                   <button class="feature__close"></button>
@@ -203,7 +229,7 @@
                 </div>
                 <div class="feature__body">
                   <ul class="feature-props row">
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-no_key"></i></div>
@@ -214,7 +240,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-diamond"></i></div>
@@ -225,7 +251,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-lock"></i></div>
@@ -236,7 +262,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-hand"></i></div>
@@ -247,7 +273,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-admin"></i></div>
@@ -258,7 +284,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-factory"></i></div>
@@ -273,7 +299,7 @@
                 </div>
               </div>
             </li>
-            <li class="features__item">
+            <li class="features__item wow fadeInUp">
               <div class="feature">
                 <div class="feature__header">
                   <button class="feature__close"></button>
@@ -281,7 +307,7 @@
                 </div>
                 <div class="feature__body">
                   <ul class="feature-props row">
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-no_key"></i></div>
@@ -292,7 +318,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-diamond"></i></div>
@@ -303,7 +329,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-lock"></i></div>
@@ -314,7 +340,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-hand"></i></div>
@@ -325,7 +351,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-admin"></i></div>
@@ -336,7 +362,7 @@
                         </div>
                       </div>
                     </li>
-                    <li class="feature-props__item col-12 col-lg-6">
+                    <li class="feature-props__item col-12 col-lg-6 wow fadeIn">
                       <div class="feature-prop">
                         <div class="feature-prop__ico">
                           <div class="circle-ico"><i class="icm icm-factory"></i></div>
@@ -358,8 +384,8 @@
         <div class="more-block">
           <div class="container">
             <div class="more-block__inner">
-              <div class="more-block__image"><img src="img/more-block-image.png" alt=""></div>
-              <div class="more-block__text">
+              <div class="more-block__image wow fadeInLeft"><img src="img/more-block-image.png" alt=""></div>
+              <div class="more-block__text wow fadeIn">
                 <h2 class="h h_l h_light mb-2">Хотите больше узнать о системе SmartAirkey?</h2>
                 <p>Заполните форму обратной связи, и мы свяжемся с вами в течение нескольких минут</p><a class="fancybox btn btn_primary" href="#giveContacts">Узнать больше       </a>
               </div>
@@ -370,21 +396,21 @@
       <section class="outer-container py-3">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-lg-6 pr-md-5 mb-2 mb-sm-3 about-header">
+            <div class="col-12 col-lg-6 pr-md-5 mb-2 mb-sm-3 about-header wow fadeInLeft">
               <h2 class="h h_l mb-2">О компании</h2>
               <div class="default-content">
                 <p>SmartAirkey — передовая компания, занимающаяся разработками высокотехнологичных систем контроля доступа с помощью современных смартфонов.</p>
               </div>
             </div>
             <div class="col-12 col-lg-6 pt-1">
-              <div class="image-text mb-1">
+              <div class="image-text mb-1 wow fadeInRight">
                 <div class="image-text__image"><img src="img/about-1.jpg" alt=""></div>
                 <div class="image-text__text default-content">
                   <h3 class="h h_m">Startup Village</h3>
                   <p>SmartAirkey оказался в 2016 году в числе 100 лучших инновационных проектов, отобранных для участия STARTUP BAZAAR среди нескольких тысяч заявок.</p>
                 </div>
               </div>
-              <div class="image-text">
+              <div class="image-text wow fadeInRight">
                 <div class="image-text__image"><img src="img/about-2.jpg" alt=""></div>
                 <div class="image-text__text default-content">
                   <h3 class="h h_m">Сколково</h3>
@@ -400,22 +426,22 @@
           <h2 class="h h_l mb-4">С кем работали</h2>
           <ul class="row ns">
             <li class="col-4 col-md-2 d-flex mb-2">
-              <div class="partner-item"><img src="img/partner1.png" alt="lg"></div>
+              <div class="partner-item wow fadeInUp" data-wow-delay="0"><img src="img/partner1.png" alt="lg"></div>
             </li>
             <li class="col-4 col-md-2 d-flex mb-2">
-              <div class="partner-item"><img src="img/partner2.png" alt="asus"></div>
+              <div class="partner-item wow fadeInUp" data-wow-delay=".2s"><img src="img/partner2.png" alt="asus"></div>
             </li>
             <li class="col-4 col-md-2 d-flex mb-2">
-              <div class="partner-item"><img src="img/partner3.png" alt="samsung"></div>
+              <div class="partner-item wow fadeInUp" data-wow-delay=".4s"><img src="img/partner3.png" alt="samsung"></div>
             </li>
             <li class="col-4 col-md-2 d-flex mb-2">
-              <div class="partner-item"><img src="img/partner4.png" alt="sony"></div>
+              <div class="partner-item wow fadeInUp" data-wow-delay=".6s"><img src="img/partner4.png" alt="sony"></div>
             </li>
             <li class="col-4 col-md-2 d-flex mb-2">
-              <div class="partner-item"><img src="img/partner5.png" alt="google"></div>
+              <div class="partner-item wow fadeInUp" data-wow-delay=".8s"><img src="img/partner5.png" alt="google"></div>
             </li>
             <li class="col-4 col-md-2 d-flex mb-2">
-              <div class="partner-item"><img src="img/partner6.png" alt="acer"></div>
+              <div class="partner-item wow fadeInUp" data-wow-delay="1s"><img src="img/partner6.png" alt="acer"></div>
             </li>
           </ul>
         </div>
@@ -432,7 +458,7 @@
               <div class="slider-btn" data-next><i class="icm icm-arrow"></i></div>
             </div>
             <div class="col-6 col-lg-4 d-flex mb-2 mb-lg-0" data-swiper-slide>
-              <div class="about-feature">
+              <div class="about-feature wow fadeInUp" data-wow-delay="">
                 <div class="about-feature__ico"><i class="icm icm-controller"></i></div>
                 <h3 class="h h_xs about-feature__header">Контроллер мобильного доступа</h3>
                 <div class="default-content">
@@ -453,7 +479,7 @@
               </div>
             </div>
             <div class="col-6 col-lg-4 d-flex mb-2 mb-lg-0" data-swiper-slide>
-              <div class="about-feature">
+              <div class="about-feature wow fadeInUp" data-wow-delay=".2s">
                 <div class="about-feature__ico"><i class="icm icm-cloud"></i></div>
                 <h3 class="h h_xs about-feature__header">Облачный сервис</h3>
                 <div class="default-content">
@@ -475,7 +501,7 @@
               </div>
             </div>
             <div class="col-6 col-lg-4 d-flex mb-2 mb-lg-0" data-swiper-slide>
-              <div class="about-feature">
+              <div class="about-feature wow fadeInUp" data-wow-delay=".4s">
                 <div class="about-feature__ico"><i class="icm icm-app">
                     <div class="ta-center"></div></i></div>
                 <h3 class="h h_xs about-feature__header">Мобильное приложение</h3>
@@ -503,7 +529,7 @@
       <section class="outer-container py-3">
         <div class="container">
           <h2 class="h h_l ta-center mb-4">Нашей компанией была разработана система <br> на основе уникальных контроллеров</h2>
-          <div class="product-slider js-swiper">
+          <div class="product-slider js-swiper wow fadeInUp">
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -649,15 +675,15 @@
       </section>
       <section class="outer-container py-3">
         <div class="container how-use">
-          <div class="how-use__header">
+          <div class="how-use__header wow fadeInLeft">
             <h2 class="h h_l mb-3">Мобильные приложения</h2>
             <div class="default-content mb-3">
               <p>Наше мобильное приложение специально разработано для платформ IOS и Android. При создании системы мы использовали передовые технологии. Такой подход позволяет нам открывать новые возможности СКУД и расширять их функционал.</p>
             </div>
           </div>
           <div class="how-use__bottom">
-            <div class="how-use__image"><img src="img/phone.png" alt=""></div>
-            <div class="how-use__bottom-left">
+            <div class="how-use__image wow fadeInRight"><img src="img/phone.png" alt=""></div>
+            <div class="how-use__bottom-left wow fadeInLeft">
               <h3 class="h h_m mb-4">Как пользоваться приложением?</h3>
               <ol class="how-use__list">
                 <li class="how-use__item">
@@ -691,7 +717,7 @@
           </div>
           <div class="row">
             <div class="col-12 col-md-6 col-lg mb-2 mb-md-4 mb-lg-0">
-              <div class="install-item">
+              <div class="install-item wow fadeInUp" data-wow-delay=".5s">
                 <div class="install-item__ico"><i class="icm icm-pro"></i></div>
                 <div class="install-item__col">
                   <div class="install-item__title">Профессионально</div>
@@ -700,7 +726,7 @@
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg mb-2 mb-md-4 mb-lg-0">
-              <div class="install-item">
+              <div class="install-item wow fadeInUp" data-wow-delay=".4s">
                 <div class="install-item__ico"><i class="icm icm-warranty"></i></div>
                 <div class="install-item__col">
                   <div class="install-item__title">Гарантийное постобслуживание</div>
@@ -709,7 +735,7 @@
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg mb-2 mb-md-4 mb-lg-0">
-              <div class="install-item">
+              <div class="install-item wow fadeInUp" data-wow-delay=".2s">
                 <div class="install-item__ico"><i class="icm icm-system"></i></div>
                 <div class="install-item__col">
                   <div class="install-item__title">Учет особенностей объекта</div>
@@ -718,7 +744,7 @@
               </div>
             </div>
             <div class="col-12 col-md-6 col-lg mb-2 mb-md-4 mb-lg-0">
-              <div class="install-item">
+              <div class="install-item wow fadeInUp" data-wow-delay="0">
                 <div class="install-item__ico"><i class="icm icm-special"></i></div>
                 <div class="install-item__col">
                   <div class="install-item__title">Учет особенностей SmartAirKey</div>
@@ -733,11 +759,11 @@
         <div class="more-block">
           <div class="container">
             <div class="more-block__inner">
-              <div class="more-block__text">
+              <div class="more-block__text wow fadeInLeft">
                 <h2 class="h h_l h_light mb-2">Остались вопросы о системе SmartAirKey?</h2>
                 <p>Оставьте ваши контакты и наш специалист ответит на них</p><a class="fancybox btn btn_primary" href="#giveContacts">Оставить контакты       </a>
               </div>
-              <div class="more-block__image"><img src="img/more-block-image2.png" alt=""></div>
+              <div class="more-block__image wow fadeInRight"><img src="img/more-block-image2.png" alt=""></div>
             </div>
           </div>
         </div>
@@ -745,7 +771,7 @@
       <section class="outer-container py-4">
         <div class="container">
           <h2 class="h h_l mb-4 ta-center">Выполненные проекты</h2>
-          <div class="js-swiper" data-items="3">
+          <div class="js-swiper wow fadeInUp" data-items="3">
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide"><a class="post-item" href="#">
@@ -776,44 +802,44 @@
         <div class="container">
           <h2 class="h h_l mb-lg-4 mb-0">Вопросы</h2>
           <div class="faq-list mb-4">
-            <div class="faq-item">
+            <div class="faq-item wow fadeIn">
               <div class="faq-item__quest"><span>Владельцы, подскажите мне пожалуйста, сколько с машиной идет ключей Smart key в комплекте один или два? И где можно прочитать что это такое и на сколько надежно от угона.</span>
                 <div class="faq-item__toggler"><span></span><span></span></div>
               </div>
               <div class="faq-item__answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero, nesciunt eaque facere provident hic adipisci rerum corrupti autem nostrum unde aliquam repellendus! Excepturi ipsum optio quos exercitationem commodi nemo?</div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item wow fadeIn">
               <div class="faq-item__quest"><span>Владельцы, подскажите мне пожалуйста, сколько с машиной идет ключей Smart key в комплекте один или два? И где можно прочитать что это такое и на сколько надежно от угона.</span>
                 <div class="faq-item__toggler"><span></span><span></span></div>
               </div>
               <div class="faq-item__answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero, nesciunt eaque facere provident hic adipisci rerum corrupti autem nostrum unde aliquam repellendus! Excepturi ipsum optio quos exercitationem commodi nemo?</div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item wow fadeIn">
               <div class="faq-item__quest"><span>Владельцы, подскажите мне пожалуйста, сколько с машиной идет ключей Smart key в комплекте один или два? И где можно прочитать что это такое и на сколько надежно от угона.</span>
                 <div class="faq-item__toggler"><span></span><span></span></div>
               </div>
               <div class="faq-item__answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero, nesciunt eaque facere provident hic adipisci rerum corrupti autem nostrum unde aliquam repellendus! Excepturi ipsum optio quos exercitationem commodi nemo?</div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item wow fadeIn">
               <div class="faq-item__quest"><span>Владельцы, подскажите мне пожалуйста, сколько с машиной идет ключей Smart key в комплекте один или два? И где можно прочитать что это такое и на сколько надежно от угона.</span>
                 <div class="faq-item__toggler"><span></span><span></span></div>
               </div>
               <div class="faq-item__answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero, nesciunt eaque facere provident hic adipisci rerum corrupti autem nostrum unde aliquam repellendus! Excepturi ipsum optio quos exercitationem commodi nemo?</div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item wow fadeIn">
               <div class="faq-item__quest"><span>Владельцы, подскажите мне пожалуйста, сколько с машиной идет ключей Smart key в комплекте один или два? И где можно прочитать что это такое и на сколько надежно от угона.</span>
                 <div class="faq-item__toggler"><span></span><span></span></div>
               </div>
               <div class="faq-item__answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero, nesciunt eaque facere provident hic adipisci rerum corrupti autem nostrum unde aliquam repellendus! Excepturi ipsum optio quos exercitationem commodi nemo?</div>
             </div>
           </div>
-          <div class="faq-buttons"><a class="btn btn_bd" href="#">Показать весь список</a><a class="btn btn_light" href="#">Задать вопрос</a></div>
+          <div class="faq-buttons wow fadeInUp"><a class="btn btn_bd" href="#">Показать весь список</a><a class="btn btn_light" href="#">Задать вопрос</a></div>
         </div>
       </section>
       <section class="outer-container py-4 mb-1">
         <div class="container">
           <h2 class="h h_l mb-3">Новости</h2>
-          <div class="js-swiper" data-items="3">
+          <div class="js-swiper wow fadeInUp" data-items="3">
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide"><a class="post-item" href="#">
@@ -848,7 +874,7 @@
       <section class="outer-container my-md-3">
         <div class="home-map">
           <div class="home-map__map"><img id="map" src="img/map.jpg"></div>
-          <div class="home-map__contacts">
+          <div class="home-map__contacts wow fadeInLeft" data-wow-offset="400">
             <div class="container">
               <div class="contacts-map">
                 <h2 class="h h_l mb-3">Контакты</h2>
@@ -876,20 +902,20 @@
           <h2 class="h h_l ta-center mb-3">Приглашаем к сотрудничеству партнеров</h2>
           <div class="h-desc ta-center">Мы производим высокотехнологичное оборудование SmartAirkey</div>
           <div class="row">
-            <div class="col-lg-4 d-flex flex-column justify-content-center mobile-text-center mb-3 mb-lg-0">
+            <div class="col-lg-4 d-flex flex-column justify-content-center mobile-text-center mb-3 mb-lg-0 wow fadeInLeft">
               <h3 class="h_m mb-4">Эксклюзивные условия поставок</h3>
               <div class="default-content">
                 <p>Выбирая SmartAirkey, вы предлагайте своим клиентам перспективные продукты и решения. Начните продажу SmartAirkey в своем городе и получите эксклюзивные условия поставок - успейте первыми предложить новый продукт своим клиентам.</p>
               </div>
             </div>
             <div class="mb-2 mb-md-0 col-12 col-md-6 col-lg-4 d-flex">
-              <div class="ico-block">
+              <div class="ico-block wow fadeInRight">
                 <div class="ico-block__ico"><i class="icm icm-update"></i></div>
                 <div class="ico-block__text">Система SmartAirkey совершенствует систему умного дома с помощью надежного и удобного бесключевого доступа </div>
               </div>
             </div>
             <div class="mb-2 mb-md-0 col-12 col-md-6 col-lg-4 d-flex">
-              <div class="ico-block">
+              <div class="ico-block wow fadeInRight" data-wow-delay="0.2s">
                 <div class="ico-block__ico"><i class="icm icm-integrate"></i></div>
                 <div class="ico-block__text">Легкая интеграция доступа с помощью цифровых ключей SmartAirkey в существующие СКУД для создания уникального продукта и повышения комфорта и удобства клиентов</div>
               </div>
@@ -900,7 +926,7 @@
       <section class="outer-container py-4 mb-2">
         <div class="container">
           <h2 class="h h_l ta-center">Истории успеха</h2>
-          <div class="reviews js-swiper">
+          <div class="reviews js-swiper wow fadeInUp">
             <div class="swiper-container">
               <div class="swiper-wrapper"> 
                 <div class="swiper-slide reviews__item">
@@ -1008,6 +1034,7 @@
     <script src="libs/parsleyjs/dist/i18n/ru.js"></script>
     <script src="libs/parsleyjs/dist/i18n/ru.extra.js"></script>
     <script src="libs/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+    <script src="libs/wow/dist/wow.min.js"></script>
     <script src="js/custom.js"></script>
   </body>
 </html>
