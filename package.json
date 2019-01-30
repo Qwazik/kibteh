@@ -6,7 +6,7 @@
   "author": "Kovakin Alexey <qwazik21@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn && gulp",
+    "start": "yarn && gulp && bower i",
     "prod": "set NODE_ENV='production' && gulp build && gulp zip",
     "end": "git add . && git commit -m 'autodeploy' && git push -u origin master && npm run prod && gulp deploy"
   },

@@ -20,11 +20,10 @@ const webpack = require('webpack');
 const webpackGulp = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 const reload = browserSync.reload;
-//const buildPath = '../local/templates/kibteh/assets/';
-const buildPath = '../local/templates/kibteh/assets/';
+const buildPath = 'build';
 const srcPath = 'src';
 const other = false;
-const proxy = 'kibteh.loc';
+const proxy = false;
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
@@ -315,15 +314,22 @@ gulp.task('build:sprite', function (callback) {
 /*-------------------------------------------------*/
 /*  clean
 /*-------------------------------------------------*/
+gulp.task('clean', function(callback){
+	cached.caches = {};
+	del([buildPath+'/*', '!assets/libs']).then(paths => {
+    	callback();
+    });
+	
+});
 
 gulp.task('clean', function(callback){
 	cached.caches = {};
 	if(other){
-		del([buildPath+'/{img,css,js,fonts,icons,data}/'], {force: true}).then(paths => {
+		del([buildPath+'/{img,css,js,fonts,icons,data}/']).then(paths => {
 	    	callback();
 	    });
 	}else{
-		del([buildPath+'/*', '!assets/libs'], {force: true}).then(paths => {
+		del([buildPath+'/*', '!assets/libs']).then(paths => {
 	    	callback();
 	    });
 	}
@@ -341,7 +347,7 @@ gulp.task('deploy', function() {
 /*  build
 /*-------------------------------------------------*/
 gulp.task('build', gulp.parallel(
-	//'build:pug',
+	'build:pug',
 	'build:css',
 	//'build:webpack',
 	'build:js',
@@ -367,7 +373,7 @@ gulp.task('watch', function(){
 		gulp.watch(path.watch.html, gulp.series('build:html'));
 		gulp.watch(path.watch.php, gulp.series('build:php'));
 	}
-	//gulp.watch(path.watch.pug, gulp.series('build:pug'));
+	gulp.watch(path.watch.pug, gulp.series('build:pug'));
 	gulp.watch(path.watch.blocks, gulp.series('build:blocks'));
 	gulp.watch(path.watch.css, gulp.series('build:css'));
 	//gulp.watch(path.watch.js.webpack, gulp.series('build:webpack'));
