@@ -3,7 +3,7 @@ include blocks/feature-item
 
 block main
     .outer-container.mb-sm-3
-        .main-slider
+        .main-slider.animated.fadeIn
             .swiper-container.main-slider__slides
                 .swiper-wrapper
                     .swiper-slide.main-slider__slide(
@@ -14,7 +14,7 @@ block main
                         data-title="Управление доступом <br> к распределенным <br> объектам"
                         data-end="Без затрат на каналы связи"
                         style="background-image: url(img/big-slide-2.jpg)")
-            .main-slider__static
+            .main-slider__static.animated.fadeInLeft.delay-2s
                 .container
                     .main-slider__header Доступ с функцией <br> «свободные руки»
                     .main-slider__btns
@@ -28,7 +28,7 @@ block main
                         .slider-dots
                         .slider-btn(data-next): i.icm.icm-arrow
                     .main-slider__end Просто внедрить в любом <br> жилом комплексе
-    section.outer-container.py-4.mb-lg-5
+    section.outer-container.py-4.mb-lg-5.wow.fadeInUp(data-wow-offset="100")
         h2.h.h_l.ta-center.mb-2.mb-sm-4 Типовые решения
         .js-tabs
             .ta-center.mb-4: .tab-nav: .container
@@ -40,17 +40,33 @@ block main
                     .tab-nav__item Парковки
             .tab-content
                 .tab-content__item.tab-content__item_active
-                    .solution-item
-                        .solution-item__col.solution-item__col_image
-                            .solution-item__image(style="background-image:url('img/solution-1.jpg')")
-                        .solution-item__col
-                            .solution-item__text
-                                .slider-navigation.mb-2
-                                    .slider-btn: i.icm.icm-arrow.rotate-180
-                                    .slider-btn: i.icm.icm-arrow
-                                h3.h.h_m.mb-2 Для бизнес центров1
-                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
-                                a(href="#").btn.btn_bd Подробнее
+                    .js-swiper
+                        .swiper-container
+                            .swiper-wrapper
+                                .swiper-slide
+                                    .solution-item
+                                        .solution-item__col.solution-item__col_image.wow.fadeInLeft(data-wow-offset="100")
+                                            .solution-item__image(style="background-image:url('img/solution-1.jpg')")
+                                        .solution-item__col.wow.fadeInRight(data-wow-offset="100")
+                                            .solution-item__text
+                                                .slider-navigation.mb-2
+                                                    .slider-btn(data-prev): i.icm.icm-arrow.rotate-180
+                                                    .slider-btn(data-next): i.icm.icm-arrow
+                                                h3.h.h_m.mb-2 Для бизнес центров1
+                                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
+                                                a(href="#").btn.btn_bd Подробнее
+                                .swiper-slide
+                                    .solution-item
+                                        .solution-item__col.solution-item__col_image
+                                            .solution-item__image(style="background-image:url('img/solution-1.jpg')")
+                                        .solution-item__col
+                                            .solution-item__text
+                                                .slider-navigation.mb-2
+                                                    .slider-btn(data-prev): i.icm.icm-arrow.rotate-180
+                                                    .slider-btn(data-next): i.icm.icm-arrow
+                                                h3.h.h_m.mb-2 Для бизнес центров1
+                                                p Особенностями бизнес-центров и административных зданий являются большие размеры, наличие прилегающей территории и парковок, множество технических помещений, а также распределённая структура арендаторов или департаментов.
+                                                a(href="#").btn.btn_bd Подробнее
                 .tab-content__item
                     .solution-item
                         .solution-item__col.solution-item__col_image
@@ -103,7 +119,7 @@ block main
         .container
             h2.h.h_l.ta-center.mb-3.mb-sm-4 Преимущества и выгоды системы
             ul.ns.features
-                li.featrues__item
+                li.featrues__item.wow.fadeInUp
                     .feature(data-open)
                         .feature__header
                             button.feature__close
@@ -140,7 +156,7 @@ block main
                                     'Легкая адаптация системы для любых объектов',
                                     'Система можно установить на любые объекты — от частного дома до большого завода.'
                                     )
-                li.features__item
+                li.features__item.wow.fadeInUp
                     .feature
                         .feature__header
                             button.feature__close
@@ -181,27 +197,27 @@ block main
         .more-block
             .container
                 .more-block__inner
-                    .more-block__image
+                    .more-block__image.wow.fadeInLeft
                         img(src="img/more-block-image.png", alt="")
-                    .more-block__text
+                    .more-block__text.wow.fadeIn
                         h2.h.h_l.h_light.mb-2 Хотите больше узнать о системе SmartAirkey?
                         p Заполните форму обратной связи, и мы свяжемся с вами в течение нескольких минут
                         a(href="#giveContacts").fancybox.btn.btn_primary Узнать больше       
     section.outer-container.py-3
         .container
             .row
-                .col-12.col-lg-6.pr-md-5.mb-2.mb-sm-3.about-header
+                .col-12.col-lg-6.pr-md-5.mb-2.mb-sm-3.about-header.wow.fadeInLeft
                     h2.h.h_l.mb-2 О компании
                     .default-content
                         p SmartAirkey — передовая компания, занимающаяся разработками высокотехнологичных систем контроля доступа с помощью современных смартфонов.
                 .col-12.col-lg-6.pt-1
-                    .image-text.mb-1
+                    .image-text.mb-1.wow.fadeInRight
                         .image-text__image
                             img(src="img/about-1.jpg", alt="")
                         .image-text__text.default-content
                             h3.h.h_m Startup Village
                             p SmartAirkey оказался в 2016 году в числе 100 лучших инновационных проектов, отобранных для участия STARTUP BAZAAR среди нескольких тысяч заявок.
-                    .image-text
+                    .image-text.wow.fadeInRight
                         .image-text__image
                             img(src="img/about-2.jpg", alt="")
                         .image-text__text.default-content
@@ -211,12 +227,12 @@ block main
         .container
             h2.h.h_l.mb-4 С кем работали
             ul.row.ns
-                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner1.png", alt="lg") 
-                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner2.png", alt="asus") 
-                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner3.png", alt="samsung") 
-                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner4.png", alt="sony") 
-                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner5.png", alt="google") 
-                li.col-4.col-md-2.d-flex.mb-2: .partner-item: img(src="img/partner6.png", alt="acer") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item.wow.fadeInUp(data-wow-delay="0"): img(src="img/partner1.png", alt="lg") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item.wow.fadeInUp(data-wow-delay=".2s"): img(src="img/partner2.png", alt="asus") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item.wow.fadeInUp(data-wow-delay=".4s"): img(src="img/partner3.png", alt="samsung") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item.wow.fadeInUp(data-wow-delay=".6s"): img(src="img/partner4.png", alt="sony") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item.wow.fadeInUp(data-wow-delay=".8s"): img(src="img/partner5.png", alt="google") 
+                li.col-4.col-md-2.d-flex.mb-2: .partner-item.wow.fadeInUp(data-wow-delay="1s"): img(src="img/partner6.png", alt="acer") 
     section.outer-container.py-3.mb-1
         .container.about-features
             .ta-center
@@ -227,7 +243,7 @@ block main
                     .slider-btn(data-prev): i.icm.icm-arrow.rotate-180
                     .slider-btn(data-next): i.icm.icm-arrow
                 .col-6.col-lg-4.d-flex.mb-2.mb-lg-0(data-swiper-slide)
-                    .about-feature
+                    .about-feature.wow.fadeInUp(data-wow-delay="")
                         .about-feature__ico: i.icm.icm-controller
                         h3.h.h_xs.about-feature__header Контроллер мобильного доступа
                         .default-content
@@ -243,7 +259,7 @@ block main
                             a(href="#giveContacts").fancybox.btn.btn_primary Заказать
                         button.btn.btn_bd.mt-auto.about-feature__btn Подробнее
                 .col-6.col-lg-4.d-flex.mb-2.mb-lg-0(data-swiper-slide)
-                    .about-feature
+                    .about-feature.wow.fadeInUp(data-wow-delay=".2s")
                         .about-feature__ico: i.icm.icm-cloud
                         h3.h.h_xs.about-feature__header Облачный сервис
                         .default-content
@@ -260,7 +276,7 @@ block main
                             a(href="#giveContacts").fancybox.btn.btn_primary Заказать
                         button.btn.btn_bd.mt-auto.about-feature__btn Подробнее
                 .col-6.col-lg-4.d-flex.mb-2.mb-lg-0(data-swiper-slide)
-                    .about-feature
+                    .about-feature.wow.fadeInUp(data-wow-delay=".4s")
                         .about-feature__ico: i.icm.icm-app
                             .ta-center
                         h3.h.h_xs.about-feature__header Мобильное приложение
@@ -280,7 +296,7 @@ block main
     section.outer-container.py-3
         .container
             h2.h.h_l.ta-center.mb-4 Нашей компанией была разработана система <br> на основе уникальных контроллеров
-            .product-slider.js-swiper
+            .product-slider.js-swiper.wow.fadeInUp
                 .swiper-container
                     .swiper-wrapper
                         -for(var i=0;i<=3;i++)
@@ -313,13 +329,13 @@ block main
                     .slider-btn(data-next): i.icm.icm-arrow
     section.outer-container.py-3
         .container.how-use
-            .how-use__header
+            .how-use__header.wow.fadeInLeft
                 h2.h.h_l.mb-3 Мобильные приложения
                 .default-content.mb-3
                     p Наше мобильное приложение специально разработано для платформ IOS и Android. При создании системы мы использовали передовые технологии. Такой подход позволяет нам открывать новые возможности СКУД и расширять их функционал.
             .how-use__bottom
-                .how-use__image: img(src="img/phone.png", alt="")
-                .how-use__bottom-left
+                .how-use__image.wow.fadeInRight: img(src="img/phone.png", alt="")
+                .how-use__bottom-left.wow.fadeInLeft
                     h3.h.h_m.mb-4 Как пользоваться приложением?
                     ol.how-use__list
                         li.how-use__item
@@ -345,25 +361,25 @@ block main
                 .col.d-none.d-md-block
             .row
                 .col-12.col-md-6.col-lg.mb-2.mb-md-4.mb-lg-0
-                    .install-item
+                    .install-item.wow.fadeInUp(data-wow-delay=".5s")
                         .install-item__ico: i.icm.icm-pro
                         .install-item__col
                             .install-item__title Профессионально
                             .default-content Наши работники имеют соответствующие сертификаты для работы с оборудованием.
                 .col-12.col-md-6.col-lg.mb-2.mb-md-4.mb-lg-0
-                    .install-item
+                    .install-item.wow.fadeInUp(data-wow-delay=".4s")
                         .install-item__ico: i.icm.icm-warranty
                         .install-item__col
                             .install-item__title Гарантийное постобслуживание
                             .default-content В течение года обслуживание бесплатно.
                 .col-12.col-md-6.col-lg.mb-2.mb-md-4.mb-lg-0
-                    .install-item
+                    .install-item.wow.fadeInUp(data-wow-delay=".2s")
                         .install-item__ico: i.icm.icm-system
                         .install-item__col
                             .install-item__title Учет особенностей объекта
                             .default-content Мы устанавливаем СКУД на разные типы объектов, у вас частный случай, то мы с ним справимся.
                 .col-12.col-md-6.col-lg.mb-2.mb-md-4.mb-lg-0
-                    .install-item
+                    .install-item.wow.fadeInUp(data-wow-delay="0")
                         .install-item__ico: i.icm.icm-special
                         .install-item__col
                             .install-item__title Учет особенностей SmartAirKey
@@ -372,16 +388,16 @@ block main
         .more-block
             .container
                 .more-block__inner
-                    .more-block__text
+                    .more-block__text.wow.fadeInLeft
                         h2.h.h_l.h_light.mb-2 Остались вопросы о системе SmartAirKey?
                         p Оставьте ваши контакты и наш специалист ответит на них
                         a(href="#giveContacts").fancybox.btn.btn_primary Оставить контакты       
-                    .more-block__image
+                    .more-block__image.wow.fadeInRight
                         img(src="img/more-block-image2.png", alt="")
     section.outer-container.py-4
         .container
             h2.h.h_l.mb-4.ta-center Выполненные проекты
-            .js-swiper(data-items="3")
+            .js-swiper(data-items="3").wow.fadeInUp
                 .swiper-container
                     .swiper-wrapper
                         -for(var i=0;i<5;i++)
@@ -397,20 +413,20 @@ block main
             h2.h.h_l.mb-lg-4.mb-0 Вопросы
             .faq-list.mb-4
                 -for(var i=0;i<5;i++)
-                    .faq-item
+                    .faq-item.wow.fadeIn
                         .faq-item__quest
                             span Владельцы, подскажите мне пожалуйста, сколько с машиной идет ключей Smart key в комплекте один или два? И где можно прочитать что это такое и на сколько надежно от угона.
                             .faq-item__toggler
                                 span
                                 span
                         .faq-item__answer Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero, nesciunt eaque facere provident hic adipisci rerum corrupti autem nostrum unde aliquam repellendus! Excepturi ipsum optio quos exercitationem commodi nemo?
-            .faq-buttons
+            .faq-buttons.wow.fadeInUp
                 a(href="#").btn.btn_bd Показать весь список
                 a(href="#").btn.btn_light Задать вопрос
     section.outer-container.py-4.mb-1
         .container
             h2.h.h_l.mb-3 Новости
-            .js-swiper(data-items="3")
+            .js-swiper(data-items="3").wow.fadeInUp
                 .swiper-container
                     .swiper-wrapper
                         -for(var i=0;i<5;i++)
@@ -425,7 +441,7 @@ block main
     section.outer-container.my-md-3
         .home-map
             .home-map__map: img#map(src="img/map.jpg")
-            .home-map__contacts
+            .home-map__contacts.wow.fadeInLeft(data-wow-offset="400")
                 .container
                     .contacts-map
                         h2.h.h_l.mb-3 Контакты
@@ -447,22 +463,22 @@ block main
             h2.h.h_l.ta-center.mb-3 Приглашаем к сотрудничеству партнеров
             .h-desc.ta-center Мы производим высокотехнологичное оборудование SmartAirkey
             .row
-                .col-lg-4.d-flex.flex-column.justify-content-center.mobile-text-center.mb-3.mb-lg-0
+                .col-lg-4.d-flex.flex-column.justify-content-center.mobile-text-center.mb-3.mb-lg-0.wow.fadeInLeft
                     h3.h_m.mb-4 Эксклюзивные условия поставок
                     .default-content
                         p Выбирая SmartAirkey, вы предлагайте своим клиентам перспективные продукты и решения. Начните продажу SmartAirkey в своем городе и получите эксклюзивные условия поставок - успейте первыми предложить новый продукт своим клиентам.
                 .mb-2.mb-md-0.col-12.col-md-6.col-lg-4.d-flex
-                    .ico-block
+                    .ico-block.wow.fadeInRight
                         .ico-block__ico: i.icm.icm-update
                         .ico-block__text Система SmartAirkey совершенствует систему умного дома с помощью надежного и удобного бесключевого доступа 
                 .mb-2.mb-md-0.col-12.col-md-6.col-lg-4.d-flex
-                    .ico-block
+                    .ico-block.wow.fadeInRight(data-wow-delay="0.2s")
                         .ico-block__ico: i.icm.icm-integrate
                         .ico-block__text Легкая интеграция доступа с помощью цифровых ключей SmartAirkey в существующие СКУД для создания уникального продукта и повышения комфорта и удобства клиентов
     section.outer-container.py-4.mb-2
         .container
             h2.h.h_l.ta-center Истории успеха
-            .reviews.js-swiper
+            .reviews.js-swiper.wow.fadeInUp
                 .swiper-container: .swiper-wrapper 
                     -for(var i=0;i<3;i++)
                         .swiper-slide.reviews__item
