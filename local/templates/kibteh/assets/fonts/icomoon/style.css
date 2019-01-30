@@ -1,0 +1,115 @@
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('fonts/icomoon.ttf?e60e6f') format('truetype'),
+    url('fonts/icomoon.woff?e60e6f') format('woff'),
+    url('fonts/icomoon.svg?e60e6f#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icm {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icm-plus:before {
+  content: "\e900";
+}
+.icm-pro:before {
+  content: "\e901";
+}
+.icm-special:before {
+  content: "\e902";
+}
+.icm-system:before {
+  content: "\e903";
+}
+.icm-telegram:before {
+  content: "\e904";
+}
+.icm-update:before {
+  content: "\e905";
+}
+.icm-user:before {
+  content: "\e906";
+}
+.icm-vk:before {
+  content: "\e907";
+}
+.icm-warranty:before {
+  content: "\e908";
+}
+.icm-wifi:before {
+  content: "\e909";
+}
+.icm-admin:before {
+  content: "\e90a";
+}
+.icm-app:before {
+  content: "\e90b";
+}
+.icm-arrow:before {
+  content: "\e90c";
+}
+.icm-bluetooth:before {
+  content: "\e90d";
+}
+.icm-bluetooth__le:before {
+  content: "\e90e";
+}
+.icm-clock:before {
+  content: "\e90f";
+}
+.icm-cloud:before {
+  content: "\e910";
+}
+.icm-controller:before {
+  content: "\e911";
+}
+.icm-diamond:before {
+  content: "\e912";
+}
+.icm-factory:before {
+  content: "\e913";
+}
+.icm-fb:before {
+  content: "\e914";
+}
+.icm-hand:before {
+  content: "\e915";
+}
+.icm-insta:before {
+  content: "\e916";
+}
+.icm-integrate:before {
+  content: "\e917";
+}
+.icm-lil__arrow:before {
+  content: "\e918";
+}
+.icm-lock:before {
+  content: "\e919";
+}
+.icm-mail:before {
+  content: "\e91a";
+}
+.icm-no_key:before {
+  content: "\e91b";
+}
+.icm-phone:before {
+  content: "\e91c";
+}
+.icm-play:before {
+  content: "\e91d";
+}
