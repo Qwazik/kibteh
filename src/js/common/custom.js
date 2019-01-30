@@ -1,6 +1,7 @@
 $(function(){
     new WOW().init({
-        offset: 100
+        offset: 100,
+        mobile: false
     });
     $('[type="tel"]').mask('+7(999) 999-99-99');
     $('.fancybox').fancybox({
