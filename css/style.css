@@ -3505,10 +3505,10 @@ body {
   border-radius: 9999px;
   padding: 1.42857em 5.42857em;
   font-weight: bold;
-  -webkit-transition: background .1s, -webkit-box-shadow .3s;
-  transition: background .1s, -webkit-box-shadow .3s;
-  transition: box-shadow .3s, background .1s;
-  transition: box-shadow .3s, background .1s, -webkit-box-shadow .3s;
+  -webkit-transition: background .6s, color .6s, -webkit-box-shadow .3s;
+  transition: background .6s, color .6s, -webkit-box-shadow .3s;
+  transition: box-shadow .3s, background .6s, color .6s;
+  transition: box-shadow .3s, background .6s, color .6s, -webkit-box-shadow .3s;
   color: #30a7df;
   position: relative;
   text-align: center;
@@ -4626,6 +4626,23 @@ body {
           justify-content: center;
   display: none; }
 
+.fancybox-content#modalArticle {
+  padding: 0; }
+
+.article-modal {
+  position: relative;
+  background: #fff;
+  max-width: 54rem; }
+  .article-modal .modal__close {
+    right: 1.5rem;
+    top: 1.5rem; }
+  .article-modal__image img {
+    max-width: 100%; }
+  .article-modal__text {
+    padding: 2.5rem 3.5rem;
+    max-height: 50vh;
+    overflow: auto; }
+
 .modal {
   background: #fff;
   border-radius: 2rem;
@@ -4719,6 +4736,9 @@ body {
 
 /*-- END: elements --*/
 /*-- START: plugins --*/
+.fancybox-button.fancybox-button--close {
+  display: none; }
+
 .parsley-errors-list {
   text-align: left; }
 
@@ -4849,6 +4869,13 @@ body {
       width: 100%; } }
 
 @media screen and (max-width: 768px) {
+  .modal {
+    padding: 3rem 2rem; }
+    .modal__close {
+      top: 2rem;
+      right: 2rem; }
+    .modal__body .btn {
+      width: 100%; }
   .how-use {
     margin-top: 0;
     margin-bottom: 0;

@@ -423,7 +423,7 @@
       </section>
       <section class="outer-container pt-3">
         <div class="container">
-          <h2 class="h h_l mb-4">С кем работали</h2>
+          <h2 class="h h_l mb-4">Нашей системе доверяют</h2>
           <ul class="row ns">
             <li class="col-4 col-md-2 d-flex mb-2">
               <div class="partner-item wow fadeInUp" data-wow-delay="0"><img src="img/partner1.png" alt="lg"></div>
@@ -833,7 +833,7 @@
               <div class="faq-item__answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates vero, nesciunt eaque facere provident hic adipisci rerum corrupti autem nostrum unde aliquam repellendus! Excepturi ipsum optio quos exercitationem commodi nemo?</div>
             </div>
           </div>
-          <div class="faq-buttons wow fadeInUp"><a class="btn btn_bd" href="#">Показать весь список</a><a class="btn btn_light" href="#">Задать вопрос</a></div>
+          <div class="faq-buttons wow fadeInUp"><a class="btn btn_bd" href="#">Показать весь список</a><a class="fancybox btn btn_light" href="#sendQuest">Задать вопрос</a></div>
         </div>
       </section>
       <section class="outer-container py-4 mb-1">
@@ -842,23 +842,23 @@
           <div class="js-swiper wow fadeInUp" data-items="3">
             <div class="swiper-container">
               <div class="swiper-wrapper">
-                <div class="swiper-slide"><a class="post-item" href="#">
+                <div class="swiper-slide"><a class="post-item fancybox" href="#modalArticle">
                     <div class="post-item__image"><img class="img-responsive" src="img/carousel-image.jpg" alt=""></div>
                     <div class="post-item__title">Бесключевой доступ в Сколково</div>
                     <div class="post-item__date">14 октября </div></a></div>
-                <div class="swiper-slide"><a class="post-item" href="#">
+                <div class="swiper-slide"><a class="post-item fancybox" href="#modalArticle">
                     <div class="post-item__image"><img class="img-responsive" src="img/carousel-image.jpg" alt=""></div>
                     <div class="post-item__title">Бесключевой доступ в Сколково</div>
                     <div class="post-item__date">14 октября </div></a></div>
-                <div class="swiper-slide"><a class="post-item" href="#">
+                <div class="swiper-slide"><a class="post-item fancybox" href="#modalArticle">
                     <div class="post-item__image"><img class="img-responsive" src="img/carousel-image.jpg" alt=""></div>
                     <div class="post-item__title">Бесключевой доступ в Сколково</div>
                     <div class="post-item__date">14 октября </div></a></div>
-                <div class="swiper-slide"><a class="post-item" href="#">
+                <div class="swiper-slide"><a class="post-item fancybox" href="#modalArticle">
                     <div class="post-item__image"><img class="img-responsive" src="img/carousel-image.jpg" alt=""></div>
                     <div class="post-item__title">Бесключевой доступ в Сколково</div>
                     <div class="post-item__date">14 октября </div></a></div>
-                <div class="swiper-slide"><a class="post-item" href="#">
+                <div class="swiper-slide"><a class="post-item fancybox" href="#modalArticle">
                     <div class="post-item__image"><img class="img-responsive" src="img/carousel-image.jpg" alt=""></div>
                     <div class="post-item__title">Бесключевой доступ в Сколково</div>
                     <div class="post-item__date">14 октября </div></a></div>
@@ -998,6 +998,22 @@
         </div>
       </footer>
       <div class="modals">
+        <div class="article-modal" id="modalArticle">
+          <div class="modal__close" data-fancybox-close><i class="icm icm-plus"></i></div>
+          <div class="article-modal__image"><img src="img/article-inner-image.jpg" alt=""></div>
+          <div class="article-modal__text">
+            <div class="default-content">
+              <div class="h h_m">Доступ в Сколково</div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
+            </div>
+          </div>
+        </div>
         <div class="modal" id="emptyModal">
           <div class="modal__close" data-fancybox-close><i class="icm icm-plus"></i></div>
           <div class="modal__body"></div>
@@ -1021,6 +1037,33 @@
                 <div class="input__error"></div>
               </div>
               <button class="btn btn_primary mt-4">Оставить контакты</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal ta-center" id="sendQuest">
+          <div class="modal__close" data-fancybox-close><i class="icm icm-plus"></i></div>
+          <div class="modal__header">
+            <div class="h h_m mb-2">Оставьте ваш вопрос</div>
+            <div class="h-desc">Наши менеджеры подробно ответят на ваш вопрос в ближайшее время</div>
+          </div>
+          <div class="modal__body">
+            <form class="ajax-form form" action="#">
+              <div class="form-control">
+                <label class="input"><span class="input__input">
+                    <input name="name" type="name" placeholder="Василий" data-parsley-required><span class="input__placeholder">Имя</span></span></label>
+                <div class="input__error"></div>
+              </div>
+              <div class="form-control">
+                <label class="input"><span class="input__input">
+                    <input name="name" type="email" placeholder="mail@mail.ru" data-parsley-required><span class="input__placeholder">Почта</span></span></label>
+                <div class="input__error"></div>
+              </div>
+              <div class="form-control">
+                <label class="input"><span class="input__input">
+                    <input name="name" type="test" data-parsley-required><span class="input__placeholder">Ваш вопрос</span></span></label>
+                <div class="input__error"></div>
+              </div>
+              <button class="btn btn_primary mt-4">Отправить</button>
             </form>
           </div>
         </div>

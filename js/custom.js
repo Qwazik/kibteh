@@ -1,12 +1,12 @@
 $(function(){
-    new WOW().init({
+    new WOW({
         offset: 100,
         mobile: false
-    });
+    }).init();
     $('[type="tel"]').mask('+7(999) 999-99-99');
     $('.fancybox').fancybox({
         smallBtn: false,
-        
+        touch:false
     });
     
     //feature
@@ -62,8 +62,8 @@ $(function(){
             var quest =  $this.find('.faq-item__quest');
             var answer = $this.find('.faq-item__answer');
             quest.click(function(){
-                $this.toggleClass('faq-item_active');
-                answer.slideToggle();
+                $this.stop(true,true).toggleClass('faq-item_active');
+                answer.stop(true,true).slideToggle();
             });
         });
     }());
@@ -125,28 +125,6 @@ $(function(){
             });
         });
     }());
-
-    //about feature detail
-    (function(){
-        var feature = '.about-feature';
-        $(feature).each(function(){
-            var $feature = $(this),
-                $featureDetail = $feature.find('.about-feature__detail').html(),
-                $detailButton = $feature.find('.about-feature__btn');
-            $detailButton.click(function(){
-                $('#emptyModal').find('.modal__body').html($featureDetail);
-                $.fancybox.open({src:'#emptyModal'},{
-                    smallBtn: false,
-                    afterLoad: function(){
-                        $('.fancybox').fancybox({
-                            smallBtn: false
-                        })
-                    }
-                })
-            });
-        });
-    }());
-
     
     //sliders
 
@@ -389,6 +367,7 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
                     if(typeof swiper === 'object'){
                         swiper.update();
                         //console.log('update');
+
                     }else{
                         swiper = new Swiper($thisSwiper, $.extend(swiperProps, {navigation: {
                             nextEl: next,
@@ -396,16 +375,40 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
                             disabledClass: 'slider-btn_disabled'
                         }})) 
                         //console.log('init');
+                        
                         console.log(prev, next);
                     }
                 }
+                
             }else{
                 if(sliderInserted){
                     //console.log('removeSlider');
+                    
                     sliderInserted = false;
                     $targetContainerLink.html($target);
                 }
             }
         }   
+    });
+
+
+    //about feature detail
+
+        
+          
+      
+
+    $(document).click('.about-feature__btn', function(e){
+        var $feature = $(e.target).closest('.about-feature'),
+            $featureDetail = $feature.find('.about-feature__detail').html();
+        $('#emptyModal').find('.modal__body').html($featureDetail);
+        $.fancybox.open({src:'#emptyModal'},{
+            smallBtn: false,
+            afterLoad: function(){
+                $('.fancybox').fancybox({
+                    smallBtn: false
+                })
+            }
+        })
     });
 }
