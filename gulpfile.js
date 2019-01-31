@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 const gulp = require('gulp');
 const browserSync = require('browser-sync');
@@ -20,10 +20,23 @@ const webpack = require('webpack');
 const webpackGulp = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 const reload = browserSync.reload;
-const buildPath = 'build';
+
+//settings
 const srcPath = 'src';
-const other = false;
+const buildPath = 'build';
+//const coreBitrixPath = '../local/templates/kibteh/assets';
+const coreBitrixPath = 'test';
+const buildPathBitrix = {
+    css: coreBitrixPath+'/css',
+    libs: coreBitrixPath+'/libs',
+    js: coreBitrixPath+'/js',
+    fonts: coreBitrixPath+'/fonts',
+    img: coreBitrixPath+'/img'
+};
+const buildBitrix = true;
 const proxy = false;
+const other = false;
+//settings
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
@@ -161,6 +174,7 @@ gulp.task('build:js', function(){
             })
         }))
         .pipe(gulp.dest(path.build.js.common))
+        .pipe(gulpIf(buildBitrix, gulp.dest(buildPathBitrix.js)))
         .pipe(browserSync.stream());
 });
 
@@ -182,6 +196,7 @@ gulp.task('build:css', function(){
         .pipe(sass())
         .pipe(gulpIf(isDevelopment, sourcemaps.write()))
         .pipe(prefixer())
+        .pipe(gulpIf(buildBitrix, gulp.dest(buildPathBitrix.css)))
         .pipe(gulp.dest(path.build.css))
         .pipe(browserSync.stream())
 });
@@ -200,6 +215,7 @@ gulp.task('build:img', function(){
             })
         }))
         .pipe(cached())
+        .pipe(gulpIf(buildBitrix, gulp.dest(buildPathBitrix.img)))
         .pipe(gulp.dest(path.build.img))
 });
 
@@ -228,6 +244,7 @@ gulp.task('build:imagemin', function(){
                 ]
             })
         ]))
+        .pipe(gulpIf(buildBitrix, gulp.dest(buildPathBitrix.img)))
         .pipe(gulp.dest(path.build.img))
 });
 
@@ -245,6 +262,7 @@ gulp.task('build:fonts', function(){
             })
         }))
         .pipe(newer(path.src.fonts))
+        .pipe(gulpIf(buildBitrix, gulp.dest(buildPathBitrix.fonts)))
         .pipe(gulp.dest(path.build.fonts))
         .pipe(browserSync.stream());
 });
@@ -277,6 +295,24 @@ gulp.task('build:php', function(callback){
 });
 
 /*-------------------------------------------------*/
+/*  libs for bx
+/*-------------------------------------------------*/
+gulp.task('build:libs.bx', function(){
+    return gulp.src('build/libs/**/*')
+        .pipe(plumber({
+            errorHandler: notify.onError(function(err){
+                return {
+                    title: 'libx for bx',
+                    message: err.message
+                }
+            })
+        }))
+        .pipe(newer('build/libs/**/*'))
+        .pipe(gulpIf(buildBitrix, gulp.dest(buildPathBitrix.libs)))
+        .pipe(browserSync.stream());
+});
+
+/*-------------------------------------------------*/
 /*  html
 /*-------------------------------------------------*/
 gulp.task('build:html', function(callback){
@@ -304,7 +340,7 @@ gulp.task('build:sprite', function (callback) {
             cssVarMap: function (sprite) {
                 sprite.name = 'icon-' + sprite.name;
             }
-        }))
+        }));
     spriteData.img.pipe(gulp.dest(path.build.icons));
     spriteData.css.pipe(gulp.dest(srcPath+'/scss/_settings/'));
     callback();
@@ -316,16 +352,12 @@ gulp.task('build:sprite', function (callback) {
 /*-------------------------------------------------*/
 gulp.task('clean', function(callback){
     cached.caches = {};
-    del([buildPath+'/*', '!build/libs']).then(paths => {
-        callback();
-    });
-
-});
-
-gulp.task('clean', function(callback){
-    cached.caches = {};
     if(other){
         del([buildPath+'/{img,css,js,fonts,icons,data}/']).then(paths => {
+            callback();
+        });
+    }else if(buildBitrix){
+        del([coreBitrixPath, buildPath+'/*', '!build/libs']).then(paths => {
             callback();
         });
     }else{
@@ -353,8 +385,7 @@ gulp.task('build', gulp.parallel(
     'build:js',
     'build:fonts',
     'build:data',
-    'build:php',
-    'build:html',
+    'build:libs.bx',
     gulp.series(
         'build:img',
         'build:sprite',
@@ -372,6 +403,9 @@ gulp.task('watch', function(){
     if(other){
         gulp.watch(path.watch.html, gulp.series('build:html'));
         gulp.watch(path.watch.php, gulp.series('build:php'));
+    }
+    if(buildBitrix){
+        gulp.watch('build/libs/**/*', gulp.series('build:libs.bx'));
     }
     gulp.watch(path.watch.pug, gulp.series('build:pug'));
     gulp.watch(path.watch.blocks, gulp.series('build:blocks'));
