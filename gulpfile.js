@@ -316,7 +316,7 @@ gulp.task('build:sprite', function (callback) {
 /*-------------------------------------------------*/
 gulp.task('clean', function(callback){
     cached.caches = {};
-    del([buildPath+'/*', '!assets/libs']).then(paths => {
+    del([buildPath+'/*', '!build/libs']).then(paths => {
         callback();
     });
 
@@ -329,7 +329,7 @@ gulp.task('clean', function(callback){
             callback();
         });
     }else{
-        del([buildPath+'/*', '!assets/libs']).then(paths => {
+        del([buildPath+'/*', '!build/libs']).then(paths => {
             callback();
         });
     }
