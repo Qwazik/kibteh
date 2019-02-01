@@ -24,8 +24,7 @@ const reload = browserSync.reload;
 //settings
 const srcPath = 'src';
 const buildPath = 'build';
-//const coreBitrixPath = '../local/templates/kibteh/assets';
-const coreBitrixPath = 'test';
+const coreBitrixPath = '../local/templates/kibteh/assets';
 const buildPathBitrix = {
     css: coreBitrixPath+'/css',
     libs: coreBitrixPath+'/libs',
@@ -34,7 +33,7 @@ const buildPathBitrix = {
     img: coreBitrixPath+'/img'
 };
 const buildBitrix = true;
-const proxy = false;
+const proxy = 'kibteh.loc';
 const other = false;
 //settings
 
@@ -88,7 +87,9 @@ var path = {
 gulp.task("server", function(){
     if(proxy){
         browserSync({
-            proxy: proxy
+            proxy: proxy,
+            ws: true,
+            logLevel: "debug"
         });
     }else{
         browserSync({
@@ -192,9 +193,9 @@ gulp.task('build:css', function(){
                 }
             })
         }))
-        .pipe(gulpIf(isDevelopment, sourcemaps.init()))
+        .pipe(gulpIf(isDevelopment && !buildBitrix, sourcemaps.init()))
         .pipe(sass())
-        .pipe(gulpIf(isDevelopment, sourcemaps.write()))
+        .pipe(gulpIf(isDevelopment && !buildBitrix, sourcemaps.write()))
         .pipe(prefixer())
         .pipe(gulpIf(buildBitrix, gulp.dest(buildPathBitrix.css)))
         .pipe(gulp.dest(path.build.css))
@@ -353,15 +354,15 @@ gulp.task('build:sprite', function (callback) {
 gulp.task('clean', function(callback){
     cached.caches = {};
     if(other){
-        del([buildPath+'/{img,css,js,fonts,icons,data}/']).then(paths => {
+        del([buildPath+'/{img,css,js,fonts,icons,data}/'], {force: true}).then(paths => {
             callback();
         });
     }else if(buildBitrix){
-        del([coreBitrixPath, buildPath+'/*', '!build/libs']).then(paths => {
+        del([coreBitrixPath, buildPath+'/*', '!build/libs'], {force: true}).then(paths => {
             callback();
         });
     }else{
-        del([buildPath+'/*', '!build/libs']).then(paths => {
+        del([buildPath+'/*', '!build/libs'], {force: true}).then(paths => {
             callback();
         });
     }
@@ -409,7 +410,7 @@ gulp.task('watch', function(){
     }
     gulp.watch(path.watch.pug, gulp.series('build:pug'));
     gulp.watch(path.watch.blocks, gulp.series('build:blocks'));
-    gulp.watch(path.watch.css, gulp.series('build:css'));
+    gulp.watch(path.watch.css, gulp.series('build:css')).on('change', function(){browserSync.reload({stream: true})});
     //gulp.watch(path.watch.js.webpack, gulp.series('build:webpack'));
     gulp.watch(path.watch.js.common, gulp.series('build:js'));
     gulp.watch(path.watch.icons, gulp.series('build:sprite'))

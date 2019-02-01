@@ -1107,7 +1107,9 @@ body{
 //main-slider
 .main-slider{
     position: relative;
-    
+    &.initialized .slider-navigation{
+        display: flex;
+    }
     &__navigation{
         margin-bottom: 3rem;
     }
