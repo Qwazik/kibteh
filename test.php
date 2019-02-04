@@ -2,9 +2,11 @@
 
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Новая страница");
-?><?$APPLICATION->IncludeComponent(
+?>
+
+<? $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	"typesolution", 
+	"about_system", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -18,13 +20,13 @@ $APPLICATION->SetTitle("Новая страница");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => "typesolution",
+		"COMPONENT_TEMPLATE" => "about_system",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "Y",
 		"DISPLAY_PICTURE" => "Y",
-		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
 			0 => "",
@@ -32,24 +34,24 @@ $APPLICATION->SetTitle("Новая страница");
 		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "2",
+		"IBLOCK_ID" => "7",
 		"IBLOCK_TYPE" => "ru",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"INCLUDE_SUBSECTIONS" => "Y",
+		"INCLUDE_SUBSECTIONS" => "N",
 		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "0",
+		"NEWS_COUNT" => "20",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
-		"PAGER_TITLE" => "Типовые решения",
+		"PAGER_TITLE" => "",
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "ICON",
 			1 => "",
 		),
 		"SET_BROWSER_TITLE" => "N",
@@ -66,4 +68,6 @@ $APPLICATION->SetTitle("Новая страница");
 		"STRICT_SECTION_CHECK" => "N"
 	),
 	false
-);?><br><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+); ?>
+
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

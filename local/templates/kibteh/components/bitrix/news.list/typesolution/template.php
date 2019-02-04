@@ -84,9 +84,11 @@ foreach ($arResult['ITEMS'] as $item){
 														</div>
 													</div>
 													<h3 class="h h_m mb-2"><?=$item['NAME'];?></h3>
+													<div class="default-content mb-4">
 													<?if(!empty($item['PREVIEW_TEXT'])):?>
 														<?=$item['PREVIEW_TEXT'];?>
 													<?endif;?>
+													</div>
 													<a class="btn btn_bd" href="<?=$item['DETAIL_PAGE_URL'];?>">Подробнее</a>
 												</div>
 											</div>

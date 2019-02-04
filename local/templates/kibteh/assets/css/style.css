@@ -3312,7 +3312,7 @@ body {
     line-height: 1.5; }
     .default-content p:first-child, .default-content ul:first-child, .default-content ol:first-child {
       margin-top: 0; }
-    .default-content p::last-child, .default-content ul::last-child, .default-content ol::last-child {
+    .default-content p:last-child, .default-content ul:last-child, .default-content ol:last-child {
       margin-bottom: 0; }
   .default-content ul li:not(:first-child), .default-content ol li:not(:first-child) {
     margin-top: 1.3rem; }
