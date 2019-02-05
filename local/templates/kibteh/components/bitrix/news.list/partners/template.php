@@ -18,18 +18,18 @@ $this->setFrameMode(true);
 		<div class="container">
 			<h2 class="h h_l mb-4"><?=$arResult['NAME'];?></h2>
 			<ul class="row ns">
-				<?$i=0;foreach ($arResult['ITEMS'] as $arItem):
+				<?$cnt=0;foreach ($arResult['ITEMS'] as $arItem):
 					$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 					$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 					?>
 				  <li class="col-4 col-md-2 d-flex mb-2">
-					  <div class="partner-item wow fadeInUp" data-wow-delay="0" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+					  <div class="partner-item wow fadeInUp" data-wow-delay="<?=($cnt*0.15).'s';?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 						<?if(!empty($arItem['PREVIEW_PICTURE']['SRC'])):?>
 							<img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt="<?=$arItem['NAME'];?>">
 						<?endif;?>
 					  </div>
 				  </li>
-				<?endforeach;?>
+				<?$cnt++;endforeach;?>
 			</ul>
 		</div>
 	</section>

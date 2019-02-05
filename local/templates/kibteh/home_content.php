@@ -564,24 +564,87 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 <section class="outer-container py-3">
 	<div class="container how-use">
 		<div class="how-use__header wow fadeInLeft">
-			<h2 class="h h_l mb-3">Мобильные приложения</h2>
+			<h2 class="h h_l mb-3">
+<!-- START: app_header -->
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"PATH" => SITE_TEMPLATE_PATH."/include_areas/app_header.php"
+	),
+	false
+);?>
+<!-- END: app_header -->
+            </h2>
 			<div class="default-content mb-3">
-				<p>Наше мобильное приложение специально разработано для платформ IOS и Android. При создании системы мы
-					использовали передовые технологии. Такой подход позволяет нам открывать новые возможности СКУД и
-					расширять их функционал.
-				</p>
+                 <!-- START: app_desc -->
+                     <? $APPLICATION->IncludeComponent(
+                         "bitrix:main.include",
+                         "",
+                         Array("AREA_FILE_SHOW" => "file",
+                             "AREA_FILE_SUFFIX" => "inc",
+                             "EDIT_TEMPLATE" => "",
+                             "PATH" => SITE_TEMPLATE_PATH."/include_areas/app_desc.php")
+                     ); ?>
+                 <!-- END: app_desc -->
 			</div>
 		</div>
 		<div class="how-use__bottom">
 			<div class="how-use__image wow fadeInRight">
-				<img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/phone.png" alt="">
+				 <!-- START: app_image -->
+				     <? $APPLICATION->IncludeComponent(
+				         "bitrix:main.include",
+				         "",
+				         Array("AREA_FILE_SHOW" => "file",
+				             "AREA_FILE_SUFFIX" => "inc",
+				             "EDIT_TEMPLATE" => "",
+				             "PATH" => SITE_TEMPLATE_PATH."/include_areas/app_image.php")
+				     ); ?>
+				 <!-- END: app_image -->
 			</div>
 			<div class="how-use__bottom-left wow fadeInLeft">
-				<h3 class="h h_m mb-4">Как пользоваться приложением?</h3>
+				<h3 class="h h_m mb-4">
+                     <!-- START: app_header2 -->
+                         <? $APPLICATION->IncludeComponent(
+                             "bitrix:main.include",
+                             "",
+                             Array("AREA_FILE_SHOW" => "file",
+                                 "AREA_FILE_SUFFIX" => "inc",
+                                 "EDIT_TEMPLATE" => "",
+                                 "PATH" => SITE_TEMPLATE_PATH."/include_areas/app_header2.php")
+                         ); ?>
+                     <!-- END: app_header2 -->
+                </h3>
 				<ol class="how-use__list">
 					<li class="how-use__item">
-						<div class="how-use__title">Скачайте приложение</div>
-						<p class="how-use__text">Скачайте приложение в Google Play или App Store</p>
+						<div class="how-use__title">
+                             <!-- START: app_stage1_header -->
+                                 <? $APPLICATION->IncludeComponent(
+                                     "bitrix:main.include",
+                                     "",
+                                     Array("AREA_FILE_SHOW" => "file",
+                                         "AREA_FILE_SUFFIX" => "inc",
+                                         "EDIT_TEMPLATE" => "",
+                                         "PATH" => SITE_TEMPLATE_PATH."/include_areas/app_stage1_header.php")
+                                 ); ?>
+                             <!-- END: app_stage1_header -->
+                        </div>
+						<p class="how-use__text">
+                             <!-- START: app_stage1_desc -->
+                                 <? $APPLICATION->IncludeComponent(
+                                     "bitrix:main.include",
+                                     "",
+                                     Array("AREA_FILE_SHOW" => "file",
+                                         "AREA_FILE_SUFFIX" => "inc",
+                                         "EDIT_TEMPLATE" => "",
+                                         "PATH" => SITE_TEMPLATE_PATH."/include_areas/app_stage1_desc.php")
+                                 ); ?>
+                             <!-- END: app_stage1_desc -->
+                        </p>
 						<div class="how-use__btns">
 							<?if($googleplayLink):?>
 							<a class="app-btn" href="<?=$googleplayLink;?>">
@@ -596,12 +659,56 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 						</div>
 					</li>
 					<li class="how-use__item">
-						<div class="how-use__title">Регистрация</div>
-						<p class="how-use__text">Зарегистрируйтесь в приложении.</p>
+						<div class="how-use__title">
+                             <!-- START: app_stage2_header -->
+                                 <? $APPLICATION->IncludeComponent(
+                                     "bitrix:main.include",
+                                     "",
+                                     Array("AREA_FILE_SHOW" => "file",
+                                         "AREA_FILE_SUFFIX" => "inc",
+                                         "EDIT_TEMPLATE" => "",
+                                         "PATH" => SITE_TEMPLATE_PATH."/include_areas/app_stage2_header.php")
+                                 ); ?>
+                             <!-- END: app_stage2_header -->
+                        </div>
+						<p class="how-use__text">
+                             <!-- START: app_stage2_desc -->
+                                 <? $APPLICATION->IncludeComponent(
+                                     "bitrix:main.include",
+                                     "",
+                                     Array("AREA_FILE_SHOW" => "file",
+                                         "AREA_FILE_SUFFIX" => "inc",
+                                         "EDIT_TEMPLATE" => "",
+                                         "PATH" => SITE_TEMPLATE_PATH."/include_areas/app_stage2_desc.php")
+                                 ); ?>
+                             <!-- END: app_stage2_desc -->
+                        </p>
 					</li>
 					<li class="how-use__item">
-						<div class="how-use__title">Бесключевой доступ</div>
-						<p class="how-use__text">Пользуйтесь бесключевым доступом.</p>
+						<div class="how-use__title">
+                             <!-- START: app_stage3_header -->
+                                 <? $APPLICATION->IncludeComponent(
+                                     "bitrix:main.include",
+                                     "",
+                                     Array("AREA_FILE_SHOW" => "file",
+                                         "AREA_FILE_SUFFIX" => "inc",
+                                         "EDIT_TEMPLATE" => "",
+                                         "PATH" => SITE_TEMPLATE_PATH."/include_areas/app_stage3_header.php")
+                                 ); ?>
+                             <!-- END: app_stage3_header -->
+                        </div>
+						<p class="how-use__text">
+                             <!-- START: app_stage3_desc -->
+                                 <? $APPLICATION->IncludeComponent(
+                                     "bitrix:main.include",
+                                     "",
+                                     Array("AREA_FILE_SHOW" => "file",
+                                         "AREA_FILE_SUFFIX" => "inc",
+                                         "EDIT_TEMPLATE" => "",
+                                         "PATH" => SITE_TEMPLATE_PATH."/include_areas/app_stage3_desc.php")
+                                 ); ?>
+                             <!-- END: app_stage3_desc -->
+                        </p>
 					</li>
 				</ol>
 			</div>
@@ -692,65 +799,71 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 	),
 	false
 );?>
-<section class="outer-container py-4">
-	<div class="container">
-		<h2 class="h h_l mb-4 ta-center">Выполненные проекты</h2>
-		<div class="js-swiper wow fadeInUp" data-items="3">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<a class="post-item" href="#">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a class="post-item" href="#">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a class="post-item" href="#">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a class="post-item" href="#">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a class="post-item" href="#">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="slider-navigation slider-navigation_centered">
-				<div class="slider-btn" data-prev>
-					<i class="icm icm-arrow rotate-180"></i>
-				</div>
-				<div class="slider-btn" data-next>
-					<i class="icm icm-arrow"></i>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"works", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "works",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "DETAIL_PICTURE",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "10",
+		"IBLOCK_TYPE" => "ru",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	),
+	false
+); ?>
 <section class="outer-container py-4">
 	<div class="container">
 		<h2 class="h h_l mb-lg-4 mb-0">Вопросы</h2>
@@ -827,71 +940,71 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 		</div>
 	</div>
 </section>
-<section class="outer-container py-4 mb-1">
-	<div class="container">
-		<h2 class="h h_l mb-3">Новости</h2>
-		<div class="js-swiper wow fadeInUp" data-items="3">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<a class="post-item fancybox" href="#modalArticle">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-							<div class="post-item__date">14 октября</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a class="post-item fancybox" href="#modalArticle">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-							<div class="post-item__date">14 октября</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a class="post-item fancybox" href="#modalArticle">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-							<div class="post-item__date">14 октября</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a class="post-item fancybox" href="#modalArticle">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-							<div class="post-item__date">14 октября</div>
-						</a>
-					</div>
-					<div class="swiper-slide">
-						<a class="post-item fancybox" href="#modalArticle">
-							<div class="post-item__image">
-								<img class="img-responsive" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/carousel-image.jpg" alt="">
-							</div>
-							<div class="post-item__title">Бесключевой доступ в Сколково</div>
-							<div class="post-item__date">14 октября</div>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="slider-navigation slider-navigation_centered">
-				<div class="slider-btn" data-prev>
-					<i class="icm icm-arrow rotate-180"></i>
-				</div>
-				<div class="slider-btn" data-next>
-					<i class="icm icm-arrow"></i>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"works", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "j F Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "works",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "DETAIL_PICTURE",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "11",
+		"IBLOCK_TYPE" => "ru",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	),
+	false
+); ?>
 <section class="outer-container my-md-3">
 	<div class="home-map">
 		<div class="home-map__map">

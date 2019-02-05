@@ -4650,7 +4650,7 @@ body {
     right: 1.5rem;
     top: 1.5rem; }
   .article-modal__image img {
-    max-width: 100%; }
+    width: 100%; }
   .article-modal__text {
     padding: 2.5rem 3.5rem;
     max-height: 50vh;

@@ -4,6 +4,20 @@ $(function(){
         mobile: false
     }).init();
     $('[type="tel"]').mask('+7(999) 999-99-99');
+    $('.fancybox[href="#modalArticle"]').click(function(){
+        var $this = $(this),
+            image = $this.find('[data-detail-picture]').clone(),
+            text = $this.find('[data-detail-text]').html(),
+            $modal = $('#modalArticle'),
+            modalImage = $modal.find('.article-modal__image'),
+            modalText = $modal.find('.article-modal__text .default-content');
+        modalImage.html(image);
+        modalText.html(text);
+        console.log($this.find('[data-detail-picture]')[0]);
+        console.log([
+            image[0],text
+        ]);
+    });
     $('.fancybox').fancybox({
         smallBtn: false,
         touch:false

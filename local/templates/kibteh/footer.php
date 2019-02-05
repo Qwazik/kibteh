@@ -37,18 +37,11 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 <div class="modals">
 	<div class="article-modal" id="modalArticle">
 		<div class="modal__close" data-fancybox-close><i class="icm icm-plus"></i></div>
-		<div class="article-modal__image"><img src="<?=SITE_TEMPLATE_PATH?>/assets/img/article-inner-image.jpg" alt=""></div>
+		<div class="article-modal__image">
+            <img src="<?=SITE_TEMPLATE_PATH?>/assets/img/article-inner-image.jpg" alt="">
+        </div>
 		<div class="article-modal__text">
-			<div class="default-content">
-				<div class="h h_m">Доступ в Сколково</div>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil in explicabo expedita repellendus ea rem consectetur eaque ab eum tempore qui libero voluptatem ratione eveniet, blanditiis optio ipsa minima?</p>
-			</div>
+			<div class="default-content"></div>
 		</div>
 	</div>
 	<div class="modal" id="emptyModal">
