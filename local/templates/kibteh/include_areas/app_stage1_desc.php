@@ -1,0 +1,1 @@
+Скачайте приложение в Google Play или App Store
