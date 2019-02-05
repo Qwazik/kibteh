@@ -8,6 +8,10 @@ $appstoreLink = \COption::GetOptionString(
 	"askaron.settings",
 	"UF_APPSTORE_LINK"
 );
+$address = \COption::GetOptionString(
+	"askaron.settings",
+	"UF_ADDRESS"
+);
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 <div class="outer-container mb-sm-3">
 	<div class="main-slider animated fadeIn">
@@ -490,244 +494,73 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 	),
 	false
 ); ?>
-<section class="outer-container py-3">
-	<div class="container">
-		<h2 class="h h_l ta-center mb-4">Нашей компанией была разработана система
-			<br>
-			на основе уникальных контроллеров
-		</h2>
-		<div class="product-slider js-swiper wow fadeInUp">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="product-slide">
-							<div class="row">
-								<div class="col product-slide__image">
-									<img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/product-slider-image.jpg" alt="">
-								</div>
-								<div class="col pr-lg-5 pr-1">
-									<div class="default-content mb-4">
-										<h3 class="h h_m mb-2">Контроллер SmartAirkey</h3>
-										<p>Контроллер доступа SmartAirkey SmartLock предназначен для контроля и
-											управления доступом при помощи смартфона и представляет собой
-											микропроцессорное электронное устройство. Контроллер может использоваться
-											для управления доступом через двери, шлагбаумы, турникеты и другие средства
-											ограничения доступа как самостоятельно, так и в составе Системы контроля и
-											управления доступом.
-										</p>
-										<p>Система бесконтактного доступа SmartAirkey может использоваться в жилых
-											комплексах, в загородных домах, в коттеджах, при оснащении умных домов, в
-											коттеджных и дачных поселках, на парковках и автостоянках, в бизнес-центрах
-											и офисах. Везде, где необходимо обеспечить бесключевой доступ «свободные
-											руки».
-										</p>
-									</div>
-									<div class="row product-slide__price-block">
-										<div class="col-auto">
-											<div class="product-slide__price">12 000 р.</div>
-										</div>
-										<div class="col">
-											<a class="fancybox btn btn_primary" href="#giveContacts">Купить</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-auto d-none d-md-block">
-									<h4 class="h h_s mb-2">Характеристики</h4>
-									<div class="props-images mb-1">
-										<div class="props-images__item">
-											<i class="icm icm-wifi"></i>
-										</div>
-										<div class="props-images__item">
-											<i class="icm icm-bluetooth"></i>
-										</div>
-										<div class="props-images__item">
-											<i class="icm icm-bluetooth__le"></i>
-										</div>
-									</div>
-									<ul class="props-list">
-										<li>1 реле (до 7А, 220V)</li>
-										<li>Питание 9-16v</li>
-										<li>Корпус DIN 6</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-slide">
-							<div class="row">
-								<div class="col product-slide__image">
-									<img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/product-slider-image.jpg" alt="">
-								</div>
-								<div class="col pr-lg-5 pr-1">
-									<div class="default-content mb-4">
-										<h3 class="h h_m mb-2">Контроллер SmartAirkey</h3>
-										<p>Контроллер доступа SmartAirkey SmartLock предназначен для контроля и
-											управления доступом при помощи смартфона и представляет собой
-											микропроцессорное электронное устройство. Контроллер может использоваться
-											для управления доступом через двери, шлагбаумы, турникеты и другие средства
-											ограничения доступа как самостоятельно, так и в составе Системы контроля и
-											управления доступом.
-										</p>
-										<p>Система бесконтактного доступа SmartAirkey может использоваться в жилых
-											комплексах, в загородных домах, в коттеджах, при оснащении умных домов, в
-											коттеджных и дачных поселках, на парковках и автостоянках, в бизнес-центрах
-											и офисах. Везде, где необходимо обеспечить бесключевой доступ «свободные
-											руки».
-										</p>
-									</div>
-									<div class="row product-slide__price-block">
-										<div class="col-auto">
-											<div class="product-slide__price">12 000 р.</div>
-										</div>
-										<div class="col">
-											<a class="fancybox btn btn_primary" href="#giveContacts">Купить</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-auto d-none d-md-block">
-									<h4 class="h h_s mb-2">Характеристики</h4>
-									<div class="props-images mb-1">
-										<div class="props-images__item">
-											<i class="icm icm-wifi"></i>
-										</div>
-										<div class="props-images__item">
-											<i class="icm icm-bluetooth"></i>
-										</div>
-										<div class="props-images__item">
-											<i class="icm icm-bluetooth__le"></i>
-										</div>
-									</div>
-									<ul class="props-list">
-										<li>1 реле (до 7А, 220V)</li>
-										<li>Питание 9-16v</li>
-										<li>Корпус DIN 6</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-slide">
-							<div class="row">
-								<div class="col product-slide__image">
-									<img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/product-slider-image.jpg" alt="">
-								</div>
-								<div class="col pr-lg-5 pr-1">
-									<div class="default-content mb-4">
-										<h3 class="h h_m mb-2">Контроллер SmartAirkey</h3>
-										<p>Контроллер доступа SmartAirkey SmartLock предназначен для контроля и
-											управления доступом при помощи смартфона и представляет собой
-											микропроцессорное электронное устройство. Контроллер может использоваться
-											для управления доступом через двери, шлагбаумы, турникеты и другие средства
-											ограничения доступа как самостоятельно, так и в составе Системы контроля и
-											управления доступом.
-										</p>
-										<p>Система бесконтактного доступа SmartAirkey может использоваться в жилых
-											комплексах, в загородных домах, в коттеджах, при оснащении умных домов, в
-											коттеджных и дачных поселках, на парковках и автостоянках, в бизнес-центрах
-											и офисах. Везде, где необходимо обеспечить бесключевой доступ «свободные
-											руки».
-										</p>
-									</div>
-									<div class="row product-slide__price-block">
-										<div class="col-auto">
-											<div class="product-slide__price">12 000 р.</div>
-										</div>
-										<div class="col">
-											<a class="fancybox btn btn_primary" href="#giveContacts">Купить</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-auto d-none d-md-block">
-									<h4 class="h h_s mb-2">Характеристики</h4>
-									<div class="props-images mb-1">
-										<div class="props-images__item">
-											<i class="icm icm-wifi"></i>
-										</div>
-										<div class="props-images__item">
-											<i class="icm icm-bluetooth"></i>
-										</div>
-										<div class="props-images__item">
-											<i class="icm icm-bluetooth__le"></i>
-										</div>
-									</div>
-									<ul class="props-list">
-										<li>1 реле (до 7А, 220V)</li>
-										<li>Питание 9-16v</li>
-										<li>Корпус DIN 6</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="product-slide">
-							<div class="row">
-								<div class="col product-slide__image">
-									<img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/product-slider-image.jpg" alt="">
-								</div>
-								<div class="col pr-lg-5 pr-1">
-									<div class="default-content mb-4">
-										<h3 class="h h_m mb-2">Контроллер SmartAirkey</h3>
-										<p>Контроллер доступа SmartAirkey SmartLock предназначен для контроля и
-											управления доступом при помощи смартфона и представляет собой
-											микропроцессорное электронное устройство. Контроллер может использоваться
-											для управления доступом через двери, шлагбаумы, турникеты и другие средства
-											ограничения доступа как самостоятельно, так и в составе Системы контроля и
-											управления доступом.
-										</p>
-										<p>Система бесконтактного доступа SmartAirkey может использоваться в жилых
-											комплексах, в загородных домах, в коттеджах, при оснащении умных домов, в
-											коттеджных и дачных поселках, на парковках и автостоянках, в бизнес-центрах
-											и офисах. Везде, где необходимо обеспечить бесключевой доступ «свободные
-											руки».
-										</p>
-									</div>
-									<div class="row product-slide__price-block">
-										<div class="col-auto">
-											<div class="product-slide__price">12 000 р.</div>
-										</div>
-										<div class="col">
-											<a class="fancybox btn btn_primary" href="#giveContacts">Купить</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-auto d-none d-md-block">
-									<h4 class="h h_s mb-2">Характеристики</h4>
-									<div class="props-images mb-1">
-										<div class="props-images__item">
-											<i class="icm icm-wifi"></i>
-										</div>
-										<div class="props-images__item">
-											<i class="icm icm-bluetooth"></i>
-										</div>
-										<div class="props-images__item">
-											<i class="icm icm-bluetooth__le"></i>
-										</div>
-									</div>
-									<ul class="props-list">
-										<li>1 реле (до 7А, 220V)</li>
-										<li>Питание 9-16v</li>
-										<li>Корпус DIN 6</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="slider-navigation slider-navigation_centered">
-				<div class="slider-btn" data-prev>
-					<i class="icm icm-arrow rotate-180"></i>
-				</div>
-				<div class="slider-btn" data-next>
-					<i class="icm icm-arrow"></i>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"products", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "products",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "8",
+		"IBLOCK_TYPE" => "ru",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "PARAMS_ADDITIONAL",
+			1 => "PARAMS",
+			2 => "PRICE",
+			3 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	),
+	false
+); ?>
 <section class="outer-container py-3">
 	<div class="container how-use">
 		<div class="how-use__header wow fadeInLeft">
@@ -775,71 +608,71 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 		</div>
 	</div>
 </section>
-<section class="outer-container py-3 mobile-text-center">
-	<div class="container">
-		<div class="row mb-4 mb-lg-6">
-			<div class="col-12 col-lg-6">
-				<h2 class="h h_l mb-2">Монтаж</h2>
-				<div class="default-content">
-					<p>Устанавливаем системы SmartAirkey качественно и быстро. При установке мы ориентируемся на
-						тонкости работы объекта и гарантируем дальнейшее обслуживание и поддержку.
-					</p>
-				</div>
-			</div>
-			<div class="col d-none d-md-block"></div>
-		</div>
-		<div class="row">
-			<div class="col-12 col-md-6 col-lg mb-2 mb-md-4 mb-lg-0">
-				<div class="install-item wow fadeInUp" data-wow-delay=".5s">
-					<div class="install-item__ico">
-						<i class="icm icm-pro"></i>
-					</div>
-					<div class="install-item__col">
-						<div class="install-item__title">Профессионально</div>
-						<div class="default-content">Наши работники имеют соответствующие сертификаты для работы с
-							оборудованием.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg mb-2 mb-md-4 mb-lg-0">
-				<div class="install-item wow fadeInUp" data-wow-delay=".4s">
-					<div class="install-item__ico">
-						<i class="icm icm-warranty"></i>
-					</div>
-					<div class="install-item__col">
-						<div class="install-item__title">Гарантийное постобслуживание</div>
-						<div class="default-content">В течение года обслуживание бесплатно.</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg mb-2 mb-md-4 mb-lg-0">
-				<div class="install-item wow fadeInUp" data-wow-delay=".2s">
-					<div class="install-item__ico">
-						<i class="icm icm-system"></i>
-					</div>
-					<div class="install-item__col">
-						<div class="install-item__title">Учет особенностей объекта</div>
-						<div class="default-content">Мы устанавливаем СКУД на разные типы объектов, у вас частный
-							случай, то мы с ним справимся.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg mb-2 mb-md-4 mb-lg-0">
-				<div class="install-item wow fadeInUp" data-wow-delay="0">
-					<div class="install-item__ico">
-						<i class="icm icm-special"></i>
-					</div>
-					<div class="install-item__col">
-						<div class="install-item__title">Учет особенностей SmartAirKey</div>
-						<div class="default-content">В течение года обслуживание бесплатно.</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"montag", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "montag",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "9",
+		"IBLOCK_TYPE" => "ru",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "ICO",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	),
+	false
+); ?>
 <?$APPLICATION->IncludeComponent(
 	"qwalex:getelement", 
 	"more_block", 
@@ -1058,32 +891,58 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 		</div>
 	</div>
 </section>
+
 <section class="outer-container my-md-3">
 	<div class="home-map">
 		<div class="home-map__map">
-			<img id="map" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/map.jpg">
+			<?$APPLICATION->IncludeComponent("bitrix:map.yandex.view", "main", Array(
+	"COMPONENT_TEMPLATE" => ".default",
+		"CONTROLS" => array(	// Элементы управления
+			0 => "ZOOM",
+			1 => "MINIMAP",
+			2 => "TYPECONTROL",
+			3 => "SCALELINE",
+		),
+		"INIT_MAP_TYPE" => "MAP",	// Стартовый тип карты
+		"MAP_DATA" => "a:4:{s:10:\"yandex_lat\";d:55.65611506778039;s:10:\"yandex_lon\";d:37.54670735596749;s:12:\"yandex_scale\";i:16;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:3:\"LON\";d:37.551633203705;s:3:\"LAT\";d:55.655847141494;s:4:\"TEXT\";s:73:\"117246, г. Москва,  Научный проезд, д. 8, стр. 1.\";}}}",	// Данные, выводимые на карте
+		"MAP_HEIGHT" => "100%",	// Высота карты
+		"MAP_ID" => "",	// Идентификатор карты
+		"MAP_WIDTH" => "100%",	// Ширина карты
+		"OPTIONS" => array(	// Настройки
+			0 => "ENABLE_SCROLL_ZOOM",
+			1 => "ENABLE_DBLCLICK_ZOOM",
+			2 => "ENABLE_DRAGGING",
+		)
+	),
+	false
+);?>
 		</div>
 		<div class="home-map__contacts wow fadeInLeft" data-wow-offset="400">
 			<div class="container">
 				<div class="contacts-map">
 					<h2 class="h h_l mb-3">Контакты</h2>
 					<div class="default-content mb-2 mb-md-6">
-						<p class="mb-2">117246, г. Москва,
-							<br>
-							Научный проезд, д. 8, стр. 1.
+						<p class="mb-2">
+							<?=$address;?>
 						</p>
 						<ul class="ns">
 							<li>
 								<i class="icm icm-phone text-muted100 mr-1"></i>
-								<span>8 (495) 150 66 25</span>
+								<a href="tel:<?=clearTel($phone);?>" class="off-link">
+									<?=$phone;?>
+								</a>
 							</li>
 							<li>
 								<i class="icm icm-mail text-muted100 mr-1"></i>
-								<span>info@smartairkey.com</span>
+								<a href="mailto:<?=$email;?>" class="off-link">
+									<?=$email;?>
+								</a>
 							</li>
 							<li>
 								<i class="icm icm-clock text-muted100 mr-1"></i>
-								<span>Пн-Пт: 10:00 - 20:00</span>
+								<span>
+									<?=$work_time;?>
+								</span>
 							</li>
 						</ul>
 					</div>

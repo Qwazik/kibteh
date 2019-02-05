@@ -3816,7 +3816,11 @@ body {
 .home-map {
   position: relative; }
   .home-map__map {
-    height: 50rem; }
+    height: 50rem;
+    border-radius: 2rem;
+    overflow: hidden; }
+    .home-map__map > * {
+      height: 100%; }
     .home-map__map img {
       height: 100%; }
   .home-map__contacts {

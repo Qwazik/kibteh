@@ -1,8 +1,8 @@
 <?
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 use Bitrix\Main\Page\Asset;
-$email = \COption::GetOptionString( "askaron.settings", "UF_PHONE" );
-$phone = \COption::GetOptionString( "askaron.settings", "UF_MAIN_EMAIL" );
+$email = \COption::GetOptionString( "askaron.settings", "UF_MAIN_EMAIL" );
+$phone = \COption::GetOptionString( "askaron.settings", "UF_PHONE" );
 $work_time = \COption::GetOptionString( "askaron.settings", "UF_WORK_TIME" );
 $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" ));
 ?>
@@ -88,19 +88,25 @@ $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" 
 								<div class="top-panel__right-bottom">
 									<div class="top-panel__nav">
 										<?
-											$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(
-												"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-												"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-												"DELAY" => "N",	// Откладывать выполнение шаблона меню
-												"MAX_LEVEL" => "1",	// Уровень вложенности меню
-												"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
-												"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-												"MENU_CACHE_TYPE" => "N",	// Тип кеширования
-												"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-												"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-												"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-												"COMPONENT_TEMPLATE" => ".default"
-											), false);
+											$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"top", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "Y",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "top"
+	),
+	false
+);
 										?>
 									</div>
 									<div class="top-panel__mobile d-lg-none">

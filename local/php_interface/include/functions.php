@@ -33,3 +33,7 @@ function proportionalResize($picture, $max_width, $max_height){
 	$need_height = $need_width * $propotionals;
 	return CFile::ResizeImageGet($picture,['width'=>$need_width,'height'=>$need_height], BX_RESIZE_IMAGE_EXACT);
 }
+
+function clearTel($phone){
+	return '+7'.preg_replace('/^8|\(|\)| /', '', $phone);
+}
