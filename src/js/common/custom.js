@@ -4,6 +4,14 @@ $(function(){
         mobile: false
     }).init();
     $('[type="tel"]').mask('+7(999) 999-99-99');
+    $('.fancybox[href="#emptyModal"]').click(function(){
+        var $this = $(this).closest('[data-container]'),
+            detail = $this.find('[data-detail]').html(),
+            $modal = $('#emptyModal'),
+            modalDetail = $modal.find('.modal__body');
+        modalDetail.html(detail);
+        initProductBtn();
+    });
     $('.fancybox[href="#modalArticle"]').click(function(){
         var $this = $(this),
             image = $this.find('[data-detail-picture]').clone(),
@@ -13,14 +21,45 @@ $(function(){
             modalText = $modal.find('.article-modal__text .default-content');
         modalImage.html(image);
         modalText.html(text);
-        console.log($this.find('[data-detail-picture]')[0]);
-        console.log([
-            image[0],text
-        ]);
     });
+    $('.fancybox[href="#product"]').click(function(){
+        var productName = $(this).attr('data-product-name');
+        $('#product').find('input[name="product_name"]').val(productName);
+    });
+
     $('.fancybox').fancybox({
         smallBtn: false,
-        touch:false
+        touch:false,
+        afterShow: function(){
+            initProductBtn();
+        }
+    });
+    $('.fancybox-reopen').click(function(){
+       $.fancybox.close();
+       $.fancybox.open({
+           src: $(this).attr('href')
+       },{
+           smallBtn: false,
+           touch:false
+       })
+    });
+
+    function initProductBtn(){
+        $('.fancybox[href="#product"]').click(function(){
+            var productName = $(this).attr('data-product-name');
+            $('#product').find('input[name="product_name"]').val(productName);
+            console.log(productName);
+        });
+        console.log(1111);
+        $('.fancybox').fancybox({
+            smallBtn: false,
+            touch:false,
+        });
+    }
+
+    $('.main-nav__link, .footer-nav__link').click(function(){
+       scrollTo($($(this).attr('href')),0);
+       return false;
     });
 
     tabsSliders=[];
@@ -34,13 +73,7 @@ $(function(){
                 if(href[0] === '#'){
                     $this.click(function(){
                         MOBILE_NAV.close();
-                        if(target){
-                            $('html, body').stop(true,true).animate({
-                                scrollTop: target.offset().top - $('.top-panel').outerHeight()
-                            },1000);
-                        }else{
-                            console.warn('Отсутствует элемент с ID '+href);
-                        }
+                        scrollTo(target, $('.top-panel').outerHeight());
                     });
                 }
             });
@@ -130,7 +163,7 @@ $(function(){
                 });
             });
             $this.parsley().on('form:submit',function(){
-                console.log(1);
+                sendAjax($this);
                 return false;
             });
         });
@@ -336,41 +369,6 @@ $(function(){
         next: '[data-next]'
     });
 
-    //about feature detail
-    (function(){
-        var feature = '.about-feature';
-        $(feature).each(function(){
-            featureModalInit();
-        });
-
-        $(window).resize(function(){
-            featureModalInit();
-        });
-
-        function featureModalInit(){
-            $(feature).each(function(){
-                var $this = $(this),
-                    btn = $this.find('.about-feature__btn'),
-                    content = $this.find('.about-feature__detail').html();
-                btn.off().click(function(){
-                    openModal(content);
-                });
-            });
-        }
-
-        function openModal(content){
-            $('#emptyModal').find('.modal__body').html(content);
-            $.fancybox.open({
-                smallBtn: false,
-                src: '#emptyModal',
-                afterLoad: function(){
-                    $('.fancybox').fancybox({
-                        smallBtn: false
-                    })
-                }
-            });
-        }
-    }());
 });
 
 function inputs(inputs){
@@ -389,10 +387,23 @@ function sendAjax(form){
     $.ajax({
         method: 'post',
         data: $form.serialize(),
-        url: '/send.php',
-        success: sendSuccess,
-        error: sendError
+        url: '/local/templates/kibteh/send.php',
+        success: function (data) {
+            sendSuccess(data);
+        },
+        error: function (data) {
+            errorSuccess(data);
+        }
     });
+}
+
+function sendSuccess(data){
+    console.log('success');
+    console.log(JSON.parse(data));
+}
+function errorSuccess(data){
+    console.log('error');
+    console.log(JSON.parse(data));
 }
 
 // data-swiper-container
@@ -455,4 +466,25 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
             }
         }
     });
+};
+
+if(typeof BX === 'function'){
+    BX.addCustomEvent('onAjaxSuccess', function(){
+        $('.fancybox').fancybox({
+            smallBtn: false,
+            touch:false
+        });
+    });
+}else{
+    console.warn('BX не подключен');
+}
+
+function scrollTo(target, offset){
+    if(target){
+        $('html, body').stop(true,true).animate({
+            scrollTop: target.offset().top - offset
+        },1000);
+    }else{
+        console.warn('Отсутствует элемент');
+    }
 }

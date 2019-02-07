@@ -486,6 +486,15 @@ body{
     max-width: 38rem;
     margin-left: auto;
     margin-right: auto;
+    &-add{
+        margin-top: 2rem;
+        display: flex;
+        a{
+            color: $muted400;
+            font-size: .9em;
+            margin: 0 auto;
+        }
+    }
     &-control{
         &:not(:first-child){
             margin-top: 2rem;
@@ -636,8 +645,8 @@ body{
 //faq
 .faq{
     &-buttons{
-        >*:not(:first-child){
-            margin-left: 2rem;
+        >*:not(:last-child){
+            margin-right: 2rem;
         }
     }
     &-item{
@@ -1544,6 +1553,9 @@ body{
     padding: 3.5rem 5.5rem 5.3rem;
     position: relative;
     max-width: 78rem;
+    @media screen and (min-width: 768px){
+        min-width: 40rem;
+    }
     &__close{
         position: absolute;
         right: 5rem;
