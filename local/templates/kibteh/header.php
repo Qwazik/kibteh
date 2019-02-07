@@ -83,7 +83,12 @@ $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" 
 											<?endif;?>
 										</div>
 									</div>
-									<div class="top-panel__auth col-auto ml-auto"><a class="auth-btn" href="#"><span class="auth-btn__ico"><i class="icm icm-user"></i></span><span class="auth-btn__title">Вход</span></a></div>
+									<div class="top-panel__auth col-auto ml-auto">
+										<a class="auth-btn fancybox" href="#login">
+											<span class="auth-btn__ico"><i class="icm icm-user"></i></span>
+											<span class="auth-btn__title">Вход</span>
+										</a>
+									</div>
 								</div>
 								<div class="top-panel__right-bottom">
 									<div class="top-panel__nav">

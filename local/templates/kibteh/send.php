@@ -32,8 +32,9 @@ foreach ($request->getPostList() as $key => $param){
     $arMsgData[$key] = htmlspecialcharsEx($param);
 }
 switch ($form_event){
-	case 'FEEDBACK': $iblockId = 18;break;
-	case 'TOUR': $iblockId = 17;break;
+	case 'PRODUCT': $iblockId = 18;break;
+	case 'QUEST': $iblockId = 17;break;
+	case 'FEEDBACK': $iblockId = 16;break;
 }
 // проверим наличие данных
 

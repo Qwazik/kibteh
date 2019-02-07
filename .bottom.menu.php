@@ -57,13 +57,6 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Отзывы", 
-		"#reviews", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
 		"FAQ", 
 		"#faq", 
 		Array(), 

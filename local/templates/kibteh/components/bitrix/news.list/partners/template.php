@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 ?>
 
 <?if(!empty($arResult['ITEMS'])):?>
-	<section class="outer-container pt-3">
+	<section class="outer-container pt-3" id="<?=$arResult['CODE'];?>">
 		<div class="container">
 			<h2 class="h h_l mb-4"><?=$arResult['NAME'];?></h2>
 			<ul class="row ns">

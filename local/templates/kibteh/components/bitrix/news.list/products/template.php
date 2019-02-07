@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 <?if(!empty($arResult['ITEMS'])):?>
-<section class="outer-container py-3">
+<section class="outer-container py-3" id="<?=$arResult['CODE'];?>">
 	<div class="container">
 		<h2 class="h h_l ta-center mb-4">
 			<?=htmlspecialcharsback($arResult['NAME']);?>
@@ -47,7 +47,6 @@ $this->setFrameMode(true);
 											<?endif;?>
 										</div>
 										<div class="col">
-											<a class="fancybox btn btn_primary" href="#giveContacts" data-price="<?=$arItem['PROPERTIES']['PRICE']['VALUE'];?>">Купить</a>
 										</div>
 									</div>
 								</div>

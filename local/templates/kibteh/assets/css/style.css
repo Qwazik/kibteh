@@ -3731,6 +3731,15 @@ body {
   max-width: 38rem;
   margin-left: auto;
   margin-right: auto; }
+  .form-add {
+    margin-top: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .form-add a {
+      color: #777;
+      font-size: .9em;
+      margin: 0 auto; }
   .form-control:not(:first-child) {
     margin-top: 2rem; }
   .form-control .input {
@@ -3845,8 +3854,8 @@ body {
   -webkit-box-shadow: 0 0.5rem 4rem rgba(48, 167, 223, 0.1);
           box-shadow: 0 0.5rem 4rem rgba(48, 167, 223, 0.1); }
 
-.faq-buttons > *:not(:first-child) {
-  margin-left: 2rem; }
+.faq-buttons > *:not(:last-child) {
+  margin-right: 2rem; }
 
 .faq-item {
   border-bottom: 1px solid #cecece; }
@@ -4662,6 +4671,9 @@ body {
   padding: 3.5rem 5.5rem 5.3rem;
   position: relative;
   max-width: 78rem; }
+  @media screen and (min-width: 768px) {
+    .modal {
+      min-width: 40rem; } }
   .modal__close {
     position: absolute;
     right: 5rem;

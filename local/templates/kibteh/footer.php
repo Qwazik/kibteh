@@ -12,24 +12,24 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 			</div>
 			<div class="col main-footer__nav">
 				<?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"bottom", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"COMPONENT_TEMPLATE" => "bottom",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "1",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "Y",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "bottom",
-		"USE_EXT" => "N"
-	),
-	false
-);?>
+					"bitrix:menu",
+					"bottom",
+					array(
+						"ALLOW_MULTI_SELECT" => "N",
+						"CHILD_MENU_TYPE" => "left",
+						"COMPONENT_TEMPLATE" => "bottom",
+						"DELAY" => "N",
+						"MAX_LEVEL" => "1",
+						"MENU_CACHE_GET_VARS" => array(
+						),
+						"MENU_CACHE_TIME" => "3600",
+						"MENU_CACHE_TYPE" => "Y",
+						"MENU_CACHE_USE_GROUPS" => "Y",
+						"ROOT_MENU_TYPE" => "bottom",
+						"USE_EXT" => "N"
+					),
+					false
+				);?>
 			</div>
 		</div>
 	</div>
@@ -48,6 +48,8 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 		<div class="modal__close" data-fancybox-close><i class="icm icm-plus"></i></div>
 		<div class="modal__body"></div>
 	</div>
+
+
 	<div class="modal ta-center" id="giveContacts">
 		<div class="modal__close" data-fancybox-close><i class="icm icm-plus"></i></div>
 		<div class="modal__header">
@@ -56,20 +58,59 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 		</div>
 		<div class="modal__body">
 			<form class="ajax-form form" action="#">
+				<input type="hidden" name="form_event" value="feedback">
+				<input type="hidden" name="form_subject" value="Оставить контакты">
 				<div class="form-control">
-					<label class="input"><span class="input__input">
-                    <input name="name" type="name" placeholder="Василий" data-parsley-required><span class="input__placeholder">Имя</span></span></label>
+					<label class="input">
+						<span class="input__input">
+                            <input name="name" type="name" placeholder="Василий" data-parsley-required>
+							<span class="input__placeholder">Имя</span>
+						</span>
+					</label>
 					<div class="input__error"></div>
 				</div>
 				<div class="form-control">
 					<label class="input"><span class="input__input">
-                    <input name="name" type="tel" placeholder="+7(___) ___-__-__" data-parsley-required data-parsley-pattern="/\+7\(\d{3}\) \d{3}-\d\d-\d\d/"><span class="input__placeholder">Телефон</span></span></label>
+                    <input name="tel" type="tel" placeholder="+7(___) ___-__-__" data-parsley-required data-parsley-pattern="/\+7\(\d{3}\) \d{3}-\d\d-\d\d/"><span class="input__placeholder">Телефон</span></span>
+					</label>
 					<div class="input__error"></div>
 				</div>
 				<button class="btn btn_primary mt-4">Оставить контакты</button>
 			</form>
 		</div>
 	</div>
+
+	<div class="modal ta-center" id="product">
+		<div class="modal__close" data-fancybox-close><i class="icm icm-plus"></i></div>
+		<div class="modal__header">
+			<div class="h h_m mb-2">Заказ</div>
+			<div class="h-desc">Напишите номер телефона и мы вам перезвоним за 10 минут</div>
+		</div>
+		<div class="modal__body">
+			<form class="ajax-form form" action="#">
+				<input type="hidden" name="form_event" value="product">
+				<input type="hidden" name="form_subject" value="Заказ">
+				<input type="hidden" name="product_name" value="">
+				<div class="form-control">
+					<label class="input">
+						<span class="input__input">
+                            <input name="name" type="name" placeholder="Василий" data-parsley-required>
+							<span class="input__placeholder">Имя</span>
+						</span>
+					</label>
+					<div class="input__error"></div>
+				</div>
+				<div class="form-control">
+					<label class="input"><span class="input__input">
+                    <input name="tel" type="tel" placeholder="+7(___) ___-__-__" data-parsley-required data-parsley-pattern="/\+7\(\d{3}\) \d{3}-\d\d-\d\d/"><span class="input__placeholder">Телефон</span></span>
+					</label>
+					<div class="input__error"></div>
+				</div>
+				<button class="btn btn_primary mt-4">Заказать</button>
+			</form>
+		</div>
+	</div>
+
 	<div class="modal ta-center" id="sendQuest">
 		<div class="modal__close" data-fancybox-close><i class="icm icm-plus"></i></div>
 		<div class="modal__header">
@@ -78,6 +119,8 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 		</div>
 		<div class="modal__body">
 			<form class="ajax-form form" action="#">
+				<input type="hidden" name="form_event" value="quest">
+				<input type="hidden" name="form_subject" value="Вопрос">
 				<div class="form-control">
 					<label class="input"><span class="input__input">
                                     <input name="name" type="name" placeholder="Василий" data-parsley-required><span class="input__placeholder">Имя</span></span></label>
@@ -85,15 +128,95 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 				</div>
 				<div class="form-control">
 					<label class="input"><span class="input__input">
-                                     <input name="name" type="email" placeholder="mail@mail.ru" data-parsley-required><span class="input__placeholder">Почта</span></span></label>
+                                     <input name="email" type="email" placeholder="mail@mail.ru" data-parsley-required><span class="input__placeholder">Почта</span></span></label>
 					<div class="input__error"></div>
 				</div>
 				<div class="form-control">
 					<label class="input"><span class="input__input">
-                                    <input name="name" type="test" data-parsley-required><span class="input__placeholder">Ваш вопрос</span></span></label>
+                                    <input name="comment" type="test" data-parsley-required><span class="input__placeholder">Ваш вопрос</span></span></label>
 					<div class="input__error"></div>
 				</div>
 				<button class="btn btn_primary mt-4">Отправить</button>
+			</form>
+		</div>
+	</div>
+	<div class="modal ta-center" id="login">
+		<div class="modal__close" data-fancybox-close>
+			<i class="icm icm-plus"></i>
+		</div>
+		<div class="modal__header">
+			<div class="h h_m mb-2">Вход</div>
+		</div>
+		<div class="modal__body">
+			<form class="ajax-form form" action="#">
+				<div class="form-control">
+					<label class="input"><span class="input__input">
+                        <input name="name" type="name" placeholder="Василий" data-parsley-required><span class="input__placeholder">Логин</span></span></label>
+					<div class="input__error"></div>
+				</div>
+				<div class="form-control">
+					<label class="input"><span class="input__input">
+                                     <input name="name" type="password" data-parsley-required><span class="input__placeholder">Пароль</span></span></label>
+					<div class="input__error"></div>
+				</div>
+				<div class="form-add">
+					<a href="#forget" class="fancybox-reopen">Забыл пароль</a>
+					<a href="#register" class="fancybox-reopen">Регистрация</a>
+				</div>
+				<button class="btn btn_primary mt-4">Войти</button>
+			</form>
+		</div>
+	</div>
+	<div class="modal ta-center" id="register">
+		<div class="modal__close" data-fancybox-close>
+			<i class="icm icm-plus"></i>
+		</div>
+		<div class="modal__header">
+			<div class="h h_m mb-2">Регистрация</div>
+		</div>
+		<div class="modal__body">
+			<form class="ajax-form form" action="#">
+				<div class="form-control">
+					<label class="input"><span class="input__input">
+                        <input name="name" type="name" data-parsley-required><span class="input__placeholder">Логин</span></span></label>
+					<div class="input__error"></div>
+				</div>
+				<div class="form-control">
+					<label class="input"><span class="input__input">
+                                     <input name="name" type="password" data-parsley-required><span class="input__placeholder">Пароль</span></span></label>
+					<div class="input__error"></div>
+				</div>
+				<div class="form-add">
+					<a href="#forget" class="fancybox-reopen">Забыл пароль</a>
+					<a href="#login" class="fancybox-reopen">Войти</a>
+				</div>
+				<button class="btn btn_primary mt-4">Зарегистрироваться</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="modal ta-center" id="forget">
+		<div class="modal__close" data-fancybox-close>
+			<i class="icm icm-plus"></i>
+		</div>
+		<div class="modal__header">
+			<div class="h h_m mb-2">Восстановление пароля</div>
+		</div>
+		<div class="modal__body">
+			<form class="ajax-form form" action="#">
+				<div class="form-control">
+					<label class="input"><span class="input__input">
+                        <input name="name" type="tel" data-parsley-required>
+							<span class="input__placeholder">Логин</span>
+						</span>
+					</label>
+					<div class="input__error"></div>
+				</div>
+				<div class="form-add">
+					<a href="#login" class="fancybox-reopen">Войти</a>
+					<a href="#register" class="fancybox-reopen">Регистрация</a>
+				</div>
+				<button class="btn btn_primary mt-4">Восстановить</button>
 			</form>
 		</div>
 	</div>
@@ -111,8 +234,5 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/libs/jquery.maskedinput/
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/libs/wow/dist/wow.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/js/custom.js');
 ?>
-<script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://localhost:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>");//.replace("HOST", location.hostname));
-    //]]></script>
 </body>
 </html>

@@ -24,6 +24,7 @@ foreach ($arResult['ITEMS'] as $item){
 			'NAME'=>$item['NAME'],
 			'PREVIEW_PICTURE_SRC'=>$item['PREVIEW_PICTURE']['SRC'],
 			'PREVIEW_TEXT'=>$item['PREVIEW_TEXT'],
+			'DETAIL_TEXT'=>$item['DETAIL_TEXT'],
 			'IBLOCK_ID'=>$item['IBLOCK_ID'],
 			'EDIT_LINK'=>$item['EDIT_LINK'],
 			'DELETE_LINK'=>$item['DELETE_LINK']
@@ -38,7 +39,7 @@ foreach ($arResult['ITEMS'] as $item){
 ?>
 
 <?if(!empty($arResult['ITEMS'])):?>
-	<section class="outer-container py-4 mb-lg-5 wow fadeInUp" data-wow-offset="100" id="typeSolution">
+	<section class="outer-container py-4 mb-lg-5 wow fadeInUp" data-wow-offset="100" id="<?=$arResult['CODE'];?>">
 		<h2 class="h h_l ta-center mb-2 mb-sm-4"><?=$arResult['NAME'];?></h2>
 		<div class="js-tabs">
 			<div class="ta-center mb-4">
@@ -74,7 +75,7 @@ foreach ($arResult['ITEMS'] as $item){
 												></div>
 											</div>
 											<div class="solution-item__col wow fadeInRight" data-wow-offset="100">
-												<div class="solution-item__text">
+												<div class="solution-item__text" data-container>
 													<div class="slider-navigation mb-2">
 														<div class="slider-btn" data-prev>
 															<i class="icm icm-arrow rotate-180"></i>
@@ -89,9 +90,19 @@ foreach ($arResult['ITEMS'] as $item){
 														<?=$item['PREVIEW_TEXT'];?>
 													<?endif;?>
 													</div>
-													<a class="btn btn_bd" href="<?=$item['DETAIL_PAGE_URL'];?>">Подробнее</a>
+													<div class="about-feature__detail" data-detail>
+														<div class="default-content mb-4">
+															<div class="h h_m"><?=$item['NAME'];?></div>
+															<?if(!empty($item['DETAIL_TEXT'])):?>
+																<?=$item['DETAIL_TEXT'];?>
+															<?endif;?>
+														</div>
+														<a class="fancybox btn btn_primary" data-product-name="<?=$item['NAME'];?>" href="#product">Заказать</a>
+													</div>
+													<a class="btn btn_bd fancybox" href="#emptyModal">Подробнее</a>
 												</div>
 											</div>
+
 										</div>
 									</div>
 									<?endforeach;?>

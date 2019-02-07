@@ -39,7 +39,7 @@ foreach ($arResult['ITEMS'] as $item){
 ?>
 
 <?if(!empty($arResult['ITEMS'])):?>
-	<section class="outer-container py-4 mb-1">
+	<section class="outer-container py-4 mb-1"  id="<?=$arResult['CODE'];?>">
 		<div class="container">
 			<h2 class="h h_l ta-center mb-3 mb-sm-4"><?=$arResult['NAME'];?></h2>
 			<ul class="ns features">

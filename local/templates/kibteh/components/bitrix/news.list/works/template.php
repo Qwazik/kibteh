@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 ?>
 
 <?if(!empty($arResult['ITEMS'])):?>
-<section class="outer-container py-4">
+<section class="outer-container py-4" id="<?=$arResult['CODE'];?>">
     <div class="container">
         <h2 class="h h_l mb-4 ta-center"><?=$arResult['NAME'];?></h2>
         <div class="js-swiper wow fadeInUp" data-items="3">

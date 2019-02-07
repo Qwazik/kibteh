@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 
 
 <?if(!empty($arResult['ITEMS'])):?>
-	<section class="outer-container py-3">
+	<section class="outer-container py-3" id="<?=$arResult['CODE'];?>">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-lg-6 pr-md-5 mb-2 mb-sm-3 about-header wow fadeInLeft">
