@@ -1,6 +1,8 @@
 <?
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 $email = \COption::GetOptionString( "askaron.settings", "UF_MAIN_EMAIL" );
 $phone = \COption::GetOptionString( "askaron.settings", "UF_PHONE" );
 $work_time = \COption::GetOptionString( "askaron.settings", "UF_WORK_TIME" );
@@ -29,7 +31,7 @@ $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" 
 	<body>
 		<div id="panel"><?$APPLICATION->ShowPanel();?></div>
 		<!--[if lt IE 10]>
-		<p class="browserupgrade">Ваш браузер  <strong>устарел</strong>. Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a> для корректного отображения сайтов.</p>
+		<?=Loc::getMessage('Old_browser');?>
 		<![endif]-->
 		<div class="page" id="app">
 			<header class="top-panel">
@@ -44,17 +46,79 @@ $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" 
 							<div class="col-auto">
 								<div class="row flex-column">
 									<div class="col-auto top-panel__social">
-										<ul class="social">
-											<li class="social__item"><a class="social__link" href="#"><i class="icm icm-fb"></i></a></li>
-											<li class="social__item"><a class="social__link" href="#"><i class="icm icm-vk"></i></a></li>
-											<li class="social__item"><a class="social__link" href="#"><i class="icm icm-telegram"></i></a></li>
-											<li class="social__item"><a class="social__link" href="#"><i class="icm icm-insta"></i></a></li>
-										</ul>
+                                        <? $APPLICATION->IncludeComponent(
+                                            "bitrix:news.list",
+                                            "socials",
+                                            Array(
+                                                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                                                "ADD_SECTIONS_CHAIN" => "N",
+                                                "AJAX_MODE" => "N",
+                                                "AJAX_OPTION_ADDITIONAL" => "",
+                                                "AJAX_OPTION_HISTORY" => "N",
+                                                "AJAX_OPTION_JUMP" => "N",
+                                                "AJAX_OPTION_STYLE" => "N",
+                                                "CACHE_FILTER" => "N",
+                                                "CACHE_GROUPS" => "Y",
+                                                "CACHE_TIME" => "36000000",
+                                                "CACHE_TYPE" => "A",
+                                                "CHECK_DATES" => "Y",
+                                                "COMPONENT_TEMPLATE" => "socials",
+                                                "DETAIL_URL" => "",
+                                                "DISPLAY_BOTTOM_PAGER" => "N",
+                                                "DISPLAY_DATE" => "N",
+                                                "DISPLAY_NAME" => "Y",
+                                                "DISPLAY_PICTURE" => "Y",
+                                                "DISPLAY_PREVIEW_TEXT" => "N",
+                                                "DISPLAY_TOP_PAGER" => "N",
+                                                "FIELD_CODE" => array(0 => "",
+                                                    1 => "",),
+                                                "FILTER_NAME" => "",
+                                                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                                                "IBLOCK_ID" => (LANGUAGE_ID==='en')?'34':'33',
+                                                "IBLOCK_TYPE" => "landing_page",
+                                                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                                                "INCLUDE_SUBSECTIONS" => "N",
+                                                "MESSAGE_404" => "",
+                                                "NEWS_COUNT" => "20",
+                                                "PAGER_BASE_LINK_ENABLE" => "N",
+                                                "PAGER_DESC_NUMBERING" => "N",
+                                                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                                                "PAGER_SHOW_ALL" => "N",
+                                                "PAGER_SHOW_ALWAYS" => "N",
+                                                "PAGER_TEMPLATE" => ".default",
+                                                "PAGER_TITLE" => "",
+                                                "PARENT_SECTION" => "",
+                                                "PARENT_SECTION_CODE" => "",
+                                                "PREVIEW_TRUNCATE_LEN" => "",
+                                                "PROPERTY_CODE" => array(
+                                                    0 => "ICO",
+                                                    1 => "LINIK",
+                                                    2 => "",
+                                                ),
+                                                "SET_BROWSER_TITLE" => "N",
+                                                "SET_LAST_MODIFIED" => "N",
+                                                "SET_META_DESCRIPTION" => "N",
+                                                "SET_META_KEYWORDS" => "N",
+                                                "SET_STATUS_404" => "N",
+                                                "SET_TITLE" => "N",
+                                                "SHOW_404" => "N",
+                                                "SORT_BY1" => "ACTIVE_FROM",
+                                                "SORT_BY2" => "SORT",
+                                                "SORT_ORDER1" => "DESC",
+                                                "SORT_ORDER2" => "ASC",
+                                                "STRICT_SECTION_CHECK" => "N"
+                                            )
+                                        ); ?>
 									</div>
 									<div class="col-auto top-panel__lang">
 										<div class="lang">
-											<div class="lang__current">Рус</div>
-											<div class="lang__list"><a class="lang__item" href="/en/">Eng</a></div>
+											<?if(LANGUAGE_ID=='ru'):?>
+												<div class="lang__current">Рус</div>
+												<div class="lang__list"><a class="lang__item" href="/en/">Eng</a></div>
+											<?else:?>
+												<div class="lang__current">Eng</div>
+												<div class="lang__list"><a class="lang__item" href="/">Рус</a></div>
+											<?endif;?>
 										</div>
 									</div>
 								</div>
@@ -86,7 +150,7 @@ $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" 
 									<div class="top-panel__auth col-auto ml-auto">
 										<a class="auth-btn fancybox" href="#login">
 											<span class="auth-btn__ico"><i class="icm icm-user"></i></span>
-											<span class="auth-btn__title">Вход</span>
+											<span class="auth-btn__title"><?=Loc::getMessage('Login');?></span>
 										</a>
 									</div>
 								</div>
@@ -94,24 +158,24 @@ $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" 
 									<div class="top-panel__nav">
 										<?
 											$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"top", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "1",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "Y",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "top",
-		"USE_EXT" => "N",
-		"COMPONENT_TEMPLATE" => "top"
-	),
-	false
-);
+												"bitrix:menu",
+												"top",
+												array(
+													"ALLOW_MULTI_SELECT" => "N",
+													"CHILD_MENU_TYPE" => "left",
+													"DELAY" => "N",
+													"MAX_LEVEL" => "1",
+													"MENU_CACHE_GET_VARS" => array(
+													),
+													"MENU_CACHE_TIME" => "3600",
+													"MENU_CACHE_TYPE" => "Y",
+													"MENU_CACHE_USE_GROUPS" => "Y",
+													"ROOT_MENU_TYPE" => "top",
+													"USE_EXT" => "N",
+													"COMPONENT_TEMPLATE" => "top"
+												),
+												false
+											);
 										?>
 									</div>
 									<div class="top-panel__mobile d-lg-none">
@@ -119,7 +183,7 @@ $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" 
 									</div>
 									<div class="top-panel__feedback">
 										<a class="btn btn_bd top-panel__callback fancybox" href="#giveContacts">
-											Заказать
+											<?=Loc::getMessage('Form_btn');?>
 										</a>
 									</div>
 								</div>

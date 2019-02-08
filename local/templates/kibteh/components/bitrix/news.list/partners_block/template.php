@@ -10,6 +10,8 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 $this->setFrameMode(true);
 ?>
 
@@ -48,6 +50,9 @@ $this->setFrameMode(true);
             <?endif;?>
 			<?endforeach;?>
 		</div>
+        <div class="py-5 ta-center">
+        <a href="#giveContacts" class="btn btn_primary fancybox"><?=Loc::getMessage('BTN_TEXT');?></a>
+        </div>
 	</div>
 </section>
 <?endif;?>

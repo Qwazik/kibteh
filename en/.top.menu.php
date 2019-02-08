@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Типовые решения", 
+		"#type-solution", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Приемущества", 
+		"#features", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Истории успеха", 
+		"#history", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Faq", 
+		"#faq", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"#contacts", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

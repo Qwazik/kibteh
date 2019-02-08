@@ -26,7 +26,6 @@ $(function(){
         var productName = $(this).attr('data-product-name');
         $('#product').find('input[name="product_name"]').val(productName);
     });
-
     $('.fancybox').fancybox({
         smallBtn: false,
         touch:false,
@@ -44,18 +43,7 @@ $(function(){
        })
     });
 
-    function initProductBtn(){
-        $('.fancybox[href="#product"]').click(function(){
-            var productName = $(this).attr('data-product-name');
-            $('#product').find('input[name="product_name"]').val(productName);
-            console.log(productName);
-        });
-        console.log(1111);
-        $('.fancybox').fancybox({
-            smallBtn: false,
-            touch:false,
-        });
-    }
+
 
     $('.main-nav__link, .footer-nav__link').click(function(){
        scrollTo($($(this).attr('href')),0);
@@ -451,7 +439,7 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
                                 nextEl: next,
                                 prevEl: prev,
                                 disabledClass: 'slider-btn_disabled'
-                            }}))
+                            }}));
                         //console.log('init');
                         console.log(prev, next);
                     }
@@ -464,6 +452,22 @@ $.fn.mobileSwiper = function(size, swiperProps, nav){
                     $targetContainerLink.html($target);
                 }
             }
+
+            $('.fancybox[href="#emptyModal"]').click(function(){
+                var $this = $(this).closest('[data-container]'),
+                    detail = $this.find('[data-detail]').html(),
+                    $modal = $('#emptyModal'),
+                    modalDetail = $modal.find('.modal__body');
+                modalDetail.html(detail);
+                initProductBtn();
+            });
+            $('.fancybox').fancybox({
+                smallBtn: false,
+                touch:false,
+                afterShow: function(){
+                    initProductBtn();
+                }
+            });
         }
     });
 };
@@ -487,4 +491,16 @@ function scrollTo(target, offset){
     }else{
         console.warn('Отсутствует элемент');
     }
+}
+
+function initProductBtn(){
+    $('.fancybox[href="#product"]').click(function(){
+        var productName = $(this).attr('data-product-name');
+        $('#product').find('input[name="product_name"]').val(productName);
+        console.log(productName);
+    });
+    $('.fancybox').fancybox({
+        smallBtn: false,
+        touch:false,
+    });
 }
