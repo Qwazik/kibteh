@@ -356,7 +356,48 @@ $(function(){
         prev: '[data-prev]',
         next: '[data-next]'
     });
+    
+    (function(){
+        var totop = $('<button class="totop"></button>'),
+            totopActiveClass = 'totop_active';
+        totop.click(function(){
+            $('html, body').stop().animate({
+                scrollTop: 0
+            }, 1000);
+        });
+        $('body').append(totop);
 
+        $(window).on({
+            'scroll':function(){
+                check();
+            },
+            'load':function(){
+                check();
+            }
+        });
+
+        function check(){
+            if($(window).scrollTop() > $(window).innerHeight()/2){
+                show();
+            }else{
+                hide();
+            }
+        }
+
+        function hide(){
+            if(totop.is('.'+totopActiveClass)) {
+                $(totop).removeClass(totopActiveClass);
+                console.log('hide');
+            }
+
+        }
+        function show(){
+            if(!totop.is('.'+totopActiveClass)) {
+                $(totop).addClass(totopActiveClass);
+                console.log('show');
+            }
+        }
+    }());
 });
 
 function inputs(inputs){
