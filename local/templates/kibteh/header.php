@@ -39,9 +39,9 @@ $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" 
 					<div class="container">
 						<div class="row align-items-center">
 							<h1 class="col-auto top-panel__logo">
-								<a class="logo" href="/">
+								<span class="logo">
 									<img src="<?=$logo;?>" alt="<?=$APPLICATION->GetTitle(false);?>">
-								</a>
+								</span>
 							</h1>
 							<div class="col-auto">
 								<div class="row flex-column">

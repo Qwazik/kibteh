@@ -4770,6 +4770,33 @@ body {
 .js-swiper {
   position: relative; }
 
+.totop {
+  height: 8rem;
+  width: 8rem;
+  background: #41A9DF;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  display: inline-block;
+  border: none;
+  border-radius: 50%;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  opacity: 0;
+  z-index: 100; }
+  .totop:hover {
+    background: rgba(65, 169, 223, 0.7); }
+  .totop:after {
+    content: "\e90c";
+    font-family: icomoon;
+    color: white;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    display: inline-block;
+    font-size: 2rem; }
+  .totop_active {
+    opacity: 1; }
+
 /*-- END: plugins --*/
 @media screen and (max-width: 1229px) {
   .horizontal-contacts__item:not(:first-child) {
@@ -5043,6 +5070,11 @@ body {
       text-align: left; } }
 
 @media screen and (max-width: 575px) {
+  .totop {
+    width: 5rem;
+    height: 5rem; }
+    .totop:after {
+      font-size: 1.4rem; }
   body {
     font-size: 1.4rem; }
   .home-map__contacts {
@@ -5108,7 +5140,7 @@ body {
   .main-slider__smalltext {
     font-size: 1.2rem; }
   .features {
-    margin-left: -1rem  !important;
+    margin-left: -1rem !important;
     margin-right: -1rem !important; }
     .features__item:not(:first-child) {
       margin-top: 1rem; }

@@ -358,7 +358,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "LINK",
 			1 => "",
 		),
 		"SET_BROWSER_TITLE" => "N",
@@ -424,7 +424,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "LINK",
 			1 => "",
 		),
 		"SET_BROWSER_TITLE" => "N",

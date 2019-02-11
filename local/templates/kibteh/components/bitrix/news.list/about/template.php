@@ -29,7 +29,7 @@ $this->setFrameMode(true);
 						$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 						$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 						?>
-					<div class="image-text mb-1 wow fadeInRight" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+					<a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'];?>" target="_blank" class="off-link image-text mb-1 wow fadeInRight" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 						<?if(!empty($arItem['PREVIEW_PICTURE']['SRC'])):?>
 							<div class="image-text__image">
 								<img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt="">
@@ -43,7 +43,7 @@ $this->setFrameMode(true);
 								</div>
 							<?endif;?>
 						</div>
-					</div>
+					</a>
 					<?endforeach;?>
 
 				</div>

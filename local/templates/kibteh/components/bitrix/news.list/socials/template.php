@@ -24,7 +24,7 @@ $this->setFrameMode(true);
             $ico = $arItem['PROPERTIES']['ICO']['VALUE'];
             ?>
         <li class="social__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-            <a class="social__link" href="<?=$link;?>">
+            <a class="social__link" href="<?=$link;?>" target="_blank">
                 <i class="icm <?=$ico;?>"></i>
             </a>
         </li>

@@ -23,11 +23,11 @@ $this->setFrameMode(true);
 					$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 					?>
 				  <li class="col-4 col-md-2 d-flex mb-2">
-					  <div class="partner-item wow fadeInUp" data-wow-delay="<?=($cnt*0.15).'s';?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+					  <a href="<?=$arItem['PROPERTIES']['LINK']['VALUE'];?>" target="_blank" class="off-link partner-item wow fadeInUp" data-wow-delay="<?=($cnt*0.15).'s';?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 						<?if(!empty($arItem['PREVIEW_PICTURE']['SRC'])):?>
 							<img src="<?=$arItem['PREVIEW_PICTURE']['SRC'];?>" alt="<?=$arItem['NAME'];?>">
 						<?endif;?>
-					  </div>
+					  </a>
 				  </li>
 				<?$cnt++;endforeach;?>
 			</ul>

@@ -1,4 +1,4 @@
-Options -Indexes 
+Options -Indexes
 ErrorDocument 404 /404.php
 
 <IfModule mod_php5.c>
@@ -19,6 +19,9 @@ ErrorDocument 404 /404.php
 	RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
 	RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
 	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+    RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteRule ^account/$ /account/dist/index.php?path=$1 [NC,L,QSA]
 </IfModule>
 
 <IfModule mod_dir.c>

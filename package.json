@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Qwazik/kibteh/issues"
   },
-  "homepage": "https://github.com/Qwazik/kibteh#readme"
+  "homepage": "https://github.com/Qwazik/kibteh#readme",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.1"
+  }
 }
