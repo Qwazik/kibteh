@@ -1,5 +1,7 @@
 <template>
   <div class="content">
+      {{count}}
+      <button @click="increaseCount">+</button>
     <v-card
             primary
             light
@@ -157,6 +159,8 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex'
+    import { mapGetters } from 'vuex'
     export default {
         data () {
             return {
@@ -173,7 +177,17 @@
                 newPassword: ''
             }
         },
+        computed: {
+            localComputed(){
 
+            },
+            ...mapState({
+                //count: state => store.getters.twoCount
+            }),
+            ...mapGetters({
+                count: 'twoCount'
+            })
+        },
         watch: {
             isUpdating (val) {
                 if (val) {
@@ -194,6 +208,9 @@
             },
             changePassword(){
                 alert('change');
+            },
+            increaseCount(){
+                this.$store.commit('increment');
             }
         }
     }
