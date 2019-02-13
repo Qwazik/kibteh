@@ -1,12 +1,15 @@
 <template>
     <v-app id="inspire">
+
         <v-navigation-drawer
                 v-model="drawer"
                 left
                 app
                 fixed
                 clipped
+                v-if="isAuthenticated"
         >
+
             <v-list dense>
                 <v-list-tile href="/">
                     <v-list-tile-action>
@@ -19,7 +22,7 @@
 
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-tile to="/">
+                <v-list-tile to="/home">
                     <v-list-tile-action>
                         <v-icon>fa-user</v-icon>
                     </v-list-tile-action>
@@ -53,7 +56,9 @@
                 </v-list-tile>
             </v-list>
         </v-navigation-drawer>
+
         <v-toolbar color="primary" dark app fixed clipped-left>
+            <template v-if="isAuthenticated">
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>
                 <div class="header-logo">
@@ -65,9 +70,17 @@
                     </div>
                 </div>
             </v-toolbar-title>
+            </template>
             <v-spacer></v-spacer>
         </v-toolbar>
         <v-content>
+            <v-progress-linear
+                    :active="authStatus === 'loading'"
+                    class="ma-0"
+                    color="green lighten-3"
+                    height="4"
+                    indeterminate
+            ></v-progress-linear>
             <v-container fluid fill-height>
                 <v-layout justify-center>
                     <router-view></router-view>
@@ -97,10 +110,28 @@
 </style>
 
 <script>
+    import { mapGetters } from "vuex"
+
     export default {
         data: () => ({
             drawer: null
         }),
+        computed: {
+            ...mapGetters([
+                'isAuthenticated',
+                'authStatus'
+            ])
+        },
+        created: function(){
+          if(this.$store.getters.isAuthenticated){
+              this.$router.push('/home');
+          }
+        },
+        watch: {
+            isAuthenticated(val){
+                if(val) this.$router.push('/home');
+            }
+        },
         props: {
             source: String
         }

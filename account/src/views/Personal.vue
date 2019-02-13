@@ -173,7 +173,6 @@
                 newPassword: ''
             }
         },
-
         watch: {
             isUpdating (val) {
                 if (val) {
@@ -194,6 +193,9 @@
             },
             changePassword(){
                 alert('change');
+            },
+            increaseCount(){
+                this.$store.commit('increment');
             }
         }
     }

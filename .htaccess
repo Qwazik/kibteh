@@ -21,7 +21,7 @@ ErrorDocument 404 /404.php
 	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
     RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-l
-    RewriteRule ^account/$ /account/dist/index.php?path=$1 [NC,L,QSA]
+    RewriteRule ^account/(.*)$ /account/dist/index.php?path=$1 [NC,L,QSA]
 </IfModule>
 
 <IfModule mod_dir.c>

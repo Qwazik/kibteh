@@ -17,7 +17,7 @@ $logo = CFile::GetPath(\COption::GetOptionString( "askaron.settings", "UF_LOGO" 
 		<meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1">
 		<link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/favicon.ico">
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+        <link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH;?>/assets/icon.png">
 		<?
 		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/libs/fancybox/dist/jquery.fancybox.min.css');
 		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/libs/swiper/dist/css/swiper.min.css');
