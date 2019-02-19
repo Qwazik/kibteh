@@ -43,4 +43,6 @@ $MESS['INPUT_PASSWORD_LOGIN'] = 'Войти';
 
 $MESS['INPUT_QUEST_NAME'] = 'Ваш вопрос';
 $MESS['INPUT_QUEST_PLACEHOLDER'] = '';
+
+$MESS['SUCCESS_MESSAGE'] = 'Сообщение успешно отправлено! <br> Вскоре с вами свяжутся наши менеджеры.';
 ?>

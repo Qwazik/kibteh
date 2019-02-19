@@ -4761,6 +4761,71 @@ body {
 
 /*-- END: elements --*/
 /*-- START: plugins --*/
+.fancybox-content > * {
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s; }
+
+.form-sending > * {
+  opacity: .5; }
+
+.form-sended > *:not(.success-message):not(.modal__close) {
+  opacity: 0; }
+
+.form-sended {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.success-message {
+  position: absolute;
+  height: auto;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+  padding: 2rem;
+  padding-top: 23rem;
+  background-image: url("../img/success.svg");
+  -webkit-background-size: 18rem;
+  background-repeat: no-repeat;
+  background-size: 18rem;
+  background-position: top 3rem center;
+  display: none;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1.8rem;
+  line-height: 2;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  display: none; }
+  .success-message .modal__close {
+    z-index: 1; }
+
+.form-sended {
+  position: relative; }
+  .form-sended .success-message {
+    display: block; }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .fancybox-button.fancybox-button--close {
   display: none; }
 

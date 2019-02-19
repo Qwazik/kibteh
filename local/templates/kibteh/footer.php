@@ -37,6 +37,9 @@ Loc::loadMessages(__FILE__); ?>
         <div class="modal__body"></div>
     </div>
     <div class="modal ta-center" id="giveContacts">
+        <div class="success-message">
+            <?=Loc::getMessage('SUCCESS_MESSAGE');?>
+        </div>
         <div class="modal__close" data-fancybox-close>
             <i class="icm icm-plus"></i>
         </div>
@@ -79,6 +82,9 @@ Loc::loadMessages(__FILE__); ?>
         </div>
     </div>
     <div class="modal ta-center" id="product">
+        <div class="success-message">
+            <?=Loc::getMessage('SUCCESS_MESSAGE');?>
+        </div>
         <div class="modal__close" data-fancybox-close>
             <i class="icm icm-plus"></i>
         </div>
@@ -122,6 +128,9 @@ Loc::loadMessages(__FILE__); ?>
         </div>
     </div>
     <div class="modal ta-center" id="sendQuest">
+        <div class="success-message">
+            <?=Loc::getMessage('SUCCESS_MESSAGE');?>
+        </div>
         <div class="modal__close" data-fancybox-close>
             <i class="icm icm-plus"></i>
         </div>
@@ -171,6 +180,7 @@ Loc::loadMessages(__FILE__); ?>
         </div>
     </div>
     <div class="modal ta-center" id="login">
+
         <div class="modal__close" data-fancybox-close>
             <i class="icm icm-plus"></i>
         </div>
@@ -212,6 +222,9 @@ Loc::loadMessages(__FILE__); ?>
     </div>
 
     <div class="modal ta-center" id="register">
+        <div class="success-message">
+            <?=Loc::getMessage('SUCCESS_MESSAGE');?>
+        </div>
         <div class="modal__close" data-fancybox-close>
             <i class="icm icm-plus"></i>
         </div>
@@ -248,6 +261,9 @@ Loc::loadMessages(__FILE__); ?>
     </div>
     
     <div class="modal ta-center" id="forget">
+        <div class="success-message">
+            <?=Loc::getMessage('SUCCESS_MESSAGE');?>
+        </div>
         <div class="modal__close" data-fancybox-close>
             <i class="icm icm-plus"></i>
         </div>

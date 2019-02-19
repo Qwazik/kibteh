@@ -1,4 +1,11 @@
 $(function(){
+
+    $.fancybox.defaults.afterClose = function(){
+        $('.form-sended').each(function(){
+            $(this).removeClass('form-sended');
+            $(this).find('form')[0].reset();
+        });
+    };
     new WOW({
         offset: 100,
         mobile: false
@@ -413,26 +420,32 @@ function inputs(inputs){
 
 function sendAjax(form){
     var $form = $(form);
+    $form.closest('.fancybox-content').addClass('form-sending');
     $.ajax({
         method: 'post',
         data: $form.serialize(),
         url: '/local/templates/kibteh/send.php',
         success: function (data) {
-            sendSuccess(data);
+            sendSuccess($form, data);
+            $form.closest('.fancybox-content').removeClass('form-sending').addClass('form-sended');
         },
         error: function (data) {
-            errorSuccess(data);
+            errorSuccess($form, data);
+            $form.closest('.fancybox-content').removeClass('form-sending').addClass('form-error');
         }
     });
 }
 
-function sendSuccess(data){
-    console.log('success');
-    console.log(JSON.parse(data));
+function sendSuccess($form, data){
+    setTimeout(function(){
+        $.fancybox.close(true);
+    },3000);
 }
-function errorSuccess(data){
-    console.log('error');
-    console.log(JSON.parse(data));
+function errorSuccess($form, data){
+    console.log({
+        form: $form,
+        data: data
+    });
 }
 
 // data-swiper-container
