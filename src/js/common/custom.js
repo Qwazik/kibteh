@@ -1,8 +1,9 @@
+var FANCYBOX_CLOSE_TIMEOUT = 0;
 $(function(){
+
     $.fancybox.defaults.afterClose = function(){
         $('.form-sended').each(function(){
-            $(this).removeClass('form-sended');
-            $(this).find('form')[0].reset();
+            clearTimeout(FANCYBOX_CLOSE_TIMEOUT);
         });
     };
     new WOW({
@@ -436,7 +437,7 @@ function sendAjax(form){
 }
 
 function sendSuccess($form, data){
-    setTimeout(function(){
+    FANCYBOX_CLOSE_TIMEOUT = setTimeout(function(){
         $.fancybox.close(true);
     },3000);
 }

@@ -1687,6 +1687,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  .modal__close{
+    z-index: 1;
+  }
 }
 .success-message{
   position: absolute;
@@ -1709,9 +1712,7 @@ body {
   top: 50%;
   transform: translate(0,-50%);
   display: none;
-  .modal__close{
-    z-index: 1;
-  }
+
 }
 .form-sended{
   position: relative;
