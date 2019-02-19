@@ -4781,6 +4781,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  .form-sended .modal__close {
+    z-index: 1; }
 
 .success-message {
   position: absolute;
@@ -4806,8 +4808,6 @@ body {
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   display: none; }
-  .success-message .modal__close {
-    z-index: 1; }
 
 .form-sended {
   position: relative; }
