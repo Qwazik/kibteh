@@ -1,5 +1,4 @@
 $(function(){
-
     $.fancybox.defaults.afterClose = function(){
         $('.form-sended').each(function(){
             $(this).removeClass('form-sended');
