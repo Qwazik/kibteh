@@ -72,6 +72,9 @@
             </v-toolbar-title>
             </template>
             <v-spacer></v-spacer>
+            <v-toolbar-items class="hidden-sm-and-down" v-if="isAuthenticated">
+                <v-btn flat @click="logout">Выйти</v-btn>
+            </v-toolbar-items>
         </v-toolbar>
         <v-content>
             <v-progress-linear
@@ -110,7 +113,8 @@
 </style>
 
 <script>
-    import { mapGetters } from "vuex"
+    import { mapGetters, mapActions } from "vuex"
+    import { AUTH_LOGOUT } from "./store/actions/auth";
 
     export default {
         data: () => ({
@@ -130,10 +134,21 @@
         watch: {
             isAuthenticated(val){
                 if(val) this.$router.push('/home');
+                else {
+                    this.$router.push('/');
+                    location.href="/"
+                }
             }
         },
         props: {
             source: String
+        },
+        methods: {
+            logout: function(){
+                this.$store.dispatch('AUTH_LOGOUT');
+                this.$router.push('/');
+                location.href="/"
+            }
         }
     }
 </script>
