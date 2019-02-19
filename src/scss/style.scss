@@ -1671,6 +1671,64 @@ body {
 /*-- END: elements --*/
 
 /*-- START: plugins --*/
+
+.fancybox-content >*{
+  transition: opacity .3s;
+}
+
+.form-sending > *{
+  opacity: .5;
+}
+
+.form-sended >*:not(.success-message):not(.modal__close){
+  opacity: 0;
+}
+.form-sended{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.success-message{
+  position: absolute;
+  height: auto;
+  animation: fadeIn 1s;
+  padding: 2rem;
+  padding-top: 23rem;
+  background-image: url('../img/success.svg');
+  -webkit-background-size: 18rem;
+  background-repeat: no-repeat;
+  background-size: 18rem;
+  background-position: top 3rem center;
+  display: none;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-sizing: border-box;
+  font-size: 1.8rem;
+  line-height: 2;
+  top: 50%;
+  transform: translate(0,-50%);
+  display: none;
+  .modal__close{
+    z-index: 1;
+  }
+}
+.form-sended{
+  position: relative;
+  .success-message{
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
 .fancybox-button.fancybox-button--close {
   display: none;
 }
